@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Lamp of the LORD · lectio</title>
+<meta name="description" content="On self-branding, integrity, and being known without having to prove yourself: a reading of Proverbs 20.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="lectio">
+<meta property="og:title" content="The Lamp of the LORD">
+<meta property="og:description" content="On self-branding, integrity, and being known without having to prove yourself: a reading of Proverbs 20.">
+<meta property="og:url" content="https://luvnpce83.github.io/lectio/the-lamp-of-the-lord/">
+<meta property="article:published_time" content="2026-09-27">
+<link rel="canonical" href="https://luvnpce83.github.io/lectio/the-lamp-of-the-lord/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500;1,600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=IBM+Plex+Sans:wght@500&display=swap">
+<style>
+/* Layout: a single lamplit article column (~40rem); the passage sits in a quiet well; one pull quote marks the turn */
+:root {
+  --paper: #F4F6F4;
+  --ink: #1B2430;
+  --muted: #5A6572;
+  --lamp: #9A5F0E;
+  --well: #E8ECEC;
+  --rule: #D3D9DC;
+  --glow: rgba(214, 150, 48, 0.20);
+  --display: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --body: "Literata", "Iowan Old Style", Georgia, serif;
+  --ui: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0E151C; --ink: #E2E6E9; --muted: #98A3AD; --lamp: #E2A849;
+    --well: #16202A; --rule: #26323D; --glow: rgba(226, 168, 73, 0.16);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0E151C; --ink: #E2E6E9; --muted: #98A3AD; --lamp: #E2A849;
+  --well: #16202A; --rule: #26323D; --glow: rgba(226, 168, 73, 0.16);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.72;
+  padding-inline: 20px;
+  padding-block: 0 72px;
+}
+.page { max-width: 40rem; margin: 0 auto; }
+header { position: relative; padding-block: 76px 36px; }
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0 -20px auto -20px;
+  height: 340px;
+  background: radial-gradient(ellipse 55% 75% at 50% 0%, var(--glow), transparent 70%);
+  pointer-events: none;
+}
+header > * { position: relative; }
+.kicker {
+  font-family: var(--ui); font-weight: 500; font-size: 0.75rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--lamp);
+  margin: 0 0 16px;
+}
+h1 {
+  font-family: var(--display); font-weight: 600;
+  font-size: clamp(2.6rem, 9vw, 4rem); line-height: 1.02; letter-spacing: -0.01em;
+  text-wrap: balance; margin: 0 0 18px;
+}
+.lord { font-variant: small-caps; letter-spacing: 0.02em; }
+.dek {
+  font-family: var(--body); font-style: italic; font-size: 1.2rem; line-height: 1.5;
+  color: var(--muted); text-wrap: pretty; margin: 0 0 26px; max-width: 34rem;
+}
+.byline {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px;
+  font-family: var(--ui); font-size: 0.8125rem; color: var(--muted);
+  padding-top: 16px; border-top: 1px solid var(--rule);
+}
+.byline .sep { color: var(--rule); }
+button {
+  margin-left: auto;
+  font-family: var(--ui); font-weight: 500; font-size: 0.8125rem; color: var(--ink);
+  background: transparent; border: 1px solid var(--rule); border-radius: 999px;
+  padding: 6px 14px; cursor: pointer;
+}
+button:hover { border-color: var(--lamp); color: var(--lamp); }
+button:focus-visible { outline: 2px solid var(--lamp); outline-offset: 2px; }
+.status { font-family: var(--ui); font-size: 0.8125rem; color: var(--muted); min-height: 1.2em; margin: 8px 0 0; text-align: right; }
+.passage { background: var(--well); padding: 24px 26px 18px; margin: 12px 0 48px; }
+.passage h3 {
+  font-family: var(--ui); font-weight: 500; font-size: 0.75rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--muted); margin: 0 0 14px;
+}
+.v { margin: 0 0 7px; font-size: 0.97rem; line-height: 1.6; }
+.v.gap { margin-top: 16px; padding-top: 12px; border-top: 1px dashed var(--rule); }
+.v sup {
+  font-family: var(--ui); font-size: 0.68rem; color: var(--lamp); margin-right: 6px;
+  vertical-align: 0.45em; font-variant-numeric: tabular-nums;
+}
+article p { margin: 0 0 1.15em; hyphens: auto; }
+article > p:first-of-type::first-letter {
+  font-family: var(--display); font-weight: 600; color: var(--lamp);
+  float: left; font-size: 3.6em; line-height: 0.85; padding: 0.06em 0.08em 0 0;
+}
+article h2 {
+  font-family: var(--display); font-style: italic; font-weight: 600;
+  font-size: 1.8rem; line-height: 1.2; text-wrap: balance; margin: 2.1em 0 0.6em;
+}
+.pull { margin: 2em 0; padding: 0; border: 0; }
+.pull p {
+  font-family: var(--display); font-style: italic; font-weight: 500;
+  font-size: clamp(1.5rem, 5vw, 1.95rem); line-height: 1.3; text-wrap: balance; margin: 0;
+}
+.pull p::before { content: "“"; color: var(--lamp); margin-right: 0.08em; }
+.pull p::after { content: "”"; color: var(--lamp); margin-left: 0.04em; }
+footer {
+  margin-top: 52px; padding-top: 18px; border-top: 1px solid var(--rule);
+  font-family: var(--ui); font-size: 0.78rem; line-height: 1.6; color: var(--muted);
+  display: grid; gap: 8px;
+}
+footer p { margin: 0; }
+@media (max-width: 480px) {
+  body { font-size: 1rem; padding-inline: 16px; }
+  header { padding-block: 52px 28px; }
+  .passage { padding: 20px 18px 14px; }
+  button { margin-left: 0; }
+  .status { text-align: left; }
+}
+
+.site { padding-top: 22px; }
+.site a {
+  font-family: var(--ui); font-weight: 500; font-size: 0.8125rem; letter-spacing: 0.04em;
+  color: var(--muted); text-decoration: none;
+}
+.site a:hover { color: var(--lamp); }
+.site + header { padding-top: 48px; }
+@media (max-width: 480px) { .site + header { padding-top: 36px; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <nav class="site"><a href="../">← lectio</a></nav>
+  <header>
+    <p class="kicker">Proverbs 20</p>
+    <h1>The Lamp of the <span class="lord">Lord</span></h1>
+    <p class="dek">On self-branding, integrity, and being known without having to prove yourself: a reading of Proverbs 20.</p>
+    <div class="byline">
+      <span>Hana Church</span><span class="sep">·</span><span>September 27, 2026</span><span class="sep">·</span><span>9 min read</span>
+      <button id="copy" type="button">Copy text</button>
+    </div>
+    <p class="status" id="status" role="status" aria-live="polite"></p>
+  </header>
+  <section class="passage" aria-label="The passage">
+    <h3>The passage · Proverbs 20:5–12, 27</h3>
+    <p class="v"><sup>5</sup>The purposes in the human mind are like deep water, but the intelligent will draw them out.</p><p class="v"><sup>6</sup>Many proclaim themselves loyal, but who can find one worthy of trust?</p><p class="v"><sup>7</sup>The righteous walk in integrity—happy are the children who follow them!</p><p class="v"><sup>8</sup>A king who sits on the throne of judgment winnows all evil with his eyes.</p><p class="v"><sup>9</sup>Who can say, “I have made my heart clean; I am pure from my sin”?</p><p class="v"><sup>10</sup>Diverse weights and diverse measures are both alike an abomination to the <span class="lord">Lord</span>.</p><p class="v"><sup>11</sup>Even children make themselves known by their acts, by whether what they do is pure and right.</p><p class="v"><sup>12</sup>The hearing ear and the seeing eye—the <span class="lord">Lord</span> has made them both.</p><p class="v gap"><sup>27</sup>The human spirit is the lamp of the <span class="lord">Lord</span>, searching every inmost part.</p>
+  </section>
+  <article id="article">
+<p>Most phone cameras now come with a beauty filter built in. The camera finds your best angle, catches the light, and smooths your skin before you have even decided to post. We have names for this: a good angle, good lighting. But it isn’t only our photos anymore. More and more, we are expected to present our whole lives under the best possible lighting, and constantly proving ourselves turns out to be exhausting. It may never have been harder than it is now to post a single unfiltered picture.</p>
+<p>Proverbs 20 has a line that speaks right into this: “The human spirit is the lamp of the <span class="lord">Lord</span>, searching every inmost part” (20:27). There is the light we aim at our faces, and there is a light that shines from within. Read in that second light, the verses just before it, Proverbs 20:5–12, have a great deal to say about how we present ourselves.</p>
+<h2>Many proclaim themselves loyal</h2>
+<p>“Many proclaim themselves loyal, but who can find one worthy of trust?” (20:6). The Hebrew word behind “loyal” is <i lang="he-Latn">hesed</i>: steady, dependable faithfulness, the kind you can lean your whole weight on. The proverb’s complaint is that plenty of people claim it for themselves. Today we would call that self-branding. Self-promotion was already everywhere thousands of years ago, and trustworthy people were already hard to find. Proverbs leaves the question hanging. Who is worthy of trust? It is worth holding onto that question until the end.</p>
+<p>Verse 9 presses further: “Who can say, ‘I have made my heart clean; I am pure from my sin’?” The answer is no one. None of us can audit ourselves and issue a clean report; the moment we try, we are already saying something untrue. Verse 11 points somewhere else: “Even children make themselves known by their acts, by whether what they do is pure and right.” Whether a life is righteous is not settled by what we say about it. It shows in how we live. Actions can reveal us and they can also hide us, and for a while we can put on a good show. But conduct built up over years eventually shows who a person really is. Proverbs trusts the righteousness that shows up in conduct more than the righteousness we announce.</p>
+<p>The trouble is that we live in a culture that makes this hard. The long arc of a life gets judged quickly by a handful of visible metrics, and those metrics decide whether we rise or fall. I wrote a lot of personal statements when I was applying to schools, and I know how it goes. You emphasize what you have achieved and start to exaggerate. You write about things you saw or heard as if you had lived them yourself. In the end you describe not who you are but the ideal version of yourself you wish you were. In Korea, people have a wry name for the self-introduction essay: <i lang="ko-Latn">jasoseol</i>, a “self-novel.” After school come résumés and LinkedIn profiles. In interviews, salary negotiations, and business meetings, the pressure never lets up: package yourself, sell yourself, show your strengths and hide your weaknesses. Human nature, as verse 6 already knew, hasn’t changed. What has changed is that technology keeps amplifying it.</p>
+<p>In July 2025, the research firm Gartner reported that about 39 percent of job candidates had used AI somewhere in the application process, while only 26 percent trusted AI to evaluate them fairly. Applicants write with AI, and companies screen with AI. People are filtered out before another human being ever looks at them. Everyone involved knows the documents are inflated, and everyone keeps writing and reading them anyway. It isn’t any one person’s fault. But in a system where an application that isn’t inflated may never get read at all, the distance between the self under the lights and the self outside them keeps growing.</p>
+<p>Proverbs points to a different way. The righteous person it has in mind doesn’t declare themselves clean, but humbly credits whatever righteousness they have to God. That isn’t meant to hold up an impossible ideal and leave the rest of us in despair. The whole Bible is candid about human weakness, and Proverbs especially so. For the people of the ancient Near East, where Proverbs took shape, a river had two faces. The same river that watered the fields and sustained life would, in some years, flood and sweep everything away. The same water gave life and took it, and they knew that fertile land came out of that very process. People are like that too. Proverbs is honest about our weakness, and even our wickedness, because only when we know our limits can we entrust ourselves fully to God and stop claiming our own righteousness. That place of letting go is exactly where a good life begins to grow.</p>
+<h2>Deep water</h2>
+<p>“The purposes in the human mind are like deep water, but the intelligent will draw them out” (20:5). The “purposes” here are the intentions that run underneath our plans. In the Bible, deep water has two faces as well. It can be a spring, a source of wisdom and life. It can also be chaos, too deep to reach or understand. Our intentions work the same way: they can be good purposes from which wisdom flows, or cravings that pull us toward chaos. So who can draw that water up?</p>
+<p>Proverbs answers: “the intelligent,” or more literally, a person of understanding, someone who can bring the deep water up as it really is. Verse 7 describes that kind of person: “The righteous walk in integrity—happy are the children who follow them!” The Hebrew word for integrity, <i lang="he-Latn">tom</i>, means wholeness: a life that isn’t split in two. It describes someone who is the same person under the lights and with the lights off. That kind of wholeness isn’t built in a day. It comes from a life that has been lived that way for a long time.</p>
+<p>Much of our culture pulls in the opposite direction, toward a split between the outside and the inside. Social media shows us only the brightest moments, and the time and money we spend on things that might make others envious keep outgrowing the time we give to character and inner life. The more those bright moments are liked and loved, the smaller and more rejected our ordinary, offscreen selves begin to feel. Depression is rising, life satisfaction and happiness are falling, and many people find it harder and harder to imagine a future. Turning that tide begins with looking honestly at the self outside the spotlight.</p>
+<h2>Two weights, two measures</h2>
+<p>“Diverse weights and diverse measures are both alike an abomination to the <span class="lord">Lord</span>” (20:10). The Hebrew is blunter: literally, “a weight and a weight, a measure and a measure.” It pictures someone carrying two sets of weights and two measuring baskets and using them to cheat. We call it a double standard. The world described above works exactly that way. We measure the outside and the inside differently. The standard we display and the standard we actually use don’t match, and everyone goes along with it, knowing it’s all inflated.</p>
+<p>And we built this system together. In a society that treats people like cogs, like disposable parts, we size each other up by what we wear and carry, how much we earn, and where we live. We notice the name of a child’s school or employer before we notice their character or their dreams. Parents, in turn, are judged by what they have given their children and how much more they can give. Churches have not been immune either; many have counted people by their titles and their offerings.</p>
+<p>Then verse 12: “The hearing ear and the seeing eye—the <span class="lord">Lord</span> has made them both.” If even children make themselves known by their acts (20:11), someone has to be paying attention. Conduct can only be known by eyes that see and ears that hear, and those are gifts from God. Metrics can be read at a glance. Character that grows from the inside can only be seen over time, by staying close, listening and watching. It will never be visible at the speed of a screening process that sorts applications in seconds. We were given ears and eyes to see people rather than their credentials, to listen first for wisdom, and to watch one another’s lives patiently. When we look and listen like that, we can help draw up the deep water in someone else, too.</p>
+<h2>The lamp of the <span class="lord">Lord</span></h2>
+<p>Which brings us back to verse 27: “The human spirit is the lamp of the <span class="lord">Lord</span>, searching every inmost part.” The word translated “spirit” is <i lang="he-Latn">neshamah</i>, breath. It is the same word Genesis uses for the breath of life God breathed into the first human, formed from the dust. In the book of Job, the young Elihu says it is “the spirit in a mortal, the breath of the Almighty” that “makes for understanding” (Job 32:8). That word for understanding shares a root with the “intelligent” person of Proverbs 20:5, the one who can draw up deep water.</p>
+<p>So we don’t have to switch on the lights ourselves. The light that helps us draw up what lies deep within was placed in us from the start. The breath God breathed into us is the lamp of the <span class="lord">Lord</span>. It is a light that wants to know us, not a light meant to expose our shame. The lights we aim at ourselves only catch our best side. This light reaches past the surface into the deepest places, and having seen everything there, God still calls us children.</p>
+<p>Paul gives a name to the one who does this work in us: the Holy Spirit. “For what human knows what is truly human except the human spirit that is within?” he asks. “Now we have received not the spirit of the world but the Spirit that is from God, so that we may understand the gifts bestowed on us by God” (1 Corinthians 2:11–12). We don’t have to manufacture anything; the Spirit helps us recognize what has already been given. In Romans, Paul adds that “it is that very Spirit bearing witness with our spirit that we are children of God” (Romans 8:16). Our spirit, the lamp of the <span class="lord">Lord</span>, and God’s own Spirit bear witness together. What the Spirit offers is not proof but testimony.</p>
+<blockquote class="pull"><p>Proving is something I do about myself. Bearing witness is something someone else does on my behalf.</p></blockquote>
+<p>Right now, some people have sent out dozens of applications without a single reply. They lose sleep feeling as though a few sheets of paper sum up everything they are, and the family and friends around them worry too. But we are already known by God. A few flimsy pages, the tower of self-righteousness we have worked so hard to build, the little stash of acorns we have squirreled away: none of it can tell the story of a life. The one who breathed breath into us already sees us by that lamp, and knows us.</p>
+<h2>Who is worthy of trust?</h2>
+<p>Back, then, to the question Proverbs left open. At the cross, people passing by taunted Jesus: “If you are the Son of God, come down from the cross” (Matthew 27:40). Prove it. He didn’t. He simply stayed faithful to the end. And God bore witness to his righteousness and faithfulness by rolling away the stone from the tomb, and by letting his breath live and breathe in us even now. Here is the answer to the question Proverbs leaves unanswered. The faithfulness of the one who never advertised his own loyalty is the reason we no longer have to wear ourselves out proving who we are.</p>
+<p>So the next time you feel the urge to switch on the bright lights and hide behind them, it might be worth pausing for a moment. Look for one person nearby whose deep water you could help draw up, seeing them as they are rather than as they appear. Listen and look before you measure the people around you. God is already shining that light into us. We are known without having to prove ourselves, and we can stand in that light together.</p>
+  </article>
+  <footer>
+    <p>Adapted from a sermon preached at Hana Church on September 27, 2026.</p>
+    <p>Scripture quotations are taken from the New Revised Standard Version Updated Edition. Copyright © 2021 National Council of Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide.</p>
+  </footer>
+</div>
+<script>
+(function () {
+  var btn = document.getElementById("copy");
+  var status = document.getElementById("status");
+  function plainText() {
+    var parts = [document.querySelector("h1").innerText, document.querySelector(".dek").innerText, ""];
+    document.querySelectorAll("#article > *").forEach(function (el) { parts.push(el.innerText); parts.push(""); });
+    parts.push(document.querySelector("footer").innerText);
+    return parts.join("\n").trim();
+  }
+  function fallback() {
+    var range = document.createRange();
+    range.selectNodeContents(document.getElementById("article"));
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    status.textContent = "Text selected. Press Ctrl+C or ⌘C to copy.";
+  }
+  btn.addEventListener("click", function () {
+    var text = plainText();
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { status.textContent = "Copied."; }, fallback);
+    } else { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>
