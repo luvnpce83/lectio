@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Set a Guard over My Mouth · lectio</title>
+<meta name="description" content="On resentment, self-blame, and the kind of guard we actually need: a reading of Psalm 141.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="lectio">
+<meta property="og:title" content="Set a Guard over My Mouth">
+<meta property="og:description" content="On resentment, self-blame, and the kind of guard we actually need: a reading of Psalm 141.">
+<meta property="og:url" content="https://luvnpce83.github.io/lectio/set-a-guard-over-my-mouth/">
+<meta property="article:published_time" content="2026-03-01">
+<link rel="canonical" href="https://luvnpce83.github.io/lectio/set-a-guard-over-my-mouth/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500;1,600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=IBM+Plex+Sans:wght@500&display=swap">
+<style>
+/* Layout: a single lamplit article column (~40rem); the passage sits in a quiet well; one pull quote marks the turn */
+:root {
+  --paper: #F4F6F4;
+  --ink: #1B2430;
+  --muted: #5A6572;
+  --lamp: #9A5F0E;
+  --well: #E8ECEC;
+  --rule: #D3D9DC;
+  --glow: rgba(214, 150, 48, 0.20);
+  --display: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --body: "Literata", "Iowan Old Style", Georgia, serif;
+  --ui: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0E151C; --ink: #E2E6E9; --muted: #98A3AD; --lamp: #E2A849;
+    --well: #16202A; --rule: #26323D; --glow: rgba(226, 168, 73, 0.16);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0E151C; --ink: #E2E6E9; --muted: #98A3AD; --lamp: #E2A849;
+  --well: #16202A; --rule: #26323D; --glow: rgba(226, 168, 73, 0.16);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.72;
+  padding-inline: 20px;
+  padding-block: 0 72px;
+}
+.page { max-width: 40rem; margin: 0 auto; }
+header { position: relative; padding-block: 76px 36px; }
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0 -20px auto -20px;
+  height: 340px;
+  background: radial-gradient(ellipse 55% 75% at 50% 0%, var(--glow), transparent 70%);
+  pointer-events: none;
+}
+header > * { position: relative; }
+.kicker {
+  font-family: var(--ui); font-weight: 500; font-size: 0.75rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--lamp);
+  margin: 0 0 16px;
+}
+h1 {
+  font-family: var(--display); font-weight: 600;
+  font-size: clamp(2.6rem, 9vw, 4rem); line-height: 1.02; letter-spacing: -0.01em;
+  text-wrap: balance; margin: 0 0 18px;
+}
+.lord { font-variant: small-caps; letter-spacing: 0.02em; }
+.dek {
+  font-family: var(--body); font-style: italic; font-size: 1.2rem; line-height: 1.5;
+  color: var(--muted); text-wrap: pretty; margin: 0 0 26px; max-width: 34rem;
+}
+.byline {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px;
+  font-family: var(--ui); font-size: 0.8125rem; color: var(--muted);
+  padding-top: 16px; border-top: 1px solid var(--rule);
+}
+.byline .sep { color: var(--rule); }
+button {
+  margin-left: auto;
+  font-family: var(--ui); font-weight: 500; font-size: 0.8125rem; color: var(--ink);
+  background: transparent; border: 1px solid var(--rule); border-radius: 999px;
+  padding: 6px 14px; cursor: pointer;
+}
+button:hover { border-color: var(--lamp); color: var(--lamp); }
+button:focus-visible { outline: 2px solid var(--lamp); outline-offset: 2px; }
+.status { font-family: var(--ui); font-size: 0.8125rem; color: var(--muted); min-height: 1.2em; margin: 8px 0 0; text-align: right; }
+.passage { background: var(--well); padding: 24px 26px 18px; margin: 12px 0 48px; }
+.passage h3 {
+  font-family: var(--ui); font-weight: 500; font-size: 0.75rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--muted); margin: 0 0 14px;
+}
+.v { margin: 0 0 7px; font-size: 0.97rem; line-height: 1.6; }
+.v.gap { margin-top: 16px; padding-top: 12px; border-top: 1px dashed var(--rule); }
+.v sup {
+  font-family: var(--ui); font-size: 0.68rem; color: var(--lamp); margin-right: 6px;
+  vertical-align: 0.45em; font-variant-numeric: tabular-nums;
+}
+article p { margin: 0 0 1.15em; hyphens: auto; }
+article > p:first-of-type::first-letter {
+  font-family: var(--display); font-weight: 600; color: var(--lamp);
+  float: left; font-size: 3.6em; line-height: 0.85; padding: 0.06em 0.08em 0 0;
+}
+article h2 {
+  font-family: var(--display); font-style: italic; font-weight: 600;
+  font-size: 1.8rem; line-height: 1.2; text-wrap: balance; margin: 2.1em 0 0.6em;
+}
+.pull { margin: 2em 0; padding: 0; border: 0; }
+.pull p {
+  font-family: var(--display); font-style: italic; font-weight: 500;
+  font-size: clamp(1.5rem, 5vw, 1.95rem); line-height: 1.3; text-wrap: balance; margin: 0;
+}
+.pull p::before { content: "“"; color: var(--lamp); margin-right: 0.08em; }
+.pull p::after { content: "”"; color: var(--lamp); margin-left: 0.04em; }
+footer {
+  margin-top: 52px; padding-top: 18px; border-top: 1px solid var(--rule);
+  font-family: var(--ui); font-size: 0.78rem; line-height: 1.6; color: var(--muted);
+  display: grid; gap: 8px;
+}
+footer p { margin: 0; }
+@media (max-width: 480px) {
+  body { font-size: 1rem; padding-inline: 16px; }
+  header { padding-block: 52px 28px; }
+  .passage { padding: 20px 18px 14px; }
+  button { margin-left: 0; }
+  .status { text-align: left; }
+}
+
+.site { padding-top: 22px; }
+.site a {
+  font-family: var(--ui); font-weight: 500; font-size: 0.8125rem; letter-spacing: 0.04em;
+  color: var(--muted); text-decoration: none;
+}
+.site a:hover { color: var(--lamp); }
+.site + header { padding-top: 48px; }
+@media (max-width: 480px) { .site + header { padding-top: 36px; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <nav class="site"><a href="../">← lectio</a></nav>
+  <header>
+    <p class="kicker">Psalm 141</p>
+    <h1>Set a Guard over My Mouth</h1>
+    <p class="dek">On resentment, self-blame, and the kind of guard we actually need: a reading of Psalm 141.</p>
+    <div class="byline">
+      <span>Hana Church</span><span class="sep">·</span><span>March 1, 2026</span><span class="sep">·</span><span>6 min read</span>
+      <button id="copy" type="button">Copy text</button>
+    </div>
+    <p class="status" id="status" role="status" aria-live="polite"></p>
+  </header>
+  <section class="passage" aria-label="The passage">
+    <h3>The passage · Psalm 141:1–5</h3>
+    <p class="v"><sup>1</sup>I call upon you, O <span class="lord">Lord</span>; come quickly to me; give ear to my voice when I call to you.</p><p class="v"><sup>2</sup>Let my prayer be counted as incense before you and the lifting up of my hands as an evening sacrifice.</p><p class="v"><sup>3</sup>Set a guard over my mouth, O <span class="lord">Lord</span>; keep watch over the door of my lips.</p><p class="v"><sup>4</sup>Do not turn my heart to any evil, to busy myself with wicked deeds in company with those who work iniquity; do not let me eat of their delicacies.</p><p class="v"><sup>5</sup>Let the righteous strike me; let the faithful correct me. Never let the oil of the wicked anoint my head, for my prayer is continually against their wicked deeds.</p>
+  </section>
+  <article id="article">
+<p>Think for a moment about where your heart usually goes when you have been wronged, or when things refuse to go your way. If we are honest, our gaze usually swings outward. Resentment toward whoever is making life hard, anger at the unfairness of it all, and the self-justification of “I didn’t do anything wrong” fill our hearts and our mouths.</p>
+<p>Many of the laments in the Bible have a similar texture. The psalm just before this one prays about its enemies: “Let burning coals fall on them! Let them be flung into pits, no more to rise!” (140:10). Inside a clear frame—a righteous me, and wicked enemies out there—the psalmist cries out for God to punish those who torment him.</p>
+<p>Psalm 141 takes a very different and quite unusual stance. The psalmist’s gaze is not fixed on the enemy outside but on his own inner life. What he fears most is not what others might do to him in his trouble, but his own heart tilting toward evil in the middle of it. He is watching, warily, to see what kind of person this suffering might turn him into.</p>
+<p>So he asks God to post a sentry at his mouth and a doorkeeper at his lips, so that his words are not poisoned by anger and hatred: “Set a guard over my mouth, O <span class="lord">Lord</span>; keep watch over the door of my lips” (141:3). And he pleads that his heart will not be assimilated into the wicked, violent, deceitful ways of those who oppose him.</p>
+<p>In verse 4 he prays, “do not let me eat of their delicacies.” He clings to God, asking to be kept from being soaked in the feast of worldly success and comfort that the wicked enjoy, and from letting his soul settle into easy compromise.</p>
+<p>In other words, this psalm does not pray, “The world is evil, so punish the world.” It is a self-aware prayer: “The world is evil, so keep me from catching its evil.”</p>
+<h2>Do not turn my heart to any evil</h2>
+<p>In everyday life, the line between the righteous and the wicked is blurrier than we think. When misfortune comes, or when we go through hard things, sometimes someone else really is to blame and we did nothing wrong. But often it is hard to say that any one person is 100 percent at fault. Often circumstances left no other way. And sometimes we simply brought it on ourselves.</p>
+<p>Yet so often we insist that we did nothing wrong, that we are in the right and they are the problem. We want to believe we can hold on to our own righteousness. But in front of reality’s heavy waves, we find out how little strength we actually have.</p>
+<p>To confess honestly before God how easily I compromise with the world’s ways, and how breakable and vulnerable I am: this is an essential condition for staying spiritually healthy.</p>
+<p>During our church retreat, we faced our own weakness and vulnerability, much as this psalmist does. We discovered that people really are fragile. And we discovered that while we had readily felt for others in their pain and offered them comfort, we had not comforted our own hurting selves at all.</p>
+<p>We often blame our circumstances. But look closely, and the sharpest blade of blame is almost always pointed at ourselves.</p>
+<p>This comes from a bodily response sometimes called the threat-defense system. When the body senses a threat, the parts of the brain that detect danger switch on, cortisol and adrenaline are released, and we get ready to fight or flee. But in modern life, where we no longer have to fear predators, most of the threats we face are psychological. They are challenges to our image and self-concept: what the world thinks of us, and what we think of ourselves.</p>
+<p>I want to be a better person. But compared with others I am not successful enough, not wealthy enough, not good-looking or smart enough; my family isn’t close, my relationships aren’t good, I am not respected or welcomed. There is only so long I can blame my parents, other people, my circumstances, or the world. And however much I blame them, deep down I still carry condemnation and a sense of defeat toward myself for failing to become the person I want to be.</p>
+<p>That is because self-esteem ends up resting on comparison—on the value the world assigns me. When things are going well, it holds. But every time life’s turns and failures shake my sense of worth, my belief that I deserve respect and have value is shaken too. No one can be better than everyone else at everything, so it is common for people we call successful to be harsh critics of themselves, condemning and driving themselves without mercy.</p>
+<h2>Keep watch over the door of my lips</h2>
+<p>But there is a clear truth we need to remember. God first embraced us, weak and vulnerable as we are, just as we are, and had compassion on us. Jesus had compassion on our pain and came to us in person. With a heart that ached for us, he took the hands of those left behind, healed the sick, fed the hungry, and comforted the brokenhearted.</p>
+<p>Because that deep mercy reached us first, we can finally show mercy to ourselves. And when we become truly gentle and kind toward ourselves, we can finally let real mercy and love flow out toward others and toward the world.</p>
+<p>So when the psalmist prays, “Set a guard over my mouth,” the guard we should be asking for is not a strict overseer who whips and condemns us at the slightest mistake.</p>
+<blockquote class="pull"><p>It is a guard of mercy, who keeps our hearts from tilting toward evil or toward self-destructive blame.</p></blockquote>
+<p>If you like, try this. Rest both hands quietly on your chest. When anxiety and fear rush in during the day, or when you come face to face with your own weakness, set down the sharp voice of self-blame that jumps out before you know it.</p>
+<p>Instead, look at yourself with the tender gaze with which God looks at you, and speak to yourself in a warm voice of mercy: “It’s okay. It’s okay not to be perfect, okay to be shaken sometimes. You are already trying hard enough.”</p>
+<h2>Let the faithful correct me</h2>
+<p>While asking God for a guard of mercy, the psalmist goes on in verse 5: “Let the righteous strike me; let the faithful correct me. Never let the oil of the wicked anoint my head.” He would rather receive the correction of the righteous as grace than be anointed by the wicked. Guarding our inner life is never something we can do alone. That is why God has given us to one another.</p>
+<p>My hope is that a community drawn together on that retreat will keep being, back in ordinary life, a healthy mirror for one another—a place where we can see our weaknesses reflected honestly.</p>
+<p>And it has to become ordinary. In verse 2 the psalmist asks that his prayer be counted as incense, and the lifting up of his hands “as an evening sacrifice.” That means this is a prayer he offers every day—morning, noon, and evening. If my heart is not to tilt toward evil, cleaning out my heart and washing the dishes of my soul has to happen daily, like any other routine. Even if it is only two or three seconds, we receive grace, and we live each day by its strength.</p>
+<p>When we become gentle guards for one another—lifting each other up when we fall, and holding on in love when we stray—we can walk the way of grace to the end without being assimilated into the world’s evil. May we set this guard of mercy within ourselves and among ourselves, and step boldly back into ordinary life.</p>
+  </article>
+  <footer>
+    <p>Adapted from a sermon preached at Hana Church on March 1, 2026.</p>
+    <p>Scripture quotations are taken from the New Revised Standard Version Updated Edition. Copyright © 2021 National Council of Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide.</p>
+  </footer>
+</div>
+<script>
+(function () {
+  var btn = document.getElementById("copy");
+  var status = document.getElementById("status");
+  function plainText() {
+    var parts = [document.querySelector("h1").innerText, document.querySelector(".dek").innerText, ""];
+    document.querySelectorAll("#article > *").forEach(function (el) { parts.push(el.innerText); parts.push(""); });
+    parts.push(document.querySelector("footer").innerText);
+    return parts.join("\n").trim();
+  }
+  function fallback() {
+    var range = document.createRange();
+    range.selectNodeContents(document.getElementById("article"));
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    status.textContent = "Text selected. Press Ctrl+C or ⌘C to copy.";
+  }
+  btn.addEventListener("click", function () {
+    var text = plainText();
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { status.textContent = "Copied."; }, fallback);
+    } else { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>

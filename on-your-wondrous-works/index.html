@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>On Your Wondrous Works I Will Meditate · lectio</title>
+<meta name="description" content="On forgetting to praise, the shape of an acrostic, and what runs in the blood: a reading of Psalm 145.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="lectio">
+<meta property="og:title" content="On Your Wondrous Works I Will Meditate">
+<meta property="og:description" content="On forgetting to praise, the shape of an acrostic, and what runs in the blood: a reading of Psalm 145.">
+<meta property="og:url" content="https://luvnpce83.github.io/lectio/on-your-wondrous-works/">
+<meta property="article:published_time" content="2026-03-29">
+<link rel="canonical" href="https://luvnpce83.github.io/lectio/on-your-wondrous-works/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500;1,600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=IBM+Plex+Sans:wght@500&display=swap">
+<style>
+/* Layout: a single lamplit article column (~40rem); the passage sits in a quiet well; one pull quote marks the turn */
+:root {
+  --paper: #F4F6F4;
+  --ink: #1B2430;
+  --muted: #5A6572;
+  --lamp: #9A5F0E;
+  --well: #E8ECEC;
+  --rule: #D3D9DC;
+  --glow: rgba(214, 150, 48, 0.20);
+  --display: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --body: "Literata", "Iowan Old Style", Georgia, serif;
+  --ui: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0E151C; --ink: #E2E6E9; --muted: #98A3AD; --lamp: #E2A849;
+    --well: #16202A; --rule: #26323D; --glow: rgba(226, 168, 73, 0.16);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0E151C; --ink: #E2E6E9; --muted: #98A3AD; --lamp: #E2A849;
+  --well: #16202A; --rule: #26323D; --glow: rgba(226, 168, 73, 0.16);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.72;
+  padding-inline: 20px;
+  padding-block: 0 72px;
+}
+.page { max-width: 40rem; margin: 0 auto; }
+header { position: relative; padding-block: 76px 36px; }
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0 -20px auto -20px;
+  height: 340px;
+  background: radial-gradient(ellipse 55% 75% at 50% 0%, var(--glow), transparent 70%);
+  pointer-events: none;
+}
+header > * { position: relative; }
+.kicker {
+  font-family: var(--ui); font-weight: 500; font-size: 0.75rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--lamp);
+  margin: 0 0 16px;
+}
+h1 {
+  font-family: var(--display); font-weight: 600;
+  font-size: clamp(2.6rem, 9vw, 4rem); line-height: 1.02; letter-spacing: -0.01em;
+  text-wrap: balance; margin: 0 0 18px;
+}
+.lord { font-variant: small-caps; letter-spacing: 0.02em; }
+.dek {
+  font-family: var(--body); font-style: italic; font-size: 1.2rem; line-height: 1.5;
+  color: var(--muted); text-wrap: pretty; margin: 0 0 26px; max-width: 34rem;
+}
+.byline {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px;
+  font-family: var(--ui); font-size: 0.8125rem; color: var(--muted);
+  padding-top: 16px; border-top: 1px solid var(--rule);
+}
+.byline .sep { color: var(--rule); }
+button {
+  margin-left: auto;
+  font-family: var(--ui); font-weight: 500; font-size: 0.8125rem; color: var(--ink);
+  background: transparent; border: 1px solid var(--rule); border-radius: 999px;
+  padding: 6px 14px; cursor: pointer;
+}
+button:hover { border-color: var(--lamp); color: var(--lamp); }
+button:focus-visible { outline: 2px solid var(--lamp); outline-offset: 2px; }
+.status { font-family: var(--ui); font-size: 0.8125rem; color: var(--muted); min-height: 1.2em; margin: 8px 0 0; text-align: right; }
+.passage { background: var(--well); padding: 24px 26px 18px; margin: 12px 0 48px; }
+.passage h3 {
+  font-family: var(--ui); font-weight: 500; font-size: 0.75rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--muted); margin: 0 0 14px;
+}
+.v { margin: 0 0 7px; font-size: 0.97rem; line-height: 1.6; }
+.v.gap { margin-top: 16px; padding-top: 12px; border-top: 1px dashed var(--rule); }
+.v sup {
+  font-family: var(--ui); font-size: 0.68rem; color: var(--lamp); margin-right: 6px;
+  vertical-align: 0.45em; font-variant-numeric: tabular-nums;
+}
+article p { margin: 0 0 1.15em; hyphens: auto; }
+article > p:first-of-type::first-letter {
+  font-family: var(--display); font-weight: 600; color: var(--lamp);
+  float: left; font-size: 3.6em; line-height: 0.85; padding: 0.06em 0.08em 0 0;
+}
+article h2 {
+  font-family: var(--display); font-style: italic; font-weight: 600;
+  font-size: 1.8rem; line-height: 1.2; text-wrap: balance; margin: 2.1em 0 0.6em;
+}
+.pull { margin: 2em 0; padding: 0; border: 0; }
+.pull p {
+  font-family: var(--display); font-style: italic; font-weight: 500;
+  font-size: clamp(1.5rem, 5vw, 1.95rem); line-height: 1.3; text-wrap: balance; margin: 0;
+}
+.pull p::before { content: "“"; color: var(--lamp); margin-right: 0.08em; }
+.pull p::after { content: "”"; color: var(--lamp); margin-left: 0.04em; }
+footer {
+  margin-top: 52px; padding-top: 18px; border-top: 1px solid var(--rule);
+  font-family: var(--ui); font-size: 0.78rem; line-height: 1.6; color: var(--muted);
+  display: grid; gap: 8px;
+}
+footer p { margin: 0; }
+@media (max-width: 480px) {
+  body { font-size: 1rem; padding-inline: 16px; }
+  header { padding-block: 52px 28px; }
+  .passage { padding: 20px 18px 14px; }
+  button { margin-left: 0; }
+  .status { text-align: left; }
+}
+
+.site { padding-top: 22px; }
+.site a {
+  font-family: var(--ui); font-weight: 500; font-size: 0.8125rem; letter-spacing: 0.04em;
+  color: var(--muted); text-decoration: none;
+}
+.site a:hover { color: var(--lamp); }
+.site + header { padding-top: 48px; }
+@media (max-width: 480px) { .site + header { padding-top: 36px; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <nav class="site"><a href="../">← lectio</a></nav>
+  <header>
+    <p class="kicker">Psalm 145</p>
+    <h1>On Your Wondrous Works I Will Meditate</h1>
+    <p class="dek">On forgetting to praise, the shape of an acrostic, and what runs in the blood: a reading of Psalm 145.</p>
+    <div class="byline">
+      <span>Hana Church</span><span class="sep">·</span><span>March 29, 2026</span><span class="sep">·</span><span>8 min read</span>
+      <button id="copy" type="button">Copy text</button>
+    </div>
+    <p class="status" id="status" role="status" aria-live="polite"></p>
+  </header>
+  <section class="passage" aria-label="The passage">
+    <h3>The passage · Psalm 145:1–13</h3>
+    <p class="v"><sup>1</sup>I will extol you, my God and King, and bless your name forever and ever.</p><p class="v"><sup>2</sup>Every day I will bless you and praise your name forever and ever.</p><p class="v"><sup>3</sup>Great is the <span class="lord">Lord</span> and greatly to be praised; his greatness is unsearchable.</p><p class="v"><sup>4</sup>One generation shall extol your works to another and shall declare your mighty acts.</p><p class="v"><sup>5</sup>They will recount the glorious splendor of your majesty, and on your wondrous works I will meditate.</p><p class="v"><sup>6</sup>They will proclaim the might of your awesome deeds, and I will declare your greatness.</p><p class="v"><sup>7</sup>They shall celebrate the fame of your abundant goodness and shall sing aloud of your righteousness.</p><p class="v"><sup>8</sup>The <span class="lord">Lord</span> is gracious and merciful, slow to anger and abounding in steadfast love.</p><p class="v"><sup>9</sup>The <span class="lord">Lord</span> is good to all, and his compassion is over all that he has made.</p><p class="v"><sup>10</sup>All your works shall give thanks to you, O <span class="lord">Lord</span>, and all your faithful shall bless you.</p><p class="v"><sup>11</sup>They shall speak of the glory of your kingdom and tell of your power,</p><p class="v"><sup>12</sup>to make known to all people your mighty deeds and the glorious splendor of your kingdom.</p><p class="v"><sup>13</sup>Your kingdom is an everlasting kingdom, and your dominion endures throughout all generations. The <span class="lord">Lord</span> is faithful in all his words and gracious in all his deeds.</p>
+  </section>
+  <article id="article">
+<p>For more than half a year now, I have been going back and forth and preaching only about once a month. Someone joked that I had become an idol—at least as far as my schedule goes. Thanks to a church family that has been patient with me, I have entered the final stage of a long doctoral program, and that made this March especially hectic. We read through the Psalms one at a time, week by week, so I had known this passage for a month and had been turning it over little by little. And yet this one would not land. It was hard to prepare.</p>
+<p>I think it was because this psalm is David’s hymn celebrating the greatness of God. I know who God is. I know what God has done for me, for us, and how unchanging God is. I know all of it. But chased by my dissertation, by work, by life, just barely getting through each day, I found that praise was out of the question; I could hardly even pray. And this was only a month after our church retreat, when I had spent long hours in meditation and wrestling, had deep fellowship with God, and received so much grace through the people of our church.</p>
+<p>In a narrow sense, praise means singing. In a broader sense, it means honoring someone’s excellence and making it known. But however much we cheer for someone, in the end it is someone else’s business. A favorite celebrity or idol or athlete—or a politician, since they say politics has become a religion now—may achieve something extraordinary. Even my own wife or husband or child may accomplish something amazing. But when I feel like I am dying, words like “well done” and “amazing” don’t come easily. That is just how people are.</p>
+<p>And this is God. Honestly, it doesn’t hit home. It feels like an obligation. I know it so well that—forgive me—setting it aside for a while doesn’t seem like it would hurt anything. Extolling God’s greatness, giving God glory, honoring and making known God’s grace, giving thanks? Even I, who had to preach on this very text, am ashamed to admit that while I was buried in life, it was the first thing I forgot and pushed aside.</p>
+<h2>Why praise slips away</h2>
+<p>Why is that? It isn’t because God has done nothing in our lives. It isn’t because the grace we received was false. It is partly because we are weak, of course, but psychologists offer an interesting explanation. What matters to the human brain is not the experiences of our lives themselves but how we remember them. And that memory inevitably depends on how the present self interprets and defines them. Depending on our posture and attitude toward what we have lived through, something minor can linger as trauma, and even the unhappiest experience can be turned into catharsis.</p>
+<p>That posture is quickly shaped by our surroundings. It is hard to hold while life’s storms and whirlwinds are raging. Koreans have a slang term, <i lang="ko-Latn">byeorak-geoji</i>, “struck-by-lightning broke.” I stayed exactly where I was, but stocks went up, crypto went up, housing went up, everyone else got rich, and so, by comparison, I suddenly became poor. Or there is FOMO, the fear of missing out: the dread of being the only one left behind while good opportunities and trends pass by. When everything around me is buzzing with opportunity and success, while I can barely handle daily life and nothing but misfortune seems to come my way, it becomes hard to keep my composure and my own pace.</p>
+<p>This psalm shows us how to interpret and define our experiences through the way David himself lived. We know David’s life well. He went from shepherd to king, but he wandered the wilderness fleeing Saul’s relentless pursuit, and even after he became king he lost his throne to his own son’s rebellion and had to run. Adultery and murder, family tragedy, a life lived at war. This man, who had far more reason to cry out than to praise God, wrote one of the most beautiful hymns ever written to God’s greatness. Because his faith was better than ours? Because he managed his emotions better? Probably not. In other psalms he cries that God has abandoned him, curses his enemies, even says he wants to die. So what did David know?</p>
+<h2>From aleph to tav</h2>
+<p>The form of Psalm 145 gives us a clue. In Hebrew, this psalm is an acrostic: each verse begins with the next of the twenty-two letters of the Hebrew alphabet, in order. From aleph, the first letter, to tav, the last—as if the first verse began with A, the second with B, and the last with Z.</p>
+<p>This is not just a literary flourish. The form is a declaration: God will be praised in every place of life, from beginning to end, with nothing left out. Put another way, if praise were simply something that flowed naturally whenever our emotions were full, a deliberate form like this would be unnecessary. The liturgical form itself says it.</p>
+<blockquote class="pull"><p>Praise is not a product of emotion. It is an act of deliberately returning.</p></blockquote>
+<p>That is why the verbs in this psalm are so varied, and why every one of them is active: extol, bless, praise, declare, recount, meditate, proclaim, celebrate, sing aloud. Each is a movement made on purpose, one by one, in order to praise God. As the psychologists say, it is not our experiences that define us; how we remember and interpret those experiences is what forms us.</p>
+<p>Praise is exactly that act of reinterpretation and reconstruction. It takes the posture that life’s storms have knocked out of shape and turns it back toward remembering who God is. People who sit for long hours all end up with bad posture. The pelvis tucks under and a disc ruptures; the shoulders round and a frozen shoulder sets in; the neck juts forward, and the whole body breaks down. So it matters to keep stretching and to return, on purpose, to good posture. In the same way, when life shakes us in every direction, praise recalibrates us and puts us back where we belong. David was not better than us. David knew how to correct the posture of his life.</p>
+<h2>One generation shall extol your works to another</h2>
+<p>And this praise is not solitary. Verse 4 says, “One generation shall extol your works to another and shall declare your mighty acts,” and verse 10, “All your works shall give thanks to you, O <span class="lord">Lord</span>, and all your faithful shall bless you.” It is David’s hymn, but the praise it holds is not one person’s confession. Someone has known God holding them up when they were falling; someone has known God raising them when they were bowed down. Someone has known the grace of being fed in hunger; someone has known God coming near when they cried out.</p>
+<p>When each of us extols and proclaims and sings, in our own words, the God we have each met in different lives and in different ways, it becomes one symphony. Just as twenty-two letters of the Hebrew alphabet become one psalm, our separate voices come together into one hymn. That is why praise is communal by nature. When I forget, the song of the person next to me wakes me up. When I am shaken, the memory of the community holds me.</p>
+<p>I preached this on Palm Sunday, a week before Easter. I did not live Lent very well this year, but I did one thing: every day I copied Scripture into a notebook and meditated on it. At first it was just the usual “let’s do something for Lent.” But at some point, in the middle of impossibly busy days, that time became a refuge. Even while chased by my dissertation and knocked around by life, having a place to come back to set me free.</p>
+<p>I hope you have a place like that too. It is only natural to slump when you sit still in the middle of life’s storms. But like a light drizzle that soaks your clothes before you notice, small daily returns—honoring God and taking God’s works to heart—add up until they become the posture of your life. And when each of us keeps returning, in our own place and in our own way, that symphony does not end with us. Our children hear it, the people who watch us hear it, and it flows on from generation to generation.</p>
+<h2>Gracious and merciful</h2>
+<p>The week before, my son was in Korea for spring break, and we went together to a ceremony. My grandfather had been posthumously recognized as a patriot of the Korean independence movement, and his remains were being moved to the National Cemetery. It had come to light only late that he had been imprisoned for independence activities in Japan; he was recognized just a year and a half ago. Because he never spoke of it himself, even the family hardly knew.</p>
+<p>We didn’t see each other much, and I have almost no memories of him. The only two things I remember are that he laughed easily, with a hearty “heh-heh,” and that at his funeral service Pastor Kang described him as a man who fell seven times and got up eight.</p>
+<p>I am the second-youngest grandson, and I saw his face only a handful of times. I can be proud of him, but not because he received a medal or was laid to rest in the National Cemetery. It is because I came to see where this stubborn, relentless streak of mine comes from—call it a righteous spirit and a will to resist if you’re being kind, or a wild, contrarian streak if you’re not. It is the identity I saw in my father and now see in my son. Faint as he is in my memory, it runs thicker than anything else in my blood. And I am even prouder that my son got to experience that too.</p>
+<p>I think becoming a child of God is something like this. To become God’s people and God’s children is more than receiving the promise that our forebears in faith, and their forebears, received—to be saved and blessed under God’s reign—and knowing that our children and their children will receive it too.</p>
+<p>To become a child of God is for God’s own character—“gracious and merciful, slow to anger and abounding in steadfast love” (145:8)—to run thicker than anything else in the blood: through our forebears in faith, together with our brothers and sisters in faith, and into the blood of our children’s children in faith.</p>
+<p>At the National Cemetery, the three-volley salute honors the spirit of those who gave their lives for their country and presses into our hearts who we are. In the same way, our praise cuts through the noise of daily life. As it extols from generation to generation and declares from age to age who our great and wondrous God is, and that this same blood runs in us, it brings us back before God.</p>
+<p>“I will extol you, my God and King, and bless your name forever and ever” (145:1). Even when the weight of life presses down and there seems to be no way out, even on days when there are more reasons to cry out than to praise, I hope we keep coming back here by honoring God and making God known. That return becomes our praise, and our life, and a legacy that runs in our children even thicker than blood.</p>
+  </article>
+  <footer>
+    <p>Adapted from a sermon preached at Hana Church on March 29, 2026, Palm Sunday.</p>
+    <p>Scripture quotations are taken from the New Revised Standard Version Updated Edition. Copyright © 2021 National Council of Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide.</p>
+  </footer>
+</div>
+<script>
+(function () {
+  var btn = document.getElementById("copy");
+  var status = document.getElementById("status");
+  function plainText() {
+    var parts = [document.querySelector("h1").innerText, document.querySelector(".dek").innerText, ""];
+    document.querySelectorAll("#article > *").forEach(function (el) { parts.push(el.innerText); parts.push(""); });
+    parts.push(document.querySelector("footer").innerText);
+    return parts.join("\n").trim();
+  }
+  function fallback() {
+    var range = document.createRange();
+    range.selectNodeContents(document.getElementById("article"));
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    status.textContent = "Text selected. Press Ctrl+C or ⌘C to copy.";
+  }
+  btn.addEventListener("click", function () {
+    var text = plainText();
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { status.textContent = "Copied."; }, fallback);
+    } else { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>

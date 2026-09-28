@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>His Steadfast Love Endures Forever · lectio</title>
+<meta name="description" content="On shame, memory, and remembering whose we are: a reading of Psalm 136.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="lectio">
+<meta property="og:title" content="His Steadfast Love Endures Forever">
+<meta property="og:description" content="On shame, memory, and remembering whose we are: a reading of Psalm 136.">
+<meta property="og:url" content="https://luvnpce83.github.io/lectio/his-steadfast-love-endures-forever/">
+<meta property="article:published_time" content="2026-01-25">
+<link rel="canonical" href="https://luvnpce83.github.io/lectio/his-steadfast-love-endures-forever/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500;1,600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=IBM+Plex+Sans:wght@500&display=swap">
+<style>
+/* Layout: a single lamplit article column (~40rem); the passage sits in a quiet well; one pull quote marks the turn */
+:root {
+  --paper: #F4F6F4;
+  --ink: #1B2430;
+  --muted: #5A6572;
+  --lamp: #9A5F0E;
+  --well: #E8ECEC;
+  --rule: #D3D9DC;
+  --glow: rgba(214, 150, 48, 0.20);
+  --display: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --body: "Literata", "Iowan Old Style", Georgia, serif;
+  --ui: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0E151C; --ink: #E2E6E9; --muted: #98A3AD; --lamp: #E2A849;
+    --well: #16202A; --rule: #26323D; --glow: rgba(226, 168, 73, 0.16);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0E151C; --ink: #E2E6E9; --muted: #98A3AD; --lamp: #E2A849;
+  --well: #16202A; --rule: #26323D; --glow: rgba(226, 168, 73, 0.16);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.72;
+  padding-inline: 20px;
+  padding-block: 0 72px;
+}
+.page { max-width: 40rem; margin: 0 auto; }
+header { position: relative; padding-block: 76px 36px; }
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0 -20px auto -20px;
+  height: 340px;
+  background: radial-gradient(ellipse 55% 75% at 50% 0%, var(--glow), transparent 70%);
+  pointer-events: none;
+}
+header > * { position: relative; }
+.kicker {
+  font-family: var(--ui); font-weight: 500; font-size: 0.75rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--lamp);
+  margin: 0 0 16px;
+}
+h1 {
+  font-family: var(--display); font-weight: 600;
+  font-size: clamp(2.6rem, 9vw, 4rem); line-height: 1.02; letter-spacing: -0.01em;
+  text-wrap: balance; margin: 0 0 18px;
+}
+.lord { font-variant: small-caps; letter-spacing: 0.02em; }
+.dek {
+  font-family: var(--body); font-style: italic; font-size: 1.2rem; line-height: 1.5;
+  color: var(--muted); text-wrap: pretty; margin: 0 0 26px; max-width: 34rem;
+}
+.byline {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px;
+  font-family: var(--ui); font-size: 0.8125rem; color: var(--muted);
+  padding-top: 16px; border-top: 1px solid var(--rule);
+}
+.byline .sep { color: var(--rule); }
+button {
+  margin-left: auto;
+  font-family: var(--ui); font-weight: 500; font-size: 0.8125rem; color: var(--ink);
+  background: transparent; border: 1px solid var(--rule); border-radius: 999px;
+  padding: 6px 14px; cursor: pointer;
+}
+button:hover { border-color: var(--lamp); color: var(--lamp); }
+button:focus-visible { outline: 2px solid var(--lamp); outline-offset: 2px; }
+.status { font-family: var(--ui); font-size: 0.8125rem; color: var(--muted); min-height: 1.2em; margin: 8px 0 0; text-align: right; }
+.passage { background: var(--well); padding: 24px 26px 18px; margin: 12px 0 48px; }
+.passage h3 {
+  font-family: var(--ui); font-weight: 500; font-size: 0.75rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--muted); margin: 0 0 14px;
+}
+.v { margin: 0 0 7px; font-size: 0.97rem; line-height: 1.6; }
+.v.gap { margin-top: 16px; padding-top: 12px; border-top: 1px dashed var(--rule); }
+.v sup {
+  font-family: var(--ui); font-size: 0.68rem; color: var(--lamp); margin-right: 6px;
+  vertical-align: 0.45em; font-variant-numeric: tabular-nums;
+}
+article p { margin: 0 0 1.15em; hyphens: auto; }
+article > p:first-of-type::first-letter {
+  font-family: var(--display); font-weight: 600; color: var(--lamp);
+  float: left; font-size: 3.6em; line-height: 0.85; padding: 0.06em 0.08em 0 0;
+}
+article h2 {
+  font-family: var(--display); font-style: italic; font-weight: 600;
+  font-size: 1.8rem; line-height: 1.2; text-wrap: balance; margin: 2.1em 0 0.6em;
+}
+.pull { margin: 2em 0; padding: 0; border: 0; }
+.pull p {
+  font-family: var(--display); font-style: italic; font-weight: 500;
+  font-size: clamp(1.5rem, 5vw, 1.95rem); line-height: 1.3; text-wrap: balance; margin: 0;
+}
+.pull p::before { content: "“"; color: var(--lamp); margin-right: 0.08em; }
+.pull p::after { content: "”"; color: var(--lamp); margin-left: 0.04em; }
+footer {
+  margin-top: 52px; padding-top: 18px; border-top: 1px solid var(--rule);
+  font-family: var(--ui); font-size: 0.78rem; line-height: 1.6; color: var(--muted);
+  display: grid; gap: 8px;
+}
+footer p { margin: 0; }
+@media (max-width: 480px) {
+  body { font-size: 1rem; padding-inline: 16px; }
+  header { padding-block: 52px 28px; }
+  .passage { padding: 20px 18px 14px; }
+  button { margin-left: 0; }
+  .status { text-align: left; }
+}
+
+.site { padding-top: 22px; }
+.site a {
+  font-family: var(--ui); font-weight: 500; font-size: 0.8125rem; letter-spacing: 0.04em;
+  color: var(--muted); text-decoration: none;
+}
+.site a:hover { color: var(--lamp); }
+.site + header { padding-top: 48px; }
+@media (max-width: 480px) { .site + header { padding-top: 36px; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <nav class="site"><a href="../">← lectio</a></nav>
+  <header>
+    <p class="kicker">Psalm 136</p>
+    <h1>His Steadfast Love Endures Forever</h1>
+    <p class="dek">On shame, memory, and remembering whose we are: a reading of Psalm 136.</p>
+    <div class="byline">
+      <span>Hana Church</span><span class="sep">·</span><span>January 25, 2026</span><span class="sep">·</span><span>9 min read</span>
+      <button id="copy" type="button">Copy text</button>
+    </div>
+    <p class="status" id="status" role="status" aria-live="polite"></p>
+  </header>
+  <section class="passage" aria-label="The passage">
+    <h3>The passage · Psalm 136:1–3, 23–26</h3>
+    <p class="v"><sup>1</sup>O give thanks to the <span class="lord">Lord</span>, for he is good, for his steadfast love endures forever.</p><p class="v"><sup>2</sup>O give thanks to the God of gods, for his steadfast love endures forever.</p><p class="v"><sup>3</sup>O give thanks to the Lord of lords, for his steadfast love endures forever;</p><p class="v gap"><sup>23</sup>It is he who remembered us in our low estate, for his steadfast love endures forever;</p><p class="v"><sup>24</sup>and rescued us from our foes, for his steadfast love endures forever;</p><p class="v"><sup>25</sup>who gives food to all flesh, for his steadfast love endures forever.</p><p class="v"><sup>26</sup>O give thanks to the God of heaven, for his steadfast love endures forever.</p>
+  </section>
+  <article id="article">
+<p>Anyone who has raised a family here as an immigrant, or grown up as the child of immigrants, has probably felt the confusion of living between two cultures, directly or indirectly. We come to know who we are, and where our roots are, as we grow. But when you live with a minority background, never fully belonging to the mainstream, the collision of two cultures is bound to leave you confused.</p>
+<p>The sense of not fully belonging anywhere, and the distance between two worlds, can push us to deny one side of ourselves, or to switch masks depending on the room and carry guilt and anxiety for doing it. For many of us and our children, the emotion that ruled that confusion was collective shame. “Mom, I told you not to put kimchi in my lunch.” “You couldn’t even check the handout my teacher sent home, because you can’t read English.” Our Korean roots were a weakness we wanted to hide.</p>
+<p>Then, in the space of a generation, something remarkable happened. K-culture swept the world, and the emotional current around our culture reversed completely. Kids are proud to be Korean now. Second-generation parents who once went through painful identity crises of their own are working hard to teach their children the Korean language and culture.</p>
+<p>Social psychologists call this bicultural identity integration. When two cultures are not split apart or at war inside a person but come together into something positive, self-esteem and life satisfaction rise. Shame has been reconstructed into pride.</p>
+<p>The psalm in front of us, and the Old Testament as a whole, is like this. It is the record of how the community of Israel took its bitter history of suffering and shame, reinterpreted and rebuilt it through faith, and formed its identity anew.</p>
+<h2>For his steadfast love endures forever</h2>
+<p>In the ancient Near East, losing a war and a kingdom meant more than losing territory. It meant the defeat and disappearance of the god that people served. When Babylon tore down the temple in Jerusalem and carried the people into exile, in the eyes of the world the God of Israel was a defeated god, and Israel was a failed nation.</p>
+<p>But Israel did not vanish in that despair, and it was not absorbed into the empire. The people began to reinterpret the time of their destruction. They came to see the painful past not as a time when God’s love had gone missing, but as a time when God’s faithfulness had been with them all along. Through war and suffering, God’s faithfulness, God’s <i lang="he-Latn">hesed</i>, had not given up on them.</p>
+<p><i lang="he-Latn">Hesed</i> is a word many of us have heard. It runs through the entire Old Testament and is the single most important word for the relationship between God and Israel. In this psalm the NRSV-UE renders it “steadfast love”; elsewhere it is translated kindness, mercy, grace, or loyalty, and no one word can hold all of it. Like the Hebrew verb for remembering, <i lang="he-Latn">zakar</i>, which we will come back to, <i lang="he-Latn">hesed</i> is not just a feeling. It includes a stance of the will and the actions that follow from it.</p>
+<p>It is often described as covenant loyalty: faithfulness to the relationship that God and Israel entered. But it goes beyond loyalty or duty toward a partner in a contract. It is a freely given kindness that does more than it is obliged to do—devoted love given even when the other has no claim to it and no way of repaying it. And it is a love that does not waver, whatever happens.</p>
+<p>Israel had suffered in Babylon and was still under Persian rule. Even so, they realized that they were still inside the covenant promised by the God of steadfast love.</p>
+<p>In a foreign land with no temple, where the sacrifices had stopped, they rebuilt their relationship with God. When the physical temple disappeared, memory and the word became their new sanctuary. They came to understand that God was not a local deity confined to one place, but the one God who rules the whole universe and is sovereign over every nation.</p>
+<p>Psalm 136 is a hymn of that joy, sung when they were at last able to build the temple again. Like a responsive reading, the priest would call out each line, and the congregation would answer: “for his steadfast love endures forever.”</p>
+<p>Caught between one great empire after another—Egypt, Assyria, Babylonia, Persia, Macedonia, Rome—Israel kept its own identity of faith rather than being forcibly merged or assimilated. The vow in Psalm 137, “Let my tongue cling to the roof of my mouth, if I do not remember you” (137:6), became a core value of the Jewish diaspora: never to forget that they were God’s people, wherever in the world they lived. Even after Rome destroyed the temple again, through two thousand years of wandering without a country, they carried it in their bones as their dignity and their pride.</p>
+<blockquote class="pull"><p>Memory and the word became their new sanctuary.</p></blockquote>
+<p>This is our story too. We live in the world, and yet we carry a dual identity, as children and people of God who bear God’s DNA and the character of Christ. Forget our roots, and we forget who we are, and life begins to drift. When we remember who we are and take it to heart, we can live lives that are different from the world’s.</p>
+<h2>The God of gods, the Lord of lords</h2>
+<p>So what is faith to us today? Do we live with pride and dignity in being Christians? I’m not so sure. In a secularizing age, Christianity has not only failed to offer answers to people who are still spiritually thirsty; sadly, it has been used as a political tool, or reduced by the logic of capitalism and prosperity theology to a means of success. Some statistics suggest that the inequality of wealth today has surpassed what it was at the time of the French Revolution. That is how entrenched the structures of exploitation are, and like it or not, we are absorbed into this system too. We rage at rising prices and wages that never rise, and our moods go up and down with stocks and crypto. Neuroscientists say a brain hooked on this looks like the brain of a gambling addict. It is a good thing when money earned with sweat is fairly valued. But the moment money, which should be a means, becomes the goal and the highest value, our everyday lives are eaten away and human worth collapses.</p>
+<p>In the coming age of AI, many people are also at risk of having their opportunities taken away. We are often treated as parts of society, as numbers, or as people it is “okay” to treat however one likes. Meritocracy has become a new religion: those who don’t succeed are branded lazy, and even their dignity is damaged. Just as enslaved Black people and colonized peoples were once treated as less than human by the logic of power, the logic of “I can, so I will” still rules the world today. The days when the powerful at least cared how things looked are gone. Because they can, they invade Ukraine and strike Venezuela; Greenland is theirs, Hong Kong is theirs, and they have their eyes on Taiwan. Children are used as hostages to seize people, crossing a line that was unwritten law even in the Middle Ages. History remembers how the empires that championed pure blood, discriminated against foreigners, and exploited their colonies came to an end—Germany, the British Empire, Rome.</p>
+<p>In the middle of this confusion, we need to do what the psalmist did. We need to <i lang="he-Latn">zakar</i>, to remember God. The first verses of the psalm declare: “O give thanks to the God of gods… O give thanks to the Lord of lords” (136:2–3). This is not mere rhetoric. It is a holy declaration and an act of resistance, proclaiming that money, power, and systems are not our true masters, and that the God we worship, and Jesus Christ who shares God’s very nature, is the true King of kings. In a world where money plays the master, where people cringe before the strong and bully the weak, we need to remember who the Lord of lords is, and whose children we are.</p>
+<p>As Israel did, we can hold on to that pride and dignity, that spirit, without letting go and without compromise. That is what makes our faith a faith.</p>
+<h2>He remembered us in our low estate</h2>
+<p>The psalmist keeps singing: “It is he who remembered us in our low estate” (136:23).</p>
+<p>God is not only with us when we are impressive and successful. When we have sunk lowest, when we feel like failures, when the world treats us like parts, God comes in person to that low place and remembers us. Someone who remembers this cannot help treating other people differently. Because I have been low, and because I have been lifted out of a low place, I cannot look down on those who are there now.</p>
+<p>Look at our times. It isn’t only the powerful who live by “because I can.” In what we call cancel culture, people rush to bury anyone who makes the slightest mistake. We feed our fragile self-esteem with a sense of moral superiority, sort good from evil with a warped measure, take sides, and pour out contempt. Forgiveness and mercy disappear, and only condemnation is left. But we have to be different, because Jesus, the highest of all, came to the lowest and humblest place and served us. He sought out the hungriest and thirstiest and gave them life, and he set free those who had been most deeply wronged. The Rev. Dr. Martin Luther King Jr., whom the nation had honored only the Monday before I preached this, cried out for human rights because of this very spirit of Jesus.</p>
+<p>We are people who have been clothed in that love, God’s <i lang="he-Latn">hesed</i>, which forgave us and remembered us in our lowliness. So we are not to trample others, but to walk the way of self-emptying, serving others by making ourselves low. The sky will not fall if you receive a little less than you are owed. You will not starve if you give a little more than you have to. In fact, it is in those moments that Jesus comes alive in us, and we find, mysteriously, that our families and neighbors come alive too. This is the life God remembers.</p>
+<h2>Food to all flesh</h2>
+<p>Living through a pandemic and an age of polarization, we have watched systems that looked solid collapse with startling emptiness. At the same time, we have learned how much caring for one another matters. As the psalm says, God is the one “who gives food to all flesh” (136:25). When we remember that, we can step out of the scramble to have more and find room to share: a kind of heavenly abundance.</p>
+<p>The time when Psalm 136 was written was not a time when Israel simply waited for a messiah until it collapsed from exhaustion. Through seventy years of suffering and the absence of the temple, they bound their scattered hearts together and rebuilt their identity through memory. Because of that season of suffering, faith in the God of Israel could mature beyond a national religion into a universal faith for all nations.</p>
+<p>We are passing through the middle of an age of crisis. But this crisis may be God’s invitation to find the heart of faith again. Remember who God is. Remembering the one who remembered us when we were low, let us turn our own eyes to the low places. Not by the world’s ways—violence and oppression, contempt and endless competition—but by the love, service, and self-giving that Jesus showed us, let us make God’s reign visible on this earth.</p>
+<p>When we refuse to follow the world’s grammar, when we are willing to lose and willing to serve, God’s DNA and the character of Christ come alive in us again. Living that way, suffering and shame may still come. But we believe that God’s steadfast love, which rescues us and feeds us, endures forever, and so we can stand up again.</p>
+<p>Remember where your roots are. The suffering of this age calls for an answer different from the world’s. Following the Lord who turned a shameful cross into a crown of glory, we are called to love fiercely and live holy lives.</p>
+  </article>
+  <footer>
+    <p>Adapted from a sermon preached at Hana Church on January 25, 2026.</p>
+    <p>Scripture quotations are taken from the New Revised Standard Version Updated Edition. Copyright © 2021 National Council of Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide.</p>
+  </footer>
+</div>
+<script>
+(function () {
+  var btn = document.getElementById("copy");
+  var status = document.getElementById("status");
+  function plainText() {
+    var parts = [document.querySelector("h1").innerText, document.querySelector(".dek").innerText, ""];
+    document.querySelectorAll("#article > *").forEach(function (el) { parts.push(el.innerText); parts.push(""); });
+    parts.push(document.querySelector("footer").innerText);
+    return parts.join("\n").trim();
+  }
+  function fallback() {
+    var range = document.createRange();
+    range.selectNodeContents(document.getElementById("article"));
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    status.textContent = "Text selected. Press Ctrl+C or ⌘C to copy.";
+  }
+  btn.addEventListener("click", function () {
+    var text = plainText();
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { status.textContent = "Copied."; }, fallback);
+    } else { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>

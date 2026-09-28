@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A False Balance · lectio</title>
+<meta name="description" content="On bad money, hidden fees, hoarded grain, and why honest people keep paying the price: a reading of Proverbs 11.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="lectio">
+<meta property="og:title" content="A False Balance">
+<meta property="og:description" content="On bad money, hidden fees, hoarded grain, and why honest people keep paying the price: a reading of Proverbs 11.">
+<meta property="og:url" content="https://luvnpce83.github.io/lectio/a-false-balance/">
+<meta property="article:published_time" content="2026-07-19">
+<link rel="canonical" href="https://luvnpce83.github.io/lectio/a-false-balance/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500;1,600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=IBM+Plex+Sans:wght@500&display=swap">
+<style>
+/* Layout: a single lamplit article column (~40rem); the passage sits in a quiet well; one pull quote marks the turn */
+:root {
+  --paper: #F4F6F4;
+  --ink: #1B2430;
+  --muted: #5A6572;
+  --lamp: #9A5F0E;
+  --well: #E8ECEC;
+  --rule: #D3D9DC;
+  --glow: rgba(214, 150, 48, 0.20);
+  --display: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --body: "Literata", "Iowan Old Style", Georgia, serif;
+  --ui: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0E151C; --ink: #E2E6E9; --muted: #98A3AD; --lamp: #E2A849;
+    --well: #16202A; --rule: #26323D; --glow: rgba(226, 168, 73, 0.16);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0E151C; --ink: #E2E6E9; --muted: #98A3AD; --lamp: #E2A849;
+  --well: #16202A; --rule: #26323D; --glow: rgba(226, 168, 73, 0.16);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.72;
+  padding-inline: 20px;
+  padding-block: 0 72px;
+}
+.page { max-width: 40rem; margin: 0 auto; }
+header { position: relative; padding-block: 76px 36px; }
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0 -20px auto -20px;
+  height: 340px;
+  background: radial-gradient(ellipse 55% 75% at 50% 0%, var(--glow), transparent 70%);
+  pointer-events: none;
+}
+header > * { position: relative; }
+.kicker {
+  font-family: var(--ui); font-weight: 500; font-size: 0.75rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--lamp);
+  margin: 0 0 16px;
+}
+h1 {
+  font-family: var(--display); font-weight: 600;
+  font-size: clamp(2.6rem, 9vw, 4rem); line-height: 1.02; letter-spacing: -0.01em;
+  text-wrap: balance; margin: 0 0 18px;
+}
+.lord { font-variant: small-caps; letter-spacing: 0.02em; }
+.dek {
+  font-family: var(--body); font-style: italic; font-size: 1.2rem; line-height: 1.5;
+  color: var(--muted); text-wrap: pretty; margin: 0 0 26px; max-width: 34rem;
+}
+.byline {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px;
+  font-family: var(--ui); font-size: 0.8125rem; color: var(--muted);
+  padding-top: 16px; border-top: 1px solid var(--rule);
+}
+.byline .sep { color: var(--rule); }
+button {
+  margin-left: auto;
+  font-family: var(--ui); font-weight: 500; font-size: 0.8125rem; color: var(--ink);
+  background: transparent; border: 1px solid var(--rule); border-radius: 999px;
+  padding: 6px 14px; cursor: pointer;
+}
+button:hover { border-color: var(--lamp); color: var(--lamp); }
+button:focus-visible { outline: 2px solid var(--lamp); outline-offset: 2px; }
+.status { font-family: var(--ui); font-size: 0.8125rem; color: var(--muted); min-height: 1.2em; margin: 8px 0 0; text-align: right; }
+.passage { background: var(--well); padding: 24px 26px 18px; margin: 12px 0 48px; }
+.passage h3 {
+  font-family: var(--ui); font-weight: 500; font-size: 0.75rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--muted); margin: 0 0 14px;
+}
+.v { margin: 0 0 7px; font-size: 0.97rem; line-height: 1.6; }
+.v.gap { margin-top: 16px; padding-top: 12px; border-top: 1px dashed var(--rule); }
+.v sup {
+  font-family: var(--ui); font-size: 0.68rem; color: var(--lamp); margin-right: 6px;
+  vertical-align: 0.45em; font-variant-numeric: tabular-nums;
+}
+article p { margin: 0 0 1.15em; hyphens: auto; }
+article > p:first-of-type::first-letter {
+  font-family: var(--display); font-weight: 600; color: var(--lamp);
+  float: left; font-size: 3.6em; line-height: 0.85; padding: 0.06em 0.08em 0 0;
+}
+article h2 {
+  font-family: var(--display); font-style: italic; font-weight: 600;
+  font-size: 1.8rem; line-height: 1.2; text-wrap: balance; margin: 2.1em 0 0.6em;
+}
+.pull { margin: 2em 0; padding: 0; border: 0; }
+.pull p {
+  font-family: var(--display); font-style: italic; font-weight: 500;
+  font-size: clamp(1.5rem, 5vw, 1.95rem); line-height: 1.3; text-wrap: balance; margin: 0;
+}
+.pull p::before { content: "“"; color: var(--lamp); margin-right: 0.08em; }
+.pull p::after { content: "”"; color: var(--lamp); margin-left: 0.04em; }
+footer {
+  margin-top: 52px; padding-top: 18px; border-top: 1px solid var(--rule);
+  font-family: var(--ui); font-size: 0.78rem; line-height: 1.6; color: var(--muted);
+  display: grid; gap: 8px;
+}
+footer p { margin: 0; }
+@media (max-width: 480px) {
+  body { font-size: 1rem; padding-inline: 16px; }
+  header { padding-block: 52px 28px; }
+  .passage { padding: 20px 18px 14px; }
+  button { margin-left: 0; }
+  .status { text-align: left; }
+}
+
+.site { padding-top: 22px; }
+.site a {
+  font-family: var(--ui); font-weight: 500; font-size: 0.8125rem; letter-spacing: 0.04em;
+  color: var(--muted); text-decoration: none;
+}
+.site a:hover { color: var(--lamp); }
+.site + header { padding-top: 48px; }
+@media (max-width: 480px) { .site + header { padding-top: 36px; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <nav class="site"><a href="../">← lectio</a></nav>
+  <header>
+    <p class="kicker">Proverbs 11</p>
+    <h1>A False Balance</h1>
+    <p class="dek">On bad money, hidden fees, hoarded grain, and why honest people keep paying the price: a reading of Proverbs 11.</p>
+    <div class="byline">
+      <span>Hana Church</span><span class="sep">·</span><span>July 19, 2026</span><span class="sep">·</span><span>9 min read</span>
+      <button id="copy" type="button">Copy text</button>
+    </div>
+    <p class="status" id="status" role="status" aria-live="polite"></p>
+  </header>
+  <section class="passage" aria-label="The passage">
+    <h3>The passage · Proverbs 11:1–14, 24–26</h3>
+    <p class="v"><sup>1</sup>A false balance is an abomination to the <span class="lord">Lord</span>, but an accurate weight is his delight.</p><p class="v"><sup>2</sup>When pride comes, then comes disgrace, but wisdom is with the humble.</p><p class="v"><sup>3</sup>The integrity of the upright guides them, but the crookedness of the treacherous destroys them.</p><p class="v"><sup>4</sup>Riches do not profit in the day of wrath, but righteousness delivers from death.</p><p class="v"><sup>5</sup>The righteousness of the blameless keeps their ways straight, but the wicked fall by their own wickedness.</p><p class="v"><sup>6</sup>The righteousness of the upright saves them, but the treacherous are taken captive by their schemes.</p><p class="v"><sup>7</sup>When the wicked die, hope perishes, and the expectation of strength comes to nothing.</p><p class="v"><sup>8</sup>The righteous are delivered from trouble, and the wicked come into it instead.</p><p class="v"><sup>9</sup>With their mouths the godless would destroy their neighbors, but by knowledge the righteous are delivered.</p><p class="v"><sup>10</sup>When it goes well with the righteous, the city rejoices, and when the wicked perish, there is jubilation.</p><p class="v"><sup>11</sup>By the blessing of the upright a city is exalted, but it is overthrown by the mouth of the wicked.</p><p class="v"><sup>12</sup>Whoever belittles another lacks sense, but an intelligent person remains silent.</p><p class="v"><sup>13</sup>A gossip goes about telling secrets, but one who is trustworthy in spirit keeps a confidence.</p><p class="v"><sup>14</sup>Where there is no guidance, a nation falls, but in an abundance of counselors there is safety.</p><p class="v gap"><sup>24</sup>Some give freely yet grow all the richer; others withhold what is due and only suffer want.</p><p class="v"><sup>25</sup>A generous person will be enriched, and one who gives water will get water.</p><p class="v"><sup>26</sup>The people curse those who hold back grain, but a blessing is on the head of those who sell it.</p>
+  </section>
+  <article id="article">
+<p>There is an old saying: “Bad money drives out good.” It is known as Gresham’s law.</p>
+<p>There was a time when coins with the same face value circulated side by side even though they held different amounts of silver. Since both were accepted at the same value, people held on to the coins with more silver and spent the ones with less. Before long, only the poorer coins were left in circulation. At first it looked like a clever gain: keep the good coins for yourself and pass the bad ones on to someone else.</p>
+<p>But now sellers received less silver than before for the same goods. As this went on and trust in the currency fell, prices rose. In the end, the whole market shared the cost of what individuals thought they had gained. The good coins didn’t simply disappear; everyone was left worse off.</p>
+<p>We see the same thing around us. A search shows you the lowest price, but when you go to check out, options, fees, taxes, and shipping get added one by one. The site that honestly showed the full price from the start now looks expensive. Deception makes money, so other sites follow suit. Consumers lose, and honest businesses are put at a disadvantage.</p>
+<p>There is a lot of this around us. The people who follow the rules look foolish, and the people who cut corners seem to come out ahead. And then, at some point, it becomes a place where no one can survive without cutting corners. Only then do we find ourselves asking:</p>
+<p>Why do honest people keep paying the price?</p>
+<p>Proverbs 11 speaks straight into that question.</p>
+<h2>A false balance is an abomination</h2>
+<p>Proverbs 11, and more broadly chapters 10 through 14, have usually been read as teaching about reward and punishment. The righteous are saved and the wicked are destroyed. Live honestly and humbly, and God will guide your life. Don’t cosign recklessly for others, watch your words, don’t be tightfisted but give to your neighbors. Even if the wicked seem to prosper for now, hold on to righteousness to the end and God will repay you.</p>
+<p>All of that is in the text, and it is wisdom we still need. Proverbs 11 really does contrast, again and again, the path of the honest and righteous with the downfall of the deceitful and wicked.</p>
+<p>But once we begin reading it only as a formula—“if I live a good life, God will give me greater blessings”—faith turns into a transaction. I give God my honesty and get a promise of success in return. I give an offering and expect more wealth. I put up with a loss and store up merit in heaven, and I assume that one day God will pay it back with interest.</p>
+<p>Look a little closer at Proverbs 11, though, and you find that its concern is wider than one person’s success or failure.</p>
+<p>Verse 1 says: “A false balance is an abomination to the <span class="lord">Lord</span>, but an accurate weight is his delight.”</p>
+<p>Tampering with the markings on a scale is an individual ethical choice. But a scale is also a social promise, something everyone who trades relies on together.</p>
+<p>A pound has to be the same pound no matter whose goods are being weighed. Only then can strangers buy and sell from each other with confidence.</p>
+<p>When one side tampers with the scale, the other pays full price and doesn’t get their full share. When that happens again and again, people lose more than goods; they lose the possibility of trusting one another. God speaks here both of the trust that a single accurate weight protects and of how a false balance can bring that trust crashing down.</p>
+<p>The Hebrew word behind “abomination,” <i lang="he-Latn">to‘evah</i>, is a strong one. It names something detestable, the kind of word used for idolatry. Cheating with a scale is treated not as a small personal lapse but as a sin that degrades and tears down the whole community.</p>
+<h2>By the blessing of the upright a city is exalted</h2>
+<p>In verses 9 through 14 this becomes even clearer. “With their mouths the godless would destroy their neighbors” (11:9). “By the blessing of the upright a city is exalted, but it is overthrown by the mouth of the wicked” (11:11). Gossip breaks another person’s confidences and their safety (11:13), and the guidance of leaders shapes the welfare of a whole people (11:14).</p>
+<p>One person speaks, and a neighbor is ruined. One person chooses, and a whole city rises or falls. When lies and gossip become normal, the person who tells the truth gets treated as difficult and inconvenient. Then people stay silent even when they know the facts, and the community’s sickness deepens where no one can see it.</p>
+<h2>Those who hold back grain</h2>
+<p>Verses 24 and 25 speak of the abundance of those who share and give: give freely and grow richer; hold back and suffer want. Read on their own, they can sound like one more transaction: “If I give a lot, God will give me even more back.” But verse 26 shows concretely that this is not the point.</p>
+<p>“The people curse those who hold back grain, but a blessing is on the head of those who sell it” (11:26).</p>
+<p>The one who is blessed is not only described as someone who gives all their grain away for free. It is the one who brings the grain out and sells it. Nor does the verse say that all storing is wrong. Storing up for a famine, as Joseph did, is wisdom. What the verse pictures is keeping the storehouse locked while the people need food to eat, and using their scarcity to squeeze out a bigger profit.</p>
+<p>One person gets a higher price. On the other side of that profit, someone has to pay more for the same grain. And the tables of poor households go empty before the tables of households with money to spare. In the era around the exile, when Proverbs was taking shape, vulnerable families were collapsing under grain, debt, taxes, and land, while those with power grew fat. It is not an unfamiliar scene to us.</p>
+<p>A false balance tilts the standard we all need to be able to trust.</p>
+<p>And the cost on the other side of that profit is passed on to other people—especially to those with the fewest choices.</p>
+<p>In this light, the moral vision of Proverbs is far sharper than the fairy-tale optimism that “if you’re good you’ll be blessed someday, and bad people will be punished.” Leave in place an order in which evil pays, and you end up demanding more and more sacrifice from good people alone. Eventually the community loses its goodness altogether. Proverbs shows us that danger in advance, to wake us up.</p>
+<p>This is where the difference between the righteous and the wicked in Proverbs shows itself. The righteous benefit the community by setting down a profit they could have taken. The wicked take a profit for themselves by handing its cost to the community.</p>
+<p>The honest choice of the righteous makes the hidden false balance visible. In the very place where everyone says there is no other way, it testifies that another way is possible. God uses such people as good instruments that keep a community alive, and invites us to take part in that work.</p>
+<p>But another question comes up here.</p>
+<p>What happens if a community has to keep living off the losses of the righteous?</p>
+<blockquote class="pull"><p>If a community can only stand because one or two good people are holding it up, its scale has already tilted—tilted so that their sacrifice is simply expected.</p></blockquote>
+<p>We cannot aim this question only at the world. We have to ask whether we, too, are hiding under the umbrella of “that’s just how it’s done,” closing our eyes to the sacrifices pushed onto the righteous and onto the community. We have to ask whether, even in the church, we keep handing service and sacrifice to the same people.</p>
+<h2>The weight we use to measure people</h2>
+<p>When I first came to the United States twenty years ago, I remember being surprised at how easily money was used as the standard for judging and dividing people. The Korea I remembered still had a certain pride that regarded chasing money, flaunting it, and using what you had to look down on others as vulgar.</p>
+<p>Of course, I may be remembering the past through rose-colored glasses. Korea has long had discrimination based on wealth, and in America there have always been many people who held faith, family, and community more precious than money.</p>
+<p>Still, in Korea today, people across the country know what an apartment in a particular building in a particular neighborhood costs, and talk of housing prices and investments has become a yardstick for sizing up a person’s ability and even their future. Money is necessary for life. But when money becomes the value that comes before every other value, the weight used to measure a person, then the words of people with money carry weight and the words of people without it are treated as light. And care, service, and honesty, which don’t make money, grow light along with them.</p>
+<p>Proverbs indicts an age like this. Individual greed adds up to a community’s custom, and that custom calls forth still greater greed from everyone. Where social trust collapses, the weakest pay the cost first. Honest people absorb the losses. And in the end even those who thought they had profited lose trust, lose safety, and lose the neighbors they have to live alongside. Evil eventually brings down the ground all of us stand on.</p>
+<p>Proverbs was written as Israel, going through the exile, reflected on why and how it had fallen. It was later read and taught to scribes and officials. It was the critical resistance of the wise against the collapse of social safety nets and the corruption of the system.</p>
+<p>In an age comparable to theirs, what should we Christians trust, depend on, and take pride in? We need a dignity and a pride that cannot be weighed on a scale or converted into a number. We have to ask not only what we have and how much, but how we got it. We have to think not only about how to live well, but about what we will protect as we live, and what kind of people we will be when our lives end.</p>
+<p>Personal success never ends with the person. We have to remember that the way I treat people and the way I treat wealth touch the rise and fall of my neighbors and my community.</p>
+<p>Jesus, the most righteous one of all, was placed on a tilted scale and hung on a cross. The powers of religion and empire made an innocent man guilty to protect their own positions. And even in the middle of that injustice, Jesus gave himself for the wicked.</p>
+<p>We know how noble that sacrifice is, and how painful. That is exactly why we cannot keep demanding sacrifice from those who fight the good fight in front of a tilted scale. Just as the cross exposed the world’s order that sacrifices the righteous, we are called to expose false balances and to take part in building a community where honest people can go on being honest.</p>
+<p>Just as a false balance that brings down a community begins with one person’s small greed, I believe an accurate weight that sets it right can begin with one person’s small courage. Just as God set right the world’s false verdict by raising Jesus, I believe God will use our small courage today to set tilted scales right.</p>
+<p>A false balance is an abomination to the <span class="lord">Lord</span>, and an accurate weight is his delight. May God give us eyes to see the tilted scale, and the courage not to treat it as normal. May God give us the strength to share the burdens that the same few people have always carried. So that good people do not collapse from exhaustion, and the tables of the vulnerable are protected, may we build together the kind of community in which the Lord delights.</p>
+  </article>
+  <footer>
+    <p>Adapted from a sermon preached at Hana Church on July 19, 2026.</p>
+    <p>Scripture quotations are taken from the New Revised Standard Version Updated Edition. Copyright © 2021 National Council of Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide.</p>
+  </footer>
+</div>
+<script>
+(function () {
+  var btn = document.getElementById("copy");
+  var status = document.getElementById("status");
+  function plainText() {
+    var parts = [document.querySelector("h1").innerText, document.querySelector(".dek").innerText, ""];
+    document.querySelectorAll("#article > *").forEach(function (el) { parts.push(el.innerText); parts.push(""); });
+    parts.push(document.querySelector("footer").innerText);
+    return parts.join("\n").trim();
+  }
+  function fallback() {
+    var range = document.createRange();
+    range.selectNodeContents(document.getElementById("article"));
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    status.textContent = "Text selected. Press Ctrl+C or ⌘C to copy.";
+  }
+  btn.addEventListener("click", function () {
+    var text = plainText();
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { status.textContent = "Copied."; }, fallback);
+    } else { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>

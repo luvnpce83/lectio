@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sing to the LORD a New Song · lectio</title>
+<meta name="description" content="On praising a future we cannot see, the sword that cuts our own chains, and learning to be led: a reading of Psalm 149.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="lectio">
+<meta property="og:title" content="Sing to the LORD a New Song">
+<meta property="og:description" content="On praising a future we cannot see, the sword that cuts our own chains, and learning to be led: a reading of Psalm 149.">
+<meta property="og:url" content="https://luvnpce83.github.io/lectio/sing-to-the-lord-a-new-song/">
+<meta property="article:published_time" content="2026-04-26">
+<link rel="canonical" href="https://luvnpce83.github.io/lectio/sing-to-the-lord-a-new-song/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500;1,600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=IBM+Plex+Sans:wght@500&display=swap">
+<style>
+/* Layout: a single lamplit article column (~40rem); the passage sits in a quiet well; one pull quote marks the turn */
+:root {
+  --paper: #F4F6F4;
+  --ink: #1B2430;
+  --muted: #5A6572;
+  --lamp: #9A5F0E;
+  --well: #E8ECEC;
+  --rule: #D3D9DC;
+  --glow: rgba(214, 150, 48, 0.20);
+  --display: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --body: "Literata", "Iowan Old Style", Georgia, serif;
+  --ui: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0E151C; --ink: #E2E6E9; --muted: #98A3AD; --lamp: #E2A849;
+    --well: #16202A; --rule: #26323D; --glow: rgba(226, 168, 73, 0.16);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0E151C; --ink: #E2E6E9; --muted: #98A3AD; --lamp: #E2A849;
+  --well: #16202A; --rule: #26323D; --glow: rgba(226, 168, 73, 0.16);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.72;
+  padding-inline: 20px;
+  padding-block: 0 72px;
+}
+.page { max-width: 40rem; margin: 0 auto; }
+header { position: relative; padding-block: 76px 36px; }
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0 -20px auto -20px;
+  height: 340px;
+  background: radial-gradient(ellipse 55% 75% at 50% 0%, var(--glow), transparent 70%);
+  pointer-events: none;
+}
+header > * { position: relative; }
+.kicker {
+  font-family: var(--ui); font-weight: 500; font-size: 0.75rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--lamp);
+  margin: 0 0 16px;
+}
+h1 {
+  font-family: var(--display); font-weight: 600;
+  font-size: clamp(2.6rem, 9vw, 4rem); line-height: 1.02; letter-spacing: -0.01em;
+  text-wrap: balance; margin: 0 0 18px;
+}
+.lord { font-variant: small-caps; letter-spacing: 0.02em; }
+.dek {
+  font-family: var(--body); font-style: italic; font-size: 1.2rem; line-height: 1.5;
+  color: var(--muted); text-wrap: pretty; margin: 0 0 26px; max-width: 34rem;
+}
+.byline {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px;
+  font-family: var(--ui); font-size: 0.8125rem; color: var(--muted);
+  padding-top: 16px; border-top: 1px solid var(--rule);
+}
+.byline .sep { color: var(--rule); }
+button {
+  margin-left: auto;
+  font-family: var(--ui); font-weight: 500; font-size: 0.8125rem; color: var(--ink);
+  background: transparent; border: 1px solid var(--rule); border-radius: 999px;
+  padding: 6px 14px; cursor: pointer;
+}
+button:hover { border-color: var(--lamp); color: var(--lamp); }
+button:focus-visible { outline: 2px solid var(--lamp); outline-offset: 2px; }
+.status { font-family: var(--ui); font-size: 0.8125rem; color: var(--muted); min-height: 1.2em; margin: 8px 0 0; text-align: right; }
+.passage { background: var(--well); padding: 24px 26px 18px; margin: 12px 0 48px; }
+.passage h3 {
+  font-family: var(--ui); font-weight: 500; font-size: 0.75rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--muted); margin: 0 0 14px;
+}
+.v { margin: 0 0 7px; font-size: 0.97rem; line-height: 1.6; }
+.v.gap { margin-top: 16px; padding-top: 12px; border-top: 1px dashed var(--rule); }
+.v sup {
+  font-family: var(--ui); font-size: 0.68rem; color: var(--lamp); margin-right: 6px;
+  vertical-align: 0.45em; font-variant-numeric: tabular-nums;
+}
+article p { margin: 0 0 1.15em; hyphens: auto; }
+article > p:first-of-type::first-letter {
+  font-family: var(--display); font-weight: 600; color: var(--lamp);
+  float: left; font-size: 3.6em; line-height: 0.85; padding: 0.06em 0.08em 0 0;
+}
+article h2 {
+  font-family: var(--display); font-style: italic; font-weight: 600;
+  font-size: 1.8rem; line-height: 1.2; text-wrap: balance; margin: 2.1em 0 0.6em;
+}
+.pull { margin: 2em 0; padding: 0; border: 0; }
+.pull p {
+  font-family: var(--display); font-style: italic; font-weight: 500;
+  font-size: clamp(1.5rem, 5vw, 1.95rem); line-height: 1.3; text-wrap: balance; margin: 0;
+}
+.pull p::before { content: "“"; color: var(--lamp); margin-right: 0.08em; }
+.pull p::after { content: "”"; color: var(--lamp); margin-left: 0.04em; }
+footer {
+  margin-top: 52px; padding-top: 18px; border-top: 1px solid var(--rule);
+  font-family: var(--ui); font-size: 0.78rem; line-height: 1.6; color: var(--muted);
+  display: grid; gap: 8px;
+}
+footer p { margin: 0; }
+@media (max-width: 480px) {
+  body { font-size: 1rem; padding-inline: 16px; }
+  header { padding-block: 52px 28px; }
+  .passage { padding: 20px 18px 14px; }
+  button { margin-left: 0; }
+  .status { text-align: left; }
+}
+
+.site { padding-top: 22px; }
+.site a {
+  font-family: var(--ui); font-weight: 500; font-size: 0.8125rem; letter-spacing: 0.04em;
+  color: var(--muted); text-decoration: none;
+}
+.site a:hover { color: var(--lamp); }
+.site + header { padding-top: 48px; }
+@media (max-width: 480px) { .site + header { padding-top: 36px; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <nav class="site"><a href="../">← lectio</a></nav>
+  <header>
+    <p class="kicker">Psalm 149</p>
+    <h1>Sing to the <span class="lord">Lord</span> a New Song</h1>
+    <p class="dek">On praising a future we cannot see, the sword that cuts our own chains, and learning to be led: a reading of Psalm 149.</p>
+    <div class="byline">
+      <span>Hana Church</span><span class="sep">·</span><span>April 26, 2026</span><span class="sep">·</span><span>7 min read</span>
+      <button id="copy" type="button">Copy text</button>
+    </div>
+    <p class="status" id="status" role="status" aria-live="polite"></p>
+  </header>
+  <section class="passage" aria-label="The passage">
+    <h3>The passage · Psalm 149:1–9</h3>
+    <p class="v"><sup>1</sup>Praise the <span class="lord">Lord</span>! Sing to the <span class="lord">Lord</span> a new song, his praise in the assembly of the faithful.</p><p class="v"><sup>2</sup>Let Israel be glad in its Maker; let the children of Zion rejoice in their King.</p><p class="v"><sup>3</sup>Let them praise his name with dancing, making melody to him with tambourine and lyre.</p><p class="v"><sup>4</sup>For the <span class="lord">Lord</span> takes pleasure in his people; he adorns the humble with victory.</p><p class="v"><sup>5</sup>Let the faithful exult in glory; let them sing for joy on their couches.</p><p class="v"><sup>6</sup>Let the high praises of God be in their throats and two-edged swords in their hands,</p><p class="v"><sup>7</sup>to execute vengeance on the nations and punishment on the peoples,</p><p class="v"><sup>8</sup>to bind their kings with fetters and their nobles with chains of iron,</p><p class="v"><sup>9</sup>to execute on them the judgment decreed. This is glory for all his faithful ones. Praise the <span class="lord">Lord</span>!</p>
+  </section>
+  <article id="article">
+<p>I first preached this in English, with Korean subtitles on the screen—the reverse of how our worship usually runs. For one morning, many of us got a small taste of the linguistic and cultural unfamiliarity that some members of our community have graciously lived with all along. My hope was that the unfamiliarity itself would teach us something: that God is far wider and greater than our differences of language and culture, and that the ways God stirs our souls go far beyond what feels comfortable and familiar.</p>
+<p>Psalm 149 has an unusual character too. As its repeated calls to praise, rejoice, and sing make plain, it is a hymn, a song the congregation sang together in worship.</p>
+<p>Most hymns in the Bible praise God for what God has already done. They remember God’s faithfulness and greatness in parting the Red Sea and defeating enemies. But this psalm has a fascinating structure: what it praises has not happened yet. It is about the future.</p>
+<p>That goes against common sense. How can anyone rejoice and sing a new song about a future that hasn’t happened, a future no one can predict?</p>
+<p>The praise in this psalm is not a forecast of circumstances. It is a declaration of trust in a faithful God. It is possible because it rests on a deep hope in the God who has always walked with Israel and proven faithful. Even amid the uncertainty of foreign invasion, not knowing what tomorrow would bring, they believed that God’s <i lang="he-Latn">hesed</i>, the steadfast love that had led them this far, would keep on leading them. That belief let them push through their fear and sing a victory song in advance.</p>
+<p>What about us? Thanks to modern science and technology, we can manage uncertainty better than at any other time in history. We forecast the weather, prevent diseases, and analyze future trends with AI. And yet, ironically, while we strain to eliminate even the smallest percentage of uncertainty, we live in extreme fear of the unpredictable things that might come into our lives. A future beyond our control is not something we praise. It is only a source of anxiety and worry.</p>
+<h2>Two-edged swords in their hands</h2>
+<p>In a world like this, how can we, like the psalmist, sing a new song toward an unknown future? Psalm 2, which forms a pair with Psalm 149, offers a hint.</p>
+<p>In Psalm 2, the nations and kings of the earth rise up against God. “Let us burst their bonds apart and cast their cords from us,” they say (2:3). They want to be the masters of their own lives and to rule the world. It is the arrogance of living without any fear of heaven, keeping the world strictly under one’s own control.</p>
+<p>In the second half of Psalm 149, we see a dramatic vengeance and judgment against them. The psalm places “two-edged swords” in the hands of the faithful, “to execute vengeance on the nations and punishment on the peoples, to bind their kings with fetters and their nobles with chains of iron” (149:6–8).</p>
+<p>But we must not misunderstand this sword. This is not nationalistic, exclusive violence by one people against everyone else. The grand conclusion of the Psalms, which comes right after this one, declares: “Let everything that breathes praise the <span class="lord">Lord</span>!” (150:6). God’s ultimate purpose is not to cut down the nations with a sword, but to restore every living creature into a community of life that praises God together. And since Psalm 149 is a hymn for worship, the sword in the hands of the faithful should be understood not as a weapon of war but as a holy sword used in worship.</p>
+<p>During Korea’s Joseon Dynasty there was a ritual sword called the <i lang="ko-Latn">sainchamsageom</i>, the Four-Tiger Sword. The king bestowed it not to strike down physical enemies, but as a symbolic blade to ward off evil and disaster. The two-edged sword in the hands of the faithful is like this. It is not a weapon for cutting the flesh and bones of others.</p>
+<blockquote class="pull"><p>It is a sword of grace that cuts away my own arrogance, my own greed, and the chains that bind me.</p></blockquote>
+<p>It cuts away my arrogance in trying to be my own master, like the nations. It cuts away my greed, always reaching out toward the world. It cuts, without hesitation, the worldly chains and shackles that have held me.</p>
+<p>And this sword points to the cross. To nail to the cross our arrogance—our insistence on holding the steering wheel of our own lives—and to follow the path of self-denial that Christ himself walked: that is the greatest vengeance against the world’s evil ways, and our true victory.</p>
+<h2>He adorns the humble with victory</h2>
+<p>If this ritual sword, the grace of the cross, can cut the world’s chains, how should we live? It doesn’t end with a single confession of faith. To keep cutting the chains that endlessly try to bind us, we have to live a life wholly bound to God, a life led by God, as God’s servants. Not a life filled with fear of uncertainty, but a life filled with expectation for the new things God will bring.</p>
+<p>To live that kind of led life toward a future that has not yet arrived, I think we need three spiritual dispositions.</p>
+<p>The first is receptivity. For our bodies to respond flexibly to different movements, we need to widen our range of motion through regular stretching. Push past that range, and muscles tear and ligaments strain. Our spiritual life, too, has to be stretched and widened ahead of time. We dream and envision the future with God, but sometimes things don’t turn out the way we want. Receptivity means not collapsing in frustration and disappointment, but being ready to accept whatever situation God allows. Only someone who can be grateful for what has already been given can joyfully receive an unknown future.</p>
+<p>The second is flexibility: the willingness to bend our stubbornness. It is an attitude of lowering ourselves in humility—careful in all things, and yet brave enough to step forward boldly. For this, we need a deep acknowledgment that everything in our lives belongs to God, not to us. True free will is not living however we please; it is voluntarily handing the steering wheel of our lives over to God. We need the spiritual flexibility to loosen our grip on what we try to control and to yield softly to God’s leading.</p>
+<p>The third is resilience: the ability to rise again in failure. In the end, we only really know by going through it. There is a deep grace that can only be tasted in thick despair and utter frustration. There is a sturdiness that belongs only to those who have stood back up from the bottom. A misbuttoned shirt is a hundred times better than one you never tried to button. Even moments that did not go the way we planned, moments we took for obvious failures, show us on looking back that God’s careful grace was shaping us all along. As those confessions pile up, a firm trust in God takes shape, and we become able to get up whenever we fall.</p>
+<h2>This is glory for all his faithful ones</h2>
+<p>Our church, too, stands before a great transition, a moment when a new song has to ring out. Can we truly praise the unknown future God will open for us?</p>
+<p>When Pastor Kang first planted Hana Church, did he accurately predict today, thirty years later, and draw up a blueprint to get here? Did he plan from the very beginning to care for dozens of children, feed hundreds of people, raise up seminary students and missionaries, and build dozens of mission centers and churches? After more than twenty years of doing little but clearing brush and holding on, did he imagine from the start that a day would come to build God’s house on this hill?</p>
+<p>Probably not. He simply tried, day by day, to obey wherever the Lord led. He struggled to preach what he heard, and he walked the path of obedience—going when told to go, stopping when told to stop—sometimes with reckless nerve, sometimes through deep wandering, but always steadily. I believe the beautiful fruit of that led life is our community, and I stand here as a witness to it.</p>
+<p>To be honest, I am afraid too. Facing the retirement of Pastor Kang—my teacher, my mentor, and my father—sometimes feels frightening and overwhelming.</p>
+<p>But to say we cannot see an inch ahead would not be true, because through our church and through our pastor’s life, God has already shown us the path we must take, and shown it very clearly. So I want to lay my fear of the unknown and my heavy, hesitant heart at the foot of the cross. Instead, giving thanks for the grace that has faithfully led us this far, I want to take a step forward, holding the unknown road ahead with anticipation.</p>
+<p>This is the spiritual receptivity, flexibility, and resilience that Psalm 149 asks of us. It is the new song that only those who gladly accept a led life and walk the way of the cross can sing. It is a song that cannot be sung by anyone tied down to past glories or past frustrations.</p>
+<p>Just as our small acts of obedience and labor have pleased God greatly until now, may we sing a new song with glad hearts. May we find the courage not to be buried in uncertainty before the future God will open, and the wisdom to walk boldly on the road the Lord provides—trusting God’s leading and provision, and singing a new song together.</p>
+  </article>
+  <footer>
+    <p>Adapted from a sermon preached in English, with Korean subtitles, at Hana Church on April 26, 2026.</p>
+    <p>Scripture quotations are taken from the New Revised Standard Version Updated Edition. Copyright © 2021 National Council of Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide.</p>
+  </footer>
+</div>
+<script>
+(function () {
+  var btn = document.getElementById("copy");
+  var status = document.getElementById("status");
+  function plainText() {
+    var parts = [document.querySelector("h1").innerText, document.querySelector(".dek").innerText, ""];
+    document.querySelectorAll("#article > *").forEach(function (el) { parts.push(el.innerText); parts.push(""); });
+    parts.push(document.querySelector("footer").innerText);
+    return parts.join("\n").trim();
+  }
+  function fallback() {
+    var range = document.createRange();
+    range.selectNodeContents(document.getElementById("article"));
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    status.textContent = "Text selected. Press Ctrl+C or ⌘C to copy.";
+  }
+  btn.addEventListener("click", function () {
+    var text = plainText();
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { status.textContent = "Copied."; }, fallback);
+    } else { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>

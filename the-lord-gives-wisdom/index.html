@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The LORD Gives Wisdom · lectio</title>
+<meta name="description" content="On wisdom as an inheritance, the shield honesty needs, and a faith that learns by walking: a reading of Proverbs 2.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="lectio">
+<meta property="og:title" content="The LORD Gives Wisdom">
+<meta property="og:description" content="On wisdom as an inheritance, the shield honesty needs, and a faith that learns by walking: a reading of Proverbs 2.">
+<meta property="og:url" content="https://luvnpce83.github.io/lectio/the-lord-gives-wisdom/">
+<meta property="article:published_time" content="2026-05-17">
+<link rel="canonical" href="https://luvnpce83.github.io/lectio/the-lord-gives-wisdom/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500;1,600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=IBM+Plex+Sans:wght@500&display=swap">
+<style>
+/* Layout: a single lamplit article column (~40rem); the passage sits in a quiet well; one pull quote marks the turn */
+:root {
+  --paper: #F4F6F4;
+  --ink: #1B2430;
+  --muted: #5A6572;
+  --lamp: #9A5F0E;
+  --well: #E8ECEC;
+  --rule: #D3D9DC;
+  --glow: rgba(214, 150, 48, 0.20);
+  --display: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --body: "Literata", "Iowan Old Style", Georgia, serif;
+  --ui: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0E151C; --ink: #E2E6E9; --muted: #98A3AD; --lamp: #E2A849;
+    --well: #16202A; --rule: #26323D; --glow: rgba(226, 168, 73, 0.16);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0E151C; --ink: #E2E6E9; --muted: #98A3AD; --lamp: #E2A849;
+  --well: #16202A; --rule: #26323D; --glow: rgba(226, 168, 73, 0.16);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.72;
+  padding-inline: 20px;
+  padding-block: 0 72px;
+}
+.page { max-width: 40rem; margin: 0 auto; }
+header { position: relative; padding-block: 76px 36px; }
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0 -20px auto -20px;
+  height: 340px;
+  background: radial-gradient(ellipse 55% 75% at 50% 0%, var(--glow), transparent 70%);
+  pointer-events: none;
+}
+header > * { position: relative; }
+.kicker {
+  font-family: var(--ui); font-weight: 500; font-size: 0.75rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--lamp);
+  margin: 0 0 16px;
+}
+h1 {
+  font-family: var(--display); font-weight: 600;
+  font-size: clamp(2.6rem, 9vw, 4rem); line-height: 1.02; letter-spacing: -0.01em;
+  text-wrap: balance; margin: 0 0 18px;
+}
+.lord { font-variant: small-caps; letter-spacing: 0.02em; }
+.dek {
+  font-family: var(--body); font-style: italic; font-size: 1.2rem; line-height: 1.5;
+  color: var(--muted); text-wrap: pretty; margin: 0 0 26px; max-width: 34rem;
+}
+.byline {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px;
+  font-family: var(--ui); font-size: 0.8125rem; color: var(--muted);
+  padding-top: 16px; border-top: 1px solid var(--rule);
+}
+.byline .sep { color: var(--rule); }
+button {
+  margin-left: auto;
+  font-family: var(--ui); font-weight: 500; font-size: 0.8125rem; color: var(--ink);
+  background: transparent; border: 1px solid var(--rule); border-radius: 999px;
+  padding: 6px 14px; cursor: pointer;
+}
+button:hover { border-color: var(--lamp); color: var(--lamp); }
+button:focus-visible { outline: 2px solid var(--lamp); outline-offset: 2px; }
+.status { font-family: var(--ui); font-size: 0.8125rem; color: var(--muted); min-height: 1.2em; margin: 8px 0 0; text-align: right; }
+.passage { background: var(--well); padding: 24px 26px 18px; margin: 12px 0 48px; }
+.passage h3 {
+  font-family: var(--ui); font-weight: 500; font-size: 0.75rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--muted); margin: 0 0 14px;
+}
+.v { margin: 0 0 7px; font-size: 0.97rem; line-height: 1.6; }
+.v.gap { margin-top: 16px; padding-top: 12px; border-top: 1px dashed var(--rule); }
+.v sup {
+  font-family: var(--ui); font-size: 0.68rem; color: var(--lamp); margin-right: 6px;
+  vertical-align: 0.45em; font-variant-numeric: tabular-nums;
+}
+article p { margin: 0 0 1.15em; hyphens: auto; }
+article > p:first-of-type::first-letter {
+  font-family: var(--display); font-weight: 600; color: var(--lamp);
+  float: left; font-size: 3.6em; line-height: 0.85; padding: 0.06em 0.08em 0 0;
+}
+article h2 {
+  font-family: var(--display); font-style: italic; font-weight: 600;
+  font-size: 1.8rem; line-height: 1.2; text-wrap: balance; margin: 2.1em 0 0.6em;
+}
+.pull { margin: 2em 0; padding: 0; border: 0; }
+.pull p {
+  font-family: var(--display); font-style: italic; font-weight: 500;
+  font-size: clamp(1.5rem, 5vw, 1.95rem); line-height: 1.3; text-wrap: balance; margin: 0;
+}
+.pull p::before { content: "“"; color: var(--lamp); margin-right: 0.08em; }
+.pull p::after { content: "”"; color: var(--lamp); margin-left: 0.04em; }
+footer {
+  margin-top: 52px; padding-top: 18px; border-top: 1px solid var(--rule);
+  font-family: var(--ui); font-size: 0.78rem; line-height: 1.6; color: var(--muted);
+  display: grid; gap: 8px;
+}
+footer p { margin: 0; }
+@media (max-width: 480px) {
+  body { font-size: 1rem; padding-inline: 16px; }
+  header { padding-block: 52px 28px; }
+  .passage { padding: 20px 18px 14px; }
+  button { margin-left: 0; }
+  .status { text-align: left; }
+}
+
+.site { padding-top: 22px; }
+.site a {
+  font-family: var(--ui); font-weight: 500; font-size: 0.8125rem; letter-spacing: 0.04em;
+  color: var(--muted); text-decoration: none;
+}
+.site a:hover { color: var(--lamp); }
+.site + header { padding-top: 48px; }
+@media (max-width: 480px) { .site + header { padding-top: 36px; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <nav class="site"><a href="../">← lectio</a></nav>
+  <header>
+    <p class="kicker">Proverbs 2</p>
+    <h1>The <span class="lord">Lord</span> Gives Wisdom</h1>
+    <p class="dek">On wisdom as an inheritance, the shield honesty needs, and a faith that learns by walking: a reading of Proverbs 2.</p>
+    <div class="byline">
+      <span>Hana Church</span><span class="sep">·</span><span>May 17, 2026</span><span class="sep">·</span><span>7 min read</span>
+      <button id="copy" type="button">Copy text</button>
+    </div>
+    <p class="status" id="status" role="status" aria-live="polite"></p>
+  </header>
+  <section class="passage" aria-label="The passage">
+    <h3>The passage · Proverbs 2:1–15</h3>
+    <p class="v"><sup>1</sup>My child, if you accept my words and treasure up my commandments within you,</p><p class="v"><sup>2</sup>making your ear attentive to wisdom and inclining your heart to understanding,</p><p class="v"><sup>3</sup>if you indeed cry out for insight and raise your voice for understanding,</p><p class="v"><sup>4</sup>if you seek it like silver and search for it as for hidden treasures—</p><p class="v"><sup>5</sup>then you will understand the fear of the <span class="lord">Lord</span> and find the knowledge of God.</p><p class="v"><sup>6</sup>For the <span class="lord">Lord</span> gives wisdom; from his mouth come knowledge and understanding;</p><p class="v"><sup>7</sup>he stores up sound wisdom for the upright; he is a shield to those who walk blamelessly,</p><p class="v"><sup>8</sup>guarding the paths of justice and preserving the way of his faithful ones.</p><p class="v"><sup>9</sup>Then you will understand righteousness and justice and equity, every good path,</p><p class="v"><sup>10</sup>for wisdom will come into your heart, and knowledge will be pleasant to your soul;</p><p class="v"><sup>11</sup>prudence will watch over you, and understanding will guard you.</p><p class="v"><sup>12</sup>It will save you from the way of evil, from those who speak perversely,</p><p class="v"><sup>13</sup>who forsake the paths of uprightness to walk in the ways of darkness,</p><p class="v"><sup>14</sup>who rejoice in doing evil and delight in the perverseness of evil,</p><p class="v"><sup>15</sup>those whose paths are crooked and who are devious in their ways.</p>
+  </section>
+  <article id="article">
+<p>In Proverbs 1, wisdom is loud. “Wisdom cries out in the street; in the squares she raises her voice” (1:20). In the middle of the noise and confusion of the marketplace, God comes looking for us through that voice and refuses to give up on us, because we are God’s children.</p>
+<p>Proverbs 2 opens in a very different voice. It is the intimate language of a parent who sits a child on their knee and passes on wisdom in a low but firm voice: “My child, if you accept my words and treasure up my commandments within you…” (2:1).</p>
+<p>When the world talks about wisdom, it usually means a kind of skill or hack, a savvy for getting ahead faster without losing out. The world’s wisdom is closer to a tool: something you pay for with time, money, and effort, or win by proving your ability. But the wisdom Proverbs has in mind is thoroughly relational. It is an inheritance, the law of life that a parent hands down to a child without conditions.</p>
+<p>If knowing how to read the notes on a score, and understanding harmony and rhythm in your head, is knowledge, then wisdom is the deep resonance of a performer who goes beyond the notes on the page—who interprets the feeling of the piece, breathes with the audience, and makes exquisite harmony with others.</p>
+<p>The wisdom of Proverbs is a holy art of living. It knows God’s order and providence as knowledge; it divides and discerns them sharply, moment by moment, as understanding; and in the end it lives as God’s children in this rough world. This wisdom is the deepest spring, flowing from God, out of which knowledge and understanding are born.</p>
+<p>But an inheritance freely given is not something we receive by sitting still with our mouths open. The passage urges us to dig for it fiercely, to “seek it like silver and search for it as for hidden treasures” (2:4). To make this law of life our real equipment for living, we have to sweat to dig it out and discern it in the rough realities of the marketplace.</p>
+<h2>He is a shield</h2>
+<p>What waits at the end of the life of wisdom that the parent so earnestly passes on, and that we must so earnestly seek—a life that is upright and blameless and keeps justice? The passage promises that God gives discernment to such people, becomes their shield, and watches over and guards their way: “he stores up sound wisdom for the upright; he is a shield to those who walk blamelessly, guarding the paths of justice and preserving the way of his faithful ones” (2:7–8).</p>
+<p>But here we have to ask a hard question. If we live upright and blameless lives and keep God’s law, why would we need a shield? Why would we need to be guarded?</p>
+<p>Paradoxically, the promise assumes that trials and pain will surely come to those who walk the way of wisdom. When we refuse to compromise and try to act honestly in the world, arrows fly from every side: envy and jealousy, slander and scheming meant to bring us down. We need wisdom to discern because we will meet the enticements of the wicked, who say one thing and mean another. And when we refuse to do wrong for small gains, make right judgments, and try to live fairly, we experience isolation—pushed aside and abandoned by the world.</p>
+<p>In that isolation, the world laughs at us and whispers: “See? Acting clean and superior only means you lose, you suffer, you end up alone.” The nail that sticks out gets hammered down. Fish don’t gather in water that is too clear. Stand too straight and you will snap.</p>
+<p>But the passage overturns the world’s logic with a firm paradox. The dark road and crooked conduct that look wide and easy for now will eventually catch that life by the ankle. In the end, as verse 22 puts it, “the wicked will be cut off from the earth, and the treacherous will be rooted out of it.” Those who hold on behind the Lord’s shield—in the very place where they were attacked and isolated for keeping righteousness—will not be shaken, and they will come through whole.</p>
+<blockquote class="pull"><p>The truly safe road is not the road without suffering. It is the road where the Lord becomes our shield in suffering.</p></blockquote>
+<h2>Wisdom will come into your heart</h2>
+<p>How, then, can we trust the Lord’s promise and hold on to the end in that suffering? The passage first tells us to make our ears attentive, incline our hearts, cry out, seek, and search. It calls us to be upright, just, and faithful.</p>
+<p>We often assume we must know and understand first, and only then can we act rightly. We even pray, “Give me certainty, and then I will obey.” But God’s wisdom works the other way around. When we choose God’s honesty and justice in the small choices of life, even if it costs us and even if it is hard—when we take a step of faith, what the New Testament calls <i lang="grc-Latn">peripateō</i>, simply to walk—then, through that very doing, the wisdom God gives pushes its way into the center of our hearts.</p>
+<p>A holy, virtuous cycle begins: we come to know in the middle of living, and through that deepening knowledge our lives become more blessed.</p>
+<p>This is of a piece with the relationship between faith and works. James 1 challenges us to consider it all joy when we face various trials, and to let endurance do its work. And right there, in the doing of endurance, it says: “If any of you is lacking in wisdom, ask God, who gives to all generously and ungrudgingly, and it will be given you” (James 1:5).</p>
+<p>Dry cement powder has no strength on its own. But when water is poured in, it becomes concrete that forms a solid wall. In the same way, when we pour the water of obedient action onto the understanding we have built up through Scripture, prayer, and meditation, it finally hardens into wisdom and faith that no storm in the world can shake. Through doing, our faith is packed down and made firm; through faith made firm, our way of life becomes visible in the middle of the world.</p>
+<h2>For the <span class="lord">Lord</span> gives wisdom</h2>
+<p>Of course, how good it would be if we could pour the water of obedience every day and build a firm wall of faith. But it isn’t easy. In a world so full of temptation, where isolation is so frightening, we feel in our bones that we do not have the power to keep living honestly, justly, and faithfully to the end on our own strength and will. Our knowing and our living fall out of step every day. Even when we want to pour the water of obedient action, so often the water in us has already run dry. Just when we think we finally understand, finally feel solid, one small test brings us down.</p>
+<p>But the passage declares that wisdom is, in the end, a gift God gives: “For the <span class="lord">Lord</span> gives wisdom; from his mouth come knowledge and understanding” (2:6). The apostle Paul, too, confesses that the real agent of our faith is not us. Even when we are weak and fail to take a step of faith, what makes us take even that small step again, and finally brings it to completion, is not our will but the faithfulness of Christ.</p>
+<p>We are able to believe in Christ and rely on him because his life of faithfulness even to death, his death, and his resurrection make us able to—leaving us no choice but to rely on the Lord alone. Wisdom, and honesty, justice, and righteousness, are gifts that God gives by grace, through Christ, to people who do not deserve them.</p>
+<p>Jesus Christ was wholly blameless and upright, yet he endured the greatest pain the world could inflict, the cross. He was wholly just, yet he was abandoned even by his disciples and utterly shunned. Because he walked this road of suffering and paradox first, and fully revealed his faithfulness on it, now when I trust him, his faithfulness becomes my shield and my guard.</p>
+<p>In one film, a friend shouts at the hero, who is faltering against his own limits: “Don’t believe in yourself. Believe in me. Believe in the me who believes in you.”</p>
+<p>The world keeps urging us to believe in our own abilities and willpower. The gospel does not come to us that way. To us who waver endlessly, Jesus speaks a paradox of grace: “Don’t believe in your flimsy resolve and your thin faith. Believe in me, who will never give up on you, and who loved you all the way to the cross.”</p>
+<p>The faith of the wise does not simply hope for, and lean on, a world where good is rewarded and evil punished. “I’ve lived this honestly and worked this hard at my faith, so God will bless me with wealth and health, right?” No. True wisdom and faith mean turning to the next page—whatever trials and tests the next chapter of my life may bring—while fully trusting God, the author who is writing our lives.</p>
+<h2>The author of the next chapter</h2>
+<p>Our church, too, is turning to a new chapter. We don’t know what story will unfold next, or what unfamiliar landscapes and hardships wait ahead of us. But we can be at peace, because we are not the ones writing our next chapter. The God who began our story, who has led it faithfully until now, and who will lead it to the best ending, is the author of our lives, and our shield.</p>
+<p>When we quietly walk the road of honesty, justice, and faithfulness, even when the world laughs and even when it costs us; when we endure in hardship, admit that we cannot do it on our own strength, hand God the steering wheel, and simply ask for God’s wisdom—may we experience, day after day, God’s true wisdom pushing its way into our hearts. Looking back, we can only confess that it was all grace. And the Lord who was our shield in every hardship is the one we can trust completely for everything ahead.</p>
+  </article>
+  <footer>
+    <p>Adapted from a sermon preached at Hana Church on May 17, 2026.</p>
+    <p>Scripture quotations are taken from the New Revised Standard Version Updated Edition. Copyright © 2021 National Council of Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide.</p>
+  </footer>
+</div>
+<script>
+(function () {
+  var btn = document.getElementById("copy");
+  var status = document.getElementById("status");
+  function plainText() {
+    var parts = [document.querySelector("h1").innerText, document.querySelector(".dek").innerText, ""];
+    document.querySelectorAll("#article > *").forEach(function (el) { parts.push(el.innerText); parts.push(""); });
+    parts.push(document.querySelector("footer").innerText);
+    return parts.join("\n").trim();
+  }
+  function fallback() {
+    var range = document.createRange();
+    range.selectNodeContents(document.getElementById("article"));
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    status.textContent = "Text selected. Press Ctrl+C or ⌘C to copy.";
+  }
+  btn.addEventListener("click", function () {
+    var text = plainText();
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { status.textContent = "Copied."; }, fallback);
+    } else { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>

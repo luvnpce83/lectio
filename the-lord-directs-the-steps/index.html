@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The LORD Directs the Steps · lectio</title>
+<meta name="description" content="On knowing versus learning in the body, the scale that weighs our motives, and rolling the load over: a reading of Proverbs 16:1–9.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="lectio">
+<meta property="og:title" content="The LORD Directs the Steps">
+<meta property="og:description" content="On knowing versus learning in the body, the scale that weighs our motives, and rolling the load over: a reading of Proverbs 16:1–9.">
+<meta property="og:url" content="https://luvnpce83.github.io/lectio/the-lord-directs-the-steps/">
+<meta property="article:published_time" content="2026-08-23">
+<link rel="canonical" href="https://luvnpce83.github.io/lectio/the-lord-directs-the-steps/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500;1,600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=IBM+Plex+Sans:wght@500&display=swap">
+<style>
+/* Layout: a single lamplit article column (~40rem); the passage sits in a quiet well; one pull quote marks the turn */
+:root {
+  --paper: #F4F6F4;
+  --ink: #1B2430;
+  --muted: #5A6572;
+  --lamp: #9A5F0E;
+  --well: #E8ECEC;
+  --rule: #D3D9DC;
+  --glow: rgba(214, 150, 48, 0.20);
+  --display: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --body: "Literata", "Iowan Old Style", Georgia, serif;
+  --ui: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0E151C; --ink: #E2E6E9; --muted: #98A3AD; --lamp: #E2A849;
+    --well: #16202A; --rule: #26323D; --glow: rgba(226, 168, 73, 0.16);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0E151C; --ink: #E2E6E9; --muted: #98A3AD; --lamp: #E2A849;
+  --well: #16202A; --rule: #26323D; --glow: rgba(226, 168, 73, 0.16);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.72;
+  padding-inline: 20px;
+  padding-block: 0 72px;
+}
+.page { max-width: 40rem; margin: 0 auto; }
+header { position: relative; padding-block: 76px 36px; }
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0 -20px auto -20px;
+  height: 340px;
+  background: radial-gradient(ellipse 55% 75% at 50% 0%, var(--glow), transparent 70%);
+  pointer-events: none;
+}
+header > * { position: relative; }
+.kicker {
+  font-family: var(--ui); font-weight: 500; font-size: 0.75rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--lamp);
+  margin: 0 0 16px;
+}
+h1 {
+  font-family: var(--display); font-weight: 600;
+  font-size: clamp(2.6rem, 9vw, 4rem); line-height: 1.02; letter-spacing: -0.01em;
+  text-wrap: balance; margin: 0 0 18px;
+}
+.lord { font-variant: small-caps; letter-spacing: 0.02em; }
+.dek {
+  font-family: var(--body); font-style: italic; font-size: 1.2rem; line-height: 1.5;
+  color: var(--muted); text-wrap: pretty; margin: 0 0 26px; max-width: 34rem;
+}
+.byline {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px;
+  font-family: var(--ui); font-size: 0.8125rem; color: var(--muted);
+  padding-top: 16px; border-top: 1px solid var(--rule);
+}
+.byline .sep { color: var(--rule); }
+button {
+  margin-left: auto;
+  font-family: var(--ui); font-weight: 500; font-size: 0.8125rem; color: var(--ink);
+  background: transparent; border: 1px solid var(--rule); border-radius: 999px;
+  padding: 6px 14px; cursor: pointer;
+}
+button:hover { border-color: var(--lamp); color: var(--lamp); }
+button:focus-visible { outline: 2px solid var(--lamp); outline-offset: 2px; }
+.status { font-family: var(--ui); font-size: 0.8125rem; color: var(--muted); min-height: 1.2em; margin: 8px 0 0; text-align: right; }
+.passage { background: var(--well); padding: 24px 26px 18px; margin: 12px 0 48px; }
+.passage h3 {
+  font-family: var(--ui); font-weight: 500; font-size: 0.75rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--muted); margin: 0 0 14px;
+}
+.v { margin: 0 0 7px; font-size: 0.97rem; line-height: 1.6; }
+.v.gap { margin-top: 16px; padding-top: 12px; border-top: 1px dashed var(--rule); }
+.v sup {
+  font-family: var(--ui); font-size: 0.68rem; color: var(--lamp); margin-right: 6px;
+  vertical-align: 0.45em; font-variant-numeric: tabular-nums;
+}
+article p { margin: 0 0 1.15em; hyphens: auto; }
+article > p:first-of-type::first-letter {
+  font-family: var(--display); font-weight: 600; color: var(--lamp);
+  float: left; font-size: 3.6em; line-height: 0.85; padding: 0.06em 0.08em 0 0;
+}
+article h2 {
+  font-family: var(--display); font-style: italic; font-weight: 600;
+  font-size: 1.8rem; line-height: 1.2; text-wrap: balance; margin: 2.1em 0 0.6em;
+}
+.pull { margin: 2em 0; padding: 0; border: 0; }
+.pull p {
+  font-family: var(--display); font-style: italic; font-weight: 500;
+  font-size: clamp(1.5rem, 5vw, 1.95rem); line-height: 1.3; text-wrap: balance; margin: 0;
+}
+.pull p::before { content: "“"; color: var(--lamp); margin-right: 0.08em; }
+.pull p::after { content: "”"; color: var(--lamp); margin-left: 0.04em; }
+footer {
+  margin-top: 52px; padding-top: 18px; border-top: 1px solid var(--rule);
+  font-family: var(--ui); font-size: 0.78rem; line-height: 1.6; color: var(--muted);
+  display: grid; gap: 8px;
+}
+footer p { margin: 0; }
+@media (max-width: 480px) {
+  body { font-size: 1rem; padding-inline: 16px; }
+  header { padding-block: 52px 28px; }
+  .passage { padding: 20px 18px 14px; }
+  button { margin-left: 0; }
+  .status { text-align: left; }
+}
+
+.site { padding-top: 22px; }
+.site a {
+  font-family: var(--ui); font-weight: 500; font-size: 0.8125rem; letter-spacing: 0.04em;
+  color: var(--muted); text-decoration: none;
+}
+.site a:hover { color: var(--lamp); }
+.site + header { padding-top: 48px; }
+@media (max-width: 480px) { .site + header { padding-top: 36px; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <nav class="site"><a href="../">← lectio</a></nav>
+  <header>
+    <p class="kicker">Proverbs 16</p>
+    <h1>The <span class="lord">Lord</span> Directs the Steps</h1>
+    <p class="dek">On knowing versus learning in the body, the scale that weighs our motives, and rolling the load over: a reading of Proverbs 16:1–9.</p>
+    <div class="byline">
+      <span>Hana Church</span><span class="sep">·</span><span>August 23, 2026</span><span class="sep">·</span><span>9 min read</span>
+      <button id="copy" type="button">Copy text</button>
+    </div>
+    <p class="status" id="status" role="status" aria-live="polite"></p>
+  </header>
+  <section class="passage" aria-label="The passage">
+    <h3>The passage · Proverbs 16:1–9</h3>
+    <p class="v"><sup>1</sup>The plans of the mind belong to mortals, but the answer of the tongue is from the <span class="lord">Lord</span>.</p><p class="v"><sup>2</sup>All one’s ways may be pure in one’s own eyes, but the <span class="lord">Lord</span> weighs the spirit.</p><p class="v"><sup>3</sup>Commit your work to the <span class="lord">Lord</span>, and your plans will be established.</p><p class="v"><sup>4</sup>The <span class="lord">Lord</span> has made everything for its purpose, even the wicked for the day of trouble.</p><p class="v"><sup>5</sup>All those who are arrogant are an abomination to the <span class="lord">Lord</span>; be assured, they will not go unpunished.</p><p class="v"><sup>6</sup>By loyalty and faithfulness iniquity is atoned for, and by the fear of the <span class="lord">Lord</span> one avoids evil.</p><p class="v"><sup>7</sup>When the ways of people please the <span class="lord">Lord</span>, he causes even their enemies to be at peace with them.</p><p class="v"><sup>8</sup>Better is a little with righteousness than large income with injustice.</p><p class="v"><sup>9</sup>The human mind plans the way, but the <span class="lord">Lord</span> directs the steps.</p>
+  </section>
+  <article id="article">
+<p>When I was young, before my son was born, the world was divided in two: what you knew and what you didn’t. If you didn’t know something, you had to find someone who did and learn from them, or dig through books, or figure it out by trial and error. These days there is a third category: what you could know. Things you don’t know yet but could look up in a moment. You google it, you search YouTube, and now you ask AI and it hands you a tidy summary.</p>
+<p>So we live feeling as if we know far more than we actually do. Making plans has gotten much easier too. For a single trip, we check off lists of everywhere other people went and everywhere we should go, and we watch all the vlogs before we leave. Places we have never set foot in, we know inside out from travel videos and TV shows. But here is the strange thing. With so much we could know, less and less of it stays in our heads or settles into our bodies. Time is limited and we have only one body, while things to watch flood past us, so we never have time to actually try anything ourselves.</p>
+<p>Knowing something and learning it in your body are different things, and we live in an age that makes that difference easy to forget.</p>
+<p>This passage walks right through that spot.</p>
+<h2>The answer of the tongue is from the <span class="lord">Lord</span></h2>
+<p>Read Proverbs 10 through 15, and the subject of nearly every sentence is a person. The wise are like this; fools are like that. The diligent and the lazy, the honest and the deceitful. All along, it has been talking about how people live. But the moment you enter chapter 16, the sentences change. From verse 1 to verse 9, every verse but one names the <span class="lord">Lord</span>. Nowhere else in Proverbs does the <span class="lord">Lord</span> come up this often.</p>
+<p>Verse 1: “The plans of the mind belong to mortals, but the answer of the tongue is from the <span class="lord">Lord</span>.” The verse doesn’t scold planning. It takes for granted that people make plans. Planning is diligence, and planning is how we got this far: the plans we made coming to America, the plans we made at the start of this year, the plans we are making for next semester. What the passage asks is not that we stop planning, but whose plans these really are. And what do we do when things refuse to go according to plan? Rather than wait and see, we draw up an even tighter plan.</p>
+<h2>The <span class="lord">Lord</span> weighs the spirit</h2>
+<p>Verse 2: “All one’s ways may be pure in one’s own eyes, but the <span class="lord">Lord</span> weighs the spirit.” The Hebrew verb here, <i lang="he-Latn">tokhen</i>, means to weigh on a scale. Elsewhere Proverbs condemns the false balance we use on our neighbors (11:1)—a scale for weighing other people’s goods. Here the direction reverses. While we fiddle with the markings on our scale, wondering what we might get away with, the <span class="lord">Lord</span> is weighing what is inside us.</p>
+<p>Behind every plan there is always a motive: what I want to have, which way I hope this will roll. That desire is the engine that drives the plan. Yet we rarely look inside the engine. Instead of examining it, we prepare our reasons. It’s for the family. It’s so everyone comes out ahead. This is the best chance we’ll get. Every one of those reasons is true, and that makes it all the harder to notice. However objectively I try to look, whatever good reasons I attach, I am never free of my own interests and desires.</p>
+<p>The more information we gather, the thicker our plans become. But is that thick stack of plans proof of my ability and confidence, or evidence of my helplessness and fear? If I look honestly, much of the time it is a cover for what I lack. Desire, the hunger for recognition, selfishness, pride, the fear of failure: to cover that bare face, we stack on one more layer of plans as a defense. Afraid to step onto the scale just as I am, I climb on carrying other things with me. I am no different. Even while preparing to preach this, rather than standing straight before God and before the text, what rose up first was the urge to hide behind scholars, behind thin knowledge.</p>
+<p>It isn’t that we are too foolish to see it. It’s that looking away is more comfortable. But however much we look away and hide, the scale is already weighing.</p>
+<h2>Commit your work to the <span class="lord">Lord</span></h2>
+<p>Then what are we supposed to do? Verse 3 answers: “Commit your work to the <span class="lord">Lord</span>, and your plans will be established.” The Hebrew word for “commit,” <i lang="he-Latn">gol</i>, means to roll. It is a bodily motion: lifting the load off your back and rolling it over to the other side. The weight of climbing onto the scale with all that baggage still on your back and the weight measured after you have rolled it away, empty-handed, are not the same.</p>
+<p>We easily hear this verse as a familiar saying, the Korean four-character idiom <i lang="ko-Latn">jininsa daecheonmyeong</i>: do everything humanly possible, then await Heaven’s will. I’ve done all I can; now I wait for Heaven to answer. It’s a fine saying, but it differs from the text. In that saying, Heaven doesn’t take my load. Still carrying my own intentions and motives, I have to plan and carry out the plan by my own toil and strength. The order in the text is the reverse. Our Lord is the one who receives the load, and before I even plan, the decision is already in his hands.</p>
+<p>The passage doesn’t promise that asking will make my plans succeed. In Hebrew, “will be established” in verse 3 is passive. In verse 9, a verb from the same root—“directs”—is active, and its subject is the <span class="lord">Lord</span>. Verse 3 keeps the doer hidden for a moment, and verse 9 reveals that the one who establishes is the <span class="lord">Lord</span>.</p>
+<blockquote class="pull"><p>To commit something does not mean my plan will now succeed. It means the ownership of the matter changes hands.</p></blockquote>
+<p>And when the owner changes, only then do we see. We finally see the underside of our motives, buried under all that information and planning. Until I set down what I carried onto the scale with me, I don’t know my own weight.</p>
+<p>Verse 4 is hard: “The <span class="lord">Lord</span> has made everything for its purpose, even the wicked for the day of trouble.” It sounds as if God created certain people for disaster. But the point is that everything in the world has its place, and what evil produces will in the end come back to meet evil. It is less a claim that our fates were fixed in advance than a claim that God’s order is alive. Even when we cannot see it, that order is working, and the scale is weighing fairly.</p>
+<p>Then waiting changes too. It is less an endurance with gritted teeth than a kind of ease, granted by the fact that God is already at work. It is also the courage to stay open to an answer that may differ from the one I hoped for.</p>
+<p>Fine, we understand. But how on earth do we wait? Life is too tight to leave room for waiting. In an age when one tap tells you anything, one click delivers anything, and one keystroke makes whatever you want, patience, restraint, humility, and moderation are all getting harder for us.</p>
+<p>The passage never tells us how to wait. And I think it withholds that on purpose. Handed one more method, we would turn it into one more piece of information, one more plan stacked on the scale.</p>
+<p>The passage gives us a single motion. Roll it.</p>
+<p>Look closely at verses 5 through 7, and you will see they never tell us to do nothing. They speak of loyalty and faithfulness, of ways that please the <span class="lord">Lord</span>. The one who has committed the work doesn’t drop it. They do today’s work today. They simply stop clutching the outcome. Waiting is like that too. Waiting is not standing frozen in place, unable to do anything until the answer comes. Whoever has rolled the load over takes their lightened hands to the other work of today. That is how we wait: by working.</p>
+<h2>Better is a little with righteousness</h2>
+<p>Verse 8: “Better is a little with righteousness than large income with injustice.” Of these nine verses, this is the only one without “the <span class="lord">Lord</span>.” Right in the middle of verses about God’s deciding sits a verse about what a person chooses.</p>
+<p>Knowing in your head that the decision belongs to the <span class="lord">Lord</span> is one thing. Taking less, just once, from a position where you could take more is another. The first stays in the head; the second stays in the body. If, in an age of so much knowing, so little stays in our bodies, then the way back will begin with the body too. What we can try is nothing grand. Declining, just once, a price you could have charged. Folding one of the plans you have already set up. Deliberately putting off one decision that isn’t urgent. Small as they look, the body remembers that one time.</p>
+<h2>The <span class="lord">Lord</span> directs the steps</h2>
+<p>We end with verse 9: “The human mind plans the way, but the <span class="lord">Lord</span> directs the steps.”</p>
+<p>Plans come from the head. Steps land on the ground. We may draw the map, but a map that is only a drawing becomes real when a person sets their feet down and walks, and the one who guides that walk and places those feet is our Lord. A map can be seen all at once; steps can only be taken one at a time. However much we plot over maps drawn at a desk or in our heads, none of it becomes part of our bodies. Only steps taken slowly and steadily build up into muscle in body and heart. Muscle isn’t built in a day. Committing, rolling the load over, is also a motion that has to be learned. You have to roll once before you can roll twice, and when the body remembers, your feet keep landing even while your head hesitates and second-guesses.</p>
+<p>Come to think of it, even the ability to plan was never ours. Proverbs said so earlier: “For the <span class="lord">Lord</span> gives wisdom; from his mouth come knowledge and understanding” (2:6). The very wisdom that drafts our plans is a gift. Before we ever entrusted anything to God, God was already giving.</p>
+<p>Proverbs 16 ends its last verse with the same confession: “The lot is cast into the lap, but the decision is the <span class="lord">Lord</span>’s alone” (16:33). The chapter’s first sentence and its last say the same thing. At first it can sound like fatalism, as if everything were already fixed. But it is still a person who casts the lot. What the text reveals is who receives that lot and decides: the one who tells us to roll our loads over to him, the one who sets his foot down ahead of ours. So this confession doesn’t freeze us in place. It sets us walking. Whatever choice we face, whichever way we end up choosing, beyond it is the one who has prepared everything for us and will lead us on.</p>
+<p>As a week begins, there are a few things I want to hold on to. Before making a plan, ask once: what is the motive behind this plan? Take one thing off the scale. And take today’s share of the walk, one step. The rest of the steps belong to the one who directs them. Even where things did not go according to plan, God’s steps have never stopped. May we learn that in our own bodies, and take the next step together.</p>
+  </article>
+  <footer>
+    <p>Adapted from a sermon preached at Hana Church on August 23, 2026.</p>
+    <p>Scripture quotations are taken from the New Revised Standard Version Updated Edition. Copyright © 2021 National Council of Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide.</p>
+  </footer>
+</div>
+<script>
+(function () {
+  var btn = document.getElementById("copy");
+  var status = document.getElementById("status");
+  function plainText() {
+    var parts = [document.querySelector("h1").innerText, document.querySelector(".dek").innerText, ""];
+    document.querySelectorAll("#article > *").forEach(function (el) { parts.push(el.innerText); parts.push(""); });
+    parts.push(document.querySelector("footer").innerText);
+    return parts.join("\n").trim();
+  }
+  function fallback() {
+    var range = document.createRange();
+    range.selectNodeContents(document.getElementById("article"));
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    status.textContent = "Text selected. Press Ctrl+C or ⌘C to copy.";
+  }
+  btn.addEventListener("click", function () {
+    var text = plainText();
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { status.textContent = "Copied."; }, fallback);
+    } else { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>
