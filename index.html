@@ -4,15 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>lectio</title>
-<meta name="description" content="Sermons and devotions from Hana Church.">
+<meta name="description" content="Sermons and reflections by Young Kang, a pastor at Hana Church in Tujunga, California.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="lectio">
 <meta property="og:title" content="lectio">
-<meta property="og:description" content="Sermons and devotions from Hana Church.">
+<meta property="og:description" content="Sermons and reflections by Young Kang, a pastor at Hana Church in Tujunga, California.">
+<meta property="og:image" content="https://luvnpce83.github.io/lectio/images/young-og.jpg">
 <meta property="og:url" content="https://luvnpce83.github.io/lectio/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500;1,600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=IBM+Plex+Sans:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500&text=%EA%B0%95%EC%98%81%EC%9A%B4&display=swap">
 <style>
 :root {
   --paper: #F4F6F4;
@@ -48,7 +50,7 @@ body {
   padding: 0 20px 72px;
 }
 .page { max-width: 40rem; margin: 0 auto; }
-header { position: relative; padding-block: 76px 28px; border-bottom: 1px solid var(--rule); }
+header { position: relative; padding-block: 76px 8px; }
 header::before {
   content: "";
   position: absolute;
@@ -64,6 +66,22 @@ h1 {
   margin: 0 0 12px;
 }
 .tagline { font-style: italic; color: var(--muted); margin: 0; }
+.about {
+  display: grid; grid-template-columns: 104px 1fr; grid-template-areas: "photo hello" "photo bio";
+  column-gap: 22px; row-gap: 10px; align-items: start;
+  padding: 28px 0 30px; border-bottom: 1px solid var(--rule);
+}
+.about img { grid-area: photo; }
+.about .hello { grid-area: hello; margin: 0; }
+.about .bio { grid-area: bio; }
+.about .ko { font-family: "Noto Serif KR", var(--display); font-size: 0.82em; font-weight: 500; white-space: nowrap; }
+.about img {
+  width: 104px; height: 104px; border-radius: 50%; object-fit: cover; display: block;
+  box-shadow: 0 0 0 1px var(--rule);
+}
+.about p { margin: 0 0 0.85em; font-size: 1rem; line-height: 1.65; text-wrap: pretty; }
+.about p:last-child { margin-bottom: 0; }
+.about .hello { font-family: var(--display); font-weight: 600; font-size: 1.45rem; line-height: 1.25; }
 ol { list-style: none; margin: 0; padding: 0; }
 li { border-bottom: 1px solid var(--rule); }
 li a { display: block; padding: 26px 0; color: inherit; text-decoration: none; }
@@ -82,7 +100,10 @@ li a:focus-visible { outline: 2px solid var(--lamp); outline-offset: 4px; }
 .lord { font-variant: small-caps; letter-spacing: 0.02em; }
 @media (max-width: 480px) {
   body { font-size: 1rem; padding-inline: 16px; }
-  header { padding-block: 52px 22px; }
+  header { padding-block: 52px 4px; }
+  .about { grid-template-columns: 64px 1fr; grid-template-areas: "photo hello" "bio bio"; column-gap: 14px; row-gap: 16px; align-items: center; padding-top: 22px; }
+  .about img { width: 64px; height: 64px; }
+  .about .hello { font-size: 1.3rem; }
   header::before { inset: 0 -16px auto -16px; }
 }
 </style>
@@ -91,8 +112,17 @@ li a:focus-visible { outline: 2px solid var(--lamp); outline-offset: 4px; }
 <div class="page">
   <header>
     <h1>lectio</h1>
-    <p class="tagline">Sermons and devotions from Hana Church.</p>
+    <p class="tagline">Latin for “reading.”</p>
   </header>
+  <section class="about" aria-label="About">
+    <img src="images/young.jpg" width="400" height="400" alt="Young Kang">
+    <p class="hello">Hi, I’m Young Kang <span class="ko" lang="ko">(강영운)</span>.</p>
+    <div class="bio">
+      <p>I’m a pastor at Hana Church in Tujunga, California, ordained in the Christian Church (Disciples of Christ). This is where I share my writing: sermons rewritten to be read rather than heard, and other reflections along the way.</p>
+      <p>I’m finishing a PhD in New Testament at Yonsei University and teach at Galilee School of Theology. My research sits where Paul’s letters, diaspora theology, and digital humanities meet, including a project building AI language models for Ancient Greek and Korean.</p>
+      <p>I’m a husband and a dad to two boys, and we have a dog. I root for the LA Dodgers and the KIA Tigers. Lately my free time goes into the church’s yard and garden, and when the real garden is done for the day, into my Animal Crossing island.</p>
+    </div>
+  </section>
   <main>
     <ol>
       <li>
