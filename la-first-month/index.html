@@ -1,0 +1,667 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="LA에 처음 온 부부를 위한 첫 한 달 정착 안내">
+<title>LA 첫 한 달</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;700;800&family=Overpass:wght@400;600;800&display=swap">
+<style>
+/* Layout: a freeway guide-sign opens the page; a sticky exit list (left on desktop, a scrolling strip on phones) indexes quiet reading sections. */
+:root {
+  --bg: #F3F6F2;
+  --surface: #FFFFFF;
+  --ink: #15211C;
+  --muted: #55645C;
+  --rule: #D3DBD5;
+  --green: #0A6A4F;
+  --green-ink: #FFFFFF;
+  --green-tint: #E1EFE8;
+  --yellow: #FFC928;
+  --yellow-ink: #1C1A08;
+  --yellow-tint: #FFF3C2;
+  --link: #1B4C9E;
+  --font: "Overpass", "Gothic A1", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0E1512; --surface: #17211B; --ink: #E7EEE9; --muted: #9FB1A7; --rule: #2C3B33;
+    --green: #0E7B5C; --green-ink: #FFFFFF; --green-tint: #173229;
+    --yellow: #FFC928; --yellow-ink: #1C1A08; --yellow-tint: #3B3411;
+    --link: #93B7F6; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0E1512; --surface: #17211B; --ink: #E7EEE9; --muted: #9FB1A7; --rule: #2C3B33;
+  --green: #0E7B5C; --green-ink: #FFFFFF; --green-tint: #173229;
+  --yellow: #FFC928; --yellow-ink: #1C1A08; --yellow-tint: #3B3411;
+  --link: #93B7F6; color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 1rem; line-height: 1.7; word-break: keep-all; overflow-wrap: anywhere; -webkit-text-size-adjust: 100%; }
+a { color: var(--link); text-underline-offset: .18em; }
+a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; border-radius: 4px; }
+h1, h2, h3 { text-wrap: balance; line-height: 1.25; margin: 0; }
+p, ul, ol { margin: 0; }
+ul, ol { padding-left: 1.25rem; }
+li + li { margin-top: .35rem; }
+
+.shell { max-width: 72rem; margin-inline: auto; padding-inline: 1rem; padding-block: 0 4rem; }
+main { min-width: 0; display: flex; flex-direction: column; gap: 2.75rem; padding-top: 1rem; }
+
+/* exit list */
+.exits { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); border-bottom: 1px solid var(--rule); margin-inline: -1rem; padding: .5rem 1rem; }
+.exits a.exits-home { display: none; }
+.exits ul { list-style: none; display: flex; gap: .25rem; padding: 0; overflow-x: auto; scrollbar-width: none; }
+.exits ul::-webkit-scrollbar { display: none; }
+.exits li { margin: 0; flex: none; }
+.exits a { display: block; padding: .35rem .7rem; border-radius: 6px; color: var(--ink); text-decoration: none; font-size: .9375rem; white-space: nowrap; }
+.exits a[aria-current="true"] { background: var(--yellow); color: var(--yellow-ink); font-weight: 800; }
+.exits button { display: none; }
+
+@media (min-width: 60rem) {
+  html { scroll-padding-top: 1.5rem; }
+  .shell { display: grid; grid-template-columns: 13.5rem minmax(0, 1fr); gap: 3rem; align-items: start; }
+  main { padding-top: 2rem; }
+  .exits { top: calc(env(safe-area-inset-top, 0px) + 2rem); border-bottom: 0; margin: 2rem 0 0; padding: 0; max-height: calc(100vh - 4rem); overflow-y: auto; }
+  .exits a.exits-home { display: block; background: var(--green); color: var(--green-ink); font-weight: 800; font-size: 1.0625rem; padding: .6rem .8rem; border-radius: 8px; margin-bottom: .75rem; text-decoration: none; }
+  .exits ul { flex-direction: column; gap: .1rem; overflow: visible; }
+  .exits a { white-space: normal; padding: .4rem .8rem; }
+  .exits button { display: block; margin-top: 1rem; width: 100%; font: inherit; font-size: .875rem; color: var(--ink); background: transparent; border: 1px solid var(--rule); border-radius: 6px; padding: .45rem .6rem; cursor: pointer; }
+}
+
+/* the guide sign */
+.sign { position: relative; background: var(--green); color: var(--green-ink); border-radius: 18px; padding: clamp(1.5rem, 5vw, 2.75rem); display: flex; flex-direction: column; gap: 1.25rem; }
+.sign::after { content: ""; position: absolute; inset: 7px; border: 2px solid var(--green-ink); border-radius: 12px; pointer-events: none; }
+.sign h1 { font-size: clamp(2.5rem, 9vw, 4.25rem); font-weight: 800; letter-spacing: -.01em; }
+.sign p { max-width: 34rem; font-size: 1.0625rem; }
+.miles { list-style: none; padding: 0; border-top: 2px solid var(--green-ink); max-width: 30rem; }
+.miles li { display: flex; justify-content: space-between; gap: 1rem; margin: 0; padding: .55rem 0; border-bottom: 1px solid color-mix(in srgb, var(--green-ink) 45%, transparent); font-size: 1.25rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.miles span:last-child { flex: none; }
+.aside-note { color: var(--muted); font-size: .9375rem; max-width: 38rem; }
+
+/* sections */
+section { display: flex; flex-direction: column; gap: 1rem; min-width: 0; }
+section > h2 { font-size: 1.625rem; font-weight: 800; padding-bottom: .5rem; border-bottom: 3px solid var(--ink); }
+section h3 { font-size: 1.0625rem; font-weight: 800; margin-top: .5rem; }
+section > p, section > ul, section > ol, details > p, details > ul, details > ol { max-width: 40rem; }
+.lead { font-size: 1.0625rem; }
+
+.easy { background: var(--green-tint); border-radius: 12px; padding: 1rem 1.15rem 1.15rem; display: flex; flex-direction: column; gap: .5rem; max-width: 42rem; }
+.plaque { align-self: flex-start; background: var(--green); color: var(--green-ink); font-weight: 800; font-size: .8125rem; padding: .1rem .6rem; border-radius: 4px; }
+.easy p strong { font-weight: 800; }
+
+.picks { list-style: none; padding: 0; max-width: 44rem; border-top: 1px solid var(--rule); }
+.picks li { margin: 0; padding: .8rem 0; border-bottom: 1px solid var(--rule); display: grid; grid-template-columns: 1fr; gap: .15rem; }
+.picks b { font-weight: 800; }
+.picks span { color: var(--ink); }
+@media (min-width: 40rem) { .picks li { grid-template-columns: 6.5rem 1fr; gap: 1rem; } }
+
+/* checklist */
+.week { background: var(--surface); border: 1px solid var(--rule); border-radius: 12px; padding: 1rem 1.15rem; max-width: 44rem; }
+.week-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: .5rem; }
+.week-head h3 { margin: 0; font-size: 1.125rem; }
+.count { color: var(--muted); font-size: .875rem; font-variant-numeric: tabular-nums; flex: none; }
+.todo { list-style: none; padding: 0; }
+.todo li { margin: 0; }
+.todo label { display: grid; grid-template-columns: 1.4rem 1fr; gap: .6rem; align-items: start; padding: .5rem .5rem; border-radius: 8px; cursor: pointer; }
+.todo input { width: 1.2rem; height: 1.2rem; margin: .28rem 0 0; accent-color: var(--green); }
+.todo .must { background: var(--yellow-tint); font-weight: 700; }
+.todo li + li { margin-top: .2rem; }
+.chip { display: inline-block; background: var(--yellow); color: var(--yellow-ink); font-weight: 800; font-size: .75rem; line-height: 1.5; padding: 0 .45rem; border-radius: 4px; margin-right: .4rem; vertical-align: .08em; }
+.todo small { display: block; font-weight: 400; font-size: .875rem; color: var(--muted); }
+.todo input:checked + span { color: var(--muted); text-decoration: line-through; }
+.todo input:checked + span .chip { opacity: .55; }
+.legend { font-size: .9375rem; color: var(--muted); }
+
+/* details */
+details { border: 1px solid var(--rule); border-radius: 10px; background: var(--surface); max-width: 100%; }
+summary { list-style: none; cursor: pointer; padding: .7rem 1rem; font-weight: 700; display: flex; align-items: center; gap: .6rem; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: ""; width: .5rem; height: .5rem; border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: rotate(-45deg); flex: none; transition: transform .15s; }
+details[open] > summary::before { transform: rotate(45deg); }
+details > *:not(summary) { margin: 0 1rem 1rem; }
+details > h3 { margin-top: .25rem; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } summary::before { transition: none; } }
+
+/* tables */
+.tbl { overflow-x: auto; max-width: 100%; }
+table { border-collapse: collapse; width: 100%; font-size: .9375rem; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; vertical-align: top; padding: .5rem .75rem .5rem 0; border-bottom: 1px solid var(--rule); }
+th { font-weight: 800; border-bottom: 2px solid var(--ink); white-space: nowrap; }
+.wide table { min-width: 42rem; }
+.mid table { min-width: 30rem; }
+.addr { background: var(--surface); border: 1px dashed var(--muted); border-radius: 8px; padding: .5rem .8rem; font-weight: 700; display: inline-block; user-select: all; }
+footer { color: var(--muted); font-size: .875rem; border-top: 1px solid var(--rule); padding-top: 1rem; }
+</style>
+</head>
+<body>
+<div class="shell">
+<nav class="exits" aria-label="목차">
+  <a class="exits-home" href="#top">LA 첫 한 달</a>
+  <ul>
+    <li><a href="#easy">편한 길</a></li>
+    <li><a href="#weeks">주차별 할 일</a></li>
+    <li><a href="#papers">들고 다닐 서류</a></li>
+    <li><a href="#ssn">SSN·은행·크레딧</a></li>
+    <li><a href="#home">집</a></li>
+    <li><a href="#car">차·보험</a></li>
+    <li><a href="#license">운전면허</a></li>
+    <li><a href="#phone">휴대폰</a></li>
+    <li><a href="#shop">장보기·살림</a></li>
+    <li><a href="#move">이사·병원</a></li>
+    <li><a href="#church">교회가 돕는 것</a></li>
+    <li><a href="#sources">출처</a></li>
+  </ul>
+  <button type="button" id="toggle-all">자세한 내용 모두 펼치기</button>
+</nav>
+
+<main id="top">
+<header class="sign">
+  <h1>LA 첫 한 달</h1>
+  <p>임시숙소와 렌터카가 끝나는 날이 마감입니다. 그 안에 집, 차, 자동차 보험만 끝내면 되고 나머지는 시작만 해두면 됩니다.</p>
+  <ul class="miles" aria-label="마감이 있는 일">
+    <li><span>SSN 신청 방문</span><span>2주차</span></li>
+    <li><span>집 계약</span><span>3주차</span></li>
+    <li><span>차와 보험</span><span>3주차</span></li>
+    <li><span>이사, 렌터카 반납</span><span>4주차</span></li>
+  </ul>
+</header>
+<p class="aside-note">이 안내는 가장 싼 길보다 가장 덜 번거로운 길을 골랐습니다. 직접 비교해 보고 싶은 분을 위한 자료는 항목마다 접어 두었습니다.</p>
+
+<section id="easy">
+  <h2>편한 길</h2>
+  <p class="lead">고민할 것을 줄이려고 항목마다 기본 선택을 하나씩 정했습니다. 특별한 이유가 없으면 이대로 하세요.</p>
+  <ul class="picks">
+    <li><b>우편 주소</b><span>집이 정해지기 전에 받는 우편은 전부 교회 주소로 받습니다. 이사해도 다시 바꿀 일이 없습니다.</span></li>
+    <li><b>집</b><span>에이전트에게 회사 근처, 회사가 운영하는 대단지, 2베드로 서너 곳만 보여 달라고 합니다. 동네를 직접 비교하지 않아도 됩니다.</span></li>
+    <li><b>차</b><span>SSN이 나오면 테슬라 앱에서 리스를 신청합니다. 딜러 방문과 흥정이 없습니다. 승인이 안 나면 고모님 코사인, 그다음은 CarMax에서 중고를 삽니다.</span></li>
+    <li><b>보험</b><span>차를 계약하는 날 한 곳에서 자동차 보험과 세입자 보험을 같이 듭니다. 비교 견적은 면허를 딴 뒤에 한 번만 받습니다.</span></li>
+    <li><b>면허</b><span>운전학원에 연수와 시험 당일 동행을 함께 맡깁니다. 시험 차와 동행 운전자를 따로 구하지 않아도 됩니다.</span></li>
+    <li><b>은행</b><span>숙소에서 가까운 대형 은행 지점 한 곳에 두 분이 같이 가서 공동계좌를 엽니다.</span></li>
+    <li><b>크레딧</b><span>Amex 한 장을 신청하고 고모님께 AU를 부탁드립니다. 지금은 이 두 가지면 충분합니다.</span></li>
+    <li><b>휴대폰</b><span>Total Wireless 매장에서 두 회선을 한 번에 개통합니다.</span></li>
+    <li><b>장보기</b><span>평소에는 배달로 받고, 케이타운은 주말에 한 번 갑니다.</span></li>
+    <li><b>살림</b><span>새것을 배송으로 받습니다. 중고 거래는 싸지만 시간이 듭니다.</span></li>
+  </ul>
+  <h3>첫 달에는 미뤄도 되는 것</h3>
+  <p>동네 여러 곳 비교, 보험 비교 견적, 딜 사이트, 중고 거래, 신용점수 관리, 세금 신고는 지금 신경 쓰지 않아도 됩니다. 뒤로 미뤄도 막히는 일이 없습니다.</p>
+</section>
+
+<section id="weeks">
+  <h2>주차별 할 일</h2>
+  <p class="legend">주차는 도착일 기준입니다. <span class="chip">필수</span>가 붙은 일은 마감이 걸려 있어 그 주에 꼭 해야 합니다. 체크한 내용은 이 기기에만 저장됩니다.</p>
+
+  <div class="week">
+    <div class="week-head"><h3>1주차: 시작만 해두는 주</h3><span class="count" aria-live="polite"></span></div>
+    <ul class="todo">
+      <li><label class="must"><input type="checkbox" id="w1-1"><span><span class="chip">필수</span>I-94 조회·출력 <small>남편 L-1B, 아내 L-2S, 만료일 확인. 여러 장 뽑아 두세요.</small></span></label></li>
+      <li><label class="must"><input type="checkbox" id="w1-2"><span><span class="chip">필수</span>SSN 온라인 신청서 작성, 방문 예약 <small>방문은 도착 10일 이후 날짜로. 우편 주소는 교회 주소.</small></span></label></li>
+      <li><label class="must"><input type="checkbox" id="w1-3"><span><span class="chip">필수</span>리로케이션 에이전트 첫 미팅 예약 <small>16시간은 집 구하는 데 씁니다.</small></span></label></li>
+      <li><label class="must"><input type="checkbox" id="w1-4"><span><span class="chip">필수</span>회사에 재직·연봉 확인 레터 요청 <small>급여 계좌 등록과 건강보험 등록 기한도 같이 물어보세요.</small></span></label></li>
+      <li><label><input type="checkbox" id="w1-5"><span>은행 계좌 개설 <small>두 분이 같이, 여권과 I-94를 들고 지점으로.</small></span></label></li>
+      <li><label><input type="checkbox" id="w1-6"><span>휴대폰 요금제 정하기 <small>임시 eSIM이 끝나기 전에.</small></span></label></li>
+      <li><label><input type="checkbox" id="w1-7"><span>DMV 온라인 신청서 작성, 필기 공부 시작</span></label></li>
+    </ul>
+  </div>
+
+  <div class="week">
+    <div class="week-head"><h3>2주차: 집과 차를 좁히는 주</h3><span class="count" aria-live="polite"></span></div>
+    <ul class="todo">
+      <li><label class="must"><input type="checkbox" id="w2-1"><span><span class="chip">필수</span>SSA 사무실 방문해 SSN 신청 <small>두 분이 같이 한 번에.</small></span></label></li>
+      <li><label class="must"><input type="checkbox" id="w2-2"><span><span class="chip">필수</span>에이전트와 집 투어, 마음에 들면 그날 지원</span></label></li>
+      <li><label><input type="checkbox" id="w2-3"><span>차 정하기 <small>테슬라 시승 예약이나 CarMax 방문.</small></span></label></li>
+      <li><label><input type="checkbox" id="w2-4"><span>운전학원에 연수와 시험 동행 문의</span></label></li>
+    </ul>
+  </div>
+
+  <div class="week">
+    <div class="week-head"><h3>3주차: 계약하는 주</h3><span class="count" aria-live="polite"></span></div>
+    <ul class="todo">
+      <li><label class="must"><input type="checkbox" id="w3-1"><span><span class="chip">필수</span>집 계약 서명, 입주일 확정</span></label></li>
+      <li><label class="must"><input type="checkbox" id="w3-2"><span><span class="chip">필수</span>차 계약, 자동차 보험 가입</span></label></li>
+      <li><label><input type="checkbox" id="w3-3"><span>SSN이 나오면 DMV 방문 <small>필기, 시력검사, 사진, 실기 예약.</small></span></label></li>
+      <li><label><input type="checkbox" id="w3-4"><span>SSN이 나오면 Amex 신청, 고모님께 AU 부탁</span></label></li>
+      <li><label><input type="checkbox" id="w3-5"><span>인터넷 설치 예약, 전기·가스 개통, 세입자 보험</span></label></li>
+    </ul>
+  </div>
+
+  <div class="week">
+    <div class="week-head"><h3>4주차: 이사하는 주</h3><span class="count" aria-live="polite"></span></div>
+    <ul class="todo">
+      <li><label class="must"><input type="checkbox" id="w4-1"><span><span class="chip">필수</span>이사, 렌터카 반납</span></label></li>
+      <li><label class="must"><input type="checkbox" id="w4-2"><span><span class="chip">필수</span>USCIS에 새 주소 신고 <small>이사 후 10일 이내. 은행, 회사, DMV, 보험에도 알립니다.</small></span></label></li>
+      <li><label><input type="checkbox" id="w4-3"><span>매트리스와 책상처럼 당장 필요한 것만 주문</span></label></li>
+    </ul>
+  </div>
+
+  <div class="week">
+    <div class="week-head"><h3>한 달 이후</h3><span class="count" aria-live="polite"></span></div>
+    <ul class="todo">
+      <li><label class="must"><input type="checkbox" id="w5-1"><span><span class="chip">필수</span>연수를 한두 번 받고 면허 실기시험</span></label></li>
+      <li><label><input type="checkbox" id="w5-2"><span>컨테이너 통관과 수령</span></label></li>
+      <li><label><input type="checkbox" id="w5-3"><span>면허를 따면 자동차 보험 다시 견적</span></label></li>
+      <li><label><input type="checkbox" id="w5-4"><span>아내분 면허 실기, 취업이나 학교 알아보기</span></label></li>
+    </ul>
+  </div>
+
+  <details>
+    <summary>순서가 정해진 일 보기</summary>
+    <div class="tbl mid"><table>
+      <thead><tr><th>하려는 일</th><th>먼저 있어야 하는 것</th></tr></thead>
+      <tbody>
+        <tr><td>SSN 신청 방문</td><td>도착 후 10일 경과, I-94 출력본</td></tr>
+        <tr><td>면허 신청</td><td>SSN, 집 계약서</td></tr>
+        <tr><td>크레딧카드, AU</td><td>SSN</td></tr>
+        <tr><td>차 리스·할부</td><td>SSN, 필요하면 코사이너</td></tr>
+        <tr><td>전기·가스·인터넷</td><td>집 주소</td></tr>
+        <tr><td>보험료 인하</td><td>캘리포니아 면허</td></tr>
+      </tbody>
+    </table></div>
+  </details>
+</section>
+
+<section id="papers">
+  <h2>들고 다닐 서류</h2>
+  <p class="lead">SSA, DMV, 은행, 집 지원서가 거의 같은 서류를 요구합니다. 폴더 하나에 넣어 두고 매번 통째로 들고 가면 다시 갈 일이 없습니다.</p>
+  <ul>
+    <li>두 분 여권</li>
+    <li>I-94 출력본 여러 장</li>
+    <li>회사의 재직·연봉 확인 레터</li>
+    <li>영문 혼인관계증명서</li>
+    <li>한국 운전면허증과 국제면허증</li>
+    <li>받는 대로 추가: SSN 카드, 집 계약서, 은행 명세서</li>
+  </ul>
+  <p>휴대폰으로 찍어 PDF로도 가지고 계세요. 온라인 신청에 올릴 일이 많습니다.</p>
+</section>
+
+<section id="ssn">
+  <h2>SSN·은행·크레딧</h2>
+  <div class="easy">
+    <span class="plaque">편한 길</span>
+    <p>오늘 I-94를 출력하고 SSN 온라인 신청서를 써 둡니다. 도착 10일 뒤에 두 분이 같이 사무실에 한 번 가면 끝납니다.</p>
+  </div>
+  <h3>I-94 확인</h3>
+  <ul>
+    <li><a href="https://i94.cbp.dhs.gov">CBP I-94 사이트</a>에서 두 분 기록을 조회해 출력합니다.</li>
+    <li>남편분은 L-1B, 아내분은 <strong>L-2S</strong>로 나와야 합니다. L-2S면 워크퍼밋 없이 바로 일할 수 있고, 따로 신청하거나 교육받을 것이 없습니다.</li>
+    <li>L-2로만 나오면 회사 이민 변호사에게 바로 알리세요.</li>
+  </ul>
+  <h3>SSN 신청</h3>
+  <div class="tbl mid"><table>
+    <tbody>
+      <tr><th scope="row">언제</th><td>도착 10일 이후. 일찍 가면 입국 기록 조회가 안 되어 오히려 늦어집니다</td></tr>
+      <tr><th scope="row">어떻게</th><td><a href="https://www.ssa.gov/number-card/request-number-first-time">SSA 사이트</a>에서 온라인 신청을 시작하고 45일 안에 사무실을 방문합니다</td></tr>
+      <tr><th scope="row">준비물</th><td>서류 폴더 전체. 여권과 I-94 출력본이 핵심입니다</td></tr>
+      <tr><th scope="row">걸리는 시간</th><td>승인 후 영업일 5~10일 안에 카드가 우편으로 옵니다</td></tr>
+      <tr><th scope="row">우편 주소</th><td>교회 주소. 임시숙소 주소는 쓰지 마세요</td></tr>
+    </tbody>
+  </table></div>
+  <p><span class="addr">9100 Tujunga Canyon Blvd, Tujunga, CA 91042</span></p>
+  <h3>은행</h3>
+  <ul>
+    <li>여권, I-94, 미국 주소와 전화번호를 들고 지점에 갑니다. SSN 없이 열어주는지는 가기 전에 전화로 확인하세요.</li>
+    <li>부부 공동계좌로 열면 아내분 이름의 명세서가 생겨 DMV 거주 증빙에 쓸 수 있습니다.</li>
+  </ul>
+  <details>
+    <summary>크레딧 쌓기와 코사인</summary>
+    <p>미국 신용기록은 이번 달 집 계약에 맞춰 만들 수 없습니다. 집은 재직 서류로 풀고, 크레딧은 그다음을 위해 지금 시작합니다.</p>
+    <ul>
+      <li><strong>Amex:</strong> 한국 신용기록을 미국식 점수로 바꿔 심사합니다. SSN이 나온 뒤 <a href="https://www.americanexpress.com/newcomers">Amex newcomers 페이지</a>에서 신청합니다.</li>
+      <li><strong>AU:</strong> 고모님 카드에 이름만 추가합니다. 카드 실물을 넘겨주지 않으면 고모님 부담이 거의 없습니다.</li>
+      <li><strong>코사인:</strong> 리스나 할부 계약에 공동 채무자로 서명하는 일이라, 미납이나 중도 귀국 시 남은 금액 전부를 책임지게 됩니다. 다른 길이 막혔을 때만 고모님이나 교회와 상의하세요.</li>
+    </ul>
+  </details>
+</section>
+
+<section id="home">
+  <h2>집</h2>
+  <div class="easy">
+    <span class="plaque">편한 길</span>
+    <p>에이전트에게 조건 세 가지만 주세요. <strong>회사 근처</strong>(Mar Vista, Palms, Culver City), <strong>회사가 운영하는 대단지</strong>, <strong>2베드와 예산 상한</strong>. 투어는 하루에 서너 곳을 몰아서 보고, 마음에 들면 그날 지원합니다.</p>
+  </div>
+  <ul>
+    <li>세 동네의 2베드 평균 월세는 $3,100~3,400이고 신축 대단지는 더 비쌉니다.</li>
+    <li>대단지는 주재원 서류에 익숙하고 신청과 계약을 온라인으로 합니다. 개인 집주인은 더 쌀 수 있지만 건마다 조건이 다릅니다.</li>
+    <li>회사 근처 세 곳 중에서는 Mar Vista의 범죄율이 가장 낮습니다.</li>
+  </ul>
+  <h3>건물에서 볼 네 가지</h3>
+  <ul>
+    <li>게이트가 있는 주차장과 출입문</li>
+    <li>세대 안 세탁기</li>
+    <li>에어컨과 냉장고 포함 여부</li>
+    <li>전기차를 살 거면 건물 충전기</li>
+  </ul>
+  <h3>계약할 때</h3>
+  <ul>
+    <li><strong>내는 서류:</strong> 서류 폴더와 은행 잔고. 주재원 서류가 신용기록을 대신합니다.</li>
+    <li><strong>디파짓:</strong> 캘리포니아는 보증금을 월세 1개월치로 제한합니다(소규모 개인 집주인은 2개월). 그래서 더 내는 대신 코사이너를 요구받을 수 있습니다.</li>
+    <li><strong>중도 해지:</strong> 조기 귀국 가능성이 있으니 회사 발령 시 해지할 수 있는 조항을 요청해 보세요.</li>
+    <li><strong>입주일:</strong> 임시숙소 종료 며칠 전으로 잡아 겹치게 하세요.</li>
+  </ul>
+  <details>
+    <summary>동네 12곳 비교표</summary>
+    <div class="tbl wide"><table>
+      <thead><tr><th>동네</th><th>2베드 평균 월세</th><th>범죄율 (주민 1,000명당)</th><th>회사까지 (추정)</th><th>특징</th></tr></thead>
+      <tbody>
+        <tr><td>Sawtelle</td><td><a href="https://www.rentcafe.com/average-rent-market-trends/us/ca/los-angeles/sawtelle/">$4,558</a> (대단지 기준)</td><td><a href="https://crimegrade.org/safest-places-in-sawtelle-los-angeles-ca/">41.9</a></td><td>5~10분</td><td>회사가 있는 동네, 일본 식당가</td></tr>
+        <tr><td>Mar Vista</td><td><a href="https://www.zumper.com/rent-research/los-angeles-ca/mar-vista">$3,195</a></td><td><a href="https://crimegrade.org/safest-places-in-mar-vista-los-angeles-ca/">33.8</a></td><td>10~20분</td><td>조용한 주택가</td></tr>
+        <tr><td>Palms</td><td><a href="https://www.zumper.com/rent-research/los-angeles-ca/palms">$3,097</a></td><td><a href="https://crimegrade.org/safest-places-in-palms-los-angeles-ca/">41.2</a></td><td>10~20분</td><td>아파트 밀집, 매물 많음</td></tr>
+        <tr><td>Culver City</td><td><a href="https://www.zillow.com/rental-manager/market-trends/culver-city-ca/">$3,406</a></td><td><a href="https://crimegrade.org/safest-places-in-culver-city-ca/">47.0</a></td><td>15~25분</td><td>독립 시, 지금 숙소가 있는 곳</td></tr>
+        <tr><td>Playa Vista</td><td><a href="https://www.rentcafe.com/average-rent-market-trends/us/ca/los-angeles/playa-vista/">$4,642</a> (대단지 기준)</td><td><a href="https://crimegrade.org/safest-places-in-playa-vista-los-angeles-ca/">39.0</a></td><td>20~35분</td><td>신축 계획단지</td></tr>
+        <tr><td>El Segundo</td><td><a href="https://www.zillow.com/rental-manager/market-trends/el-segundo-ca/">$3,300</a></td><td><a href="https://crimegrade.org/safest-places-in-el-segundo-ca/">33.7</a></td><td>25~45분</td><td>작은 해변 도시</td></tr>
+        <tr><td>Torrance</td><td><a href="https://www.zillow.com/rental-manager/market-trends/torrance-ca/">$2,775</a></td><td><a href="https://crimegrade.org/safest-places-in-torrance-ca/">35.7</a></td><td>35~60분</td><td>한인·일본 마트와 식당이 많음</td></tr>
+        <tr><td>Sherman Oaks</td><td><a href="https://www.zumper.com/rent-research/los-angeles-ca/sherman-oaks">$2,745</a></td><td><a href="https://crimegrade.org/safest-places-in-sherman-oaks-ca/">36.1</a></td><td>25~50분</td><td>밸리에서 회사와 가장 가까움</td></tr>
+        <tr><td>Studio City</td><td><a href="https://www.zillow.com/rental-manager/market-trends/studio-city-los-angeles-ca/">$3,045</a></td><td><a href="https://crimegrade.org/safest-places-in-studio-city-ca/">42.3</a></td><td>30~55분</td><td>밸리의 식당가</td></tr>
+        <tr><td>Burbank</td><td><a href="https://www.zillow.com/rental-manager/market-trends/burbank-ca/">$2,825</a></td><td><a href="https://crimegrade.org/safest-places-in-burbank-ca/">37.1</a></td><td>40~65분</td><td>독립 시, 교회와 가까움</td></tr>
+        <tr><td>Glendale</td><td><a href="https://www.zillow.com/rental-manager/market-trends/glendale-ca/">$2,800</a></td><td><a href="https://crimegrade.org/safest-places-in-glendale-ca/">34.2</a></td><td>40~70분</td><td>큰 독립 시, 교회와 가까움</td></tr>
+        <tr><td>La Crescenta</td><td><a href="https://www.zillow.com/rental-manager/market-trends/la-crescenta-montrose-ca/">$2,800</a></td><td><a href="https://crimegrade.org/safest-places-in-la-crescenta-montrose-ca/">22.9</a></td><td>45~75분</td><td>한인 가정이 많은 주택가</td></tr>
+      </tbody>
+    </table></div>
+    <ul>
+      <li><strong>월세:</strong> 2026년 9~10월 매물 평균입니다. Sawtelle과 Playa Vista는 대단지만 집계한 수치라 높게 나오고, 오래된 소형 건물은 더 쌀 수 있습니다.</li>
+      <li><strong>범죄율:</strong> 연간 건수의 추정치이고 대부분 절도와 차량 범죄입니다. La Crescenta를 빼면 34~47로 큰 차이가 없어서, 동네 이름보다 어느 건물인지가 더 중요합니다.</li>
+      <li><strong>출퇴근:</strong> 정체 시간대 어림입니다. 구글 지도에서 평일 오전 8시 30분 출발로 찍어보세요.</li>
+    </ul>
+  </details>
+  <details>
+    <summary>Zillow로 직접 시세 보기</summary>
+    <ol>
+      <li>Zillow 앱에서 동네 이름을 검색하고 For Rent를 고릅니다. 예: <a href="https://www.zillow.com/culver-city-ca/rentals/">Culver City 렌트 매물</a>.</li>
+      <li>필터를 Beds 2+, 가격 상한 $4,000 정도로 놓고 지도를 움직여 동네를 비교합니다.</li>
+      <li>"1 month free" 프로모션은 12개월로 나눠 실제 월세를 계산합니다.</li>
+      <li>직접 보지 않은 집에는 돈을 보내지 마세요. 투어 전에 송금을 요구하면 사기입니다.</li>
+    </ol>
+  </details>
+</section>
+
+<section id="car">
+  <h2>차·보험</h2>
+  <div class="easy">
+    <span class="plaque">편한 길</span>
+    <p>SSN이 나오면 <strong>테슬라 앱에서 리스를 신청</strong>합니다. 주문, 서류, 인수 예약이 앱에서 끝나고 흥정이 없습니다. FSD는 월 $99 구독이라 필요한 달만 켜면 됩니다.</p>
+  </div>
+  <ul>
+    <li><strong>가격 감:</strong> Model 3 리스가 월 $399, 계약 시 $4,094입니다(<a href="https://www.carsdirect.com/deals-articles/2026-tesla-model-3-lease-price-cut-to-399-mo">36개월, 2026년 2월 조건</a>). 조건은 자주 바뀌니 <a href="https://www.tesla.com">테슬라 사이트</a>에서 확인하세요.</li>
+    <li><strong>승인이 안 나면:</strong> 신용기록이 없어 거절될 수 있습니다. 그때는 고모님 코사인을 먼저 보고, 어려우면 CarMax에서 중고를 삽니다. 정찰제라 흥정이 없습니다.</li>
+    <li><strong>날짜가 안 맞으면:</strong> 렌터카 종료일까지 차가 안 나오면 렌터카를 한두 주 연장하세요. 급하게 사는 것보다 덜 번거롭습니다.</li>
+  </ul>
+  <h3>보험</h3>
+  <ul>
+    <li>차를 인수하기 전에 보험이 있어야 합니다. 차가 정해지면 바로 가입하세요.</li>
+    <li>미국 운전 기록이 없어 처음에는 초보 요율이 적용됩니다. 캘리포니아는 보험료에 신용점수를 쓰지 못하니, 보험료를 낮추는 길은 캘리포니아 면허입니다.</li>
+    <li>면허를 딴 뒤에 2~3곳에서 다시 견적을 받으세요. 비교는 그때 한 번이면 됩니다.</li>
+  </ul>
+  <details>
+    <summary>차 선택지 네 가지 비교</summary>
+    <div class="tbl wide"><table>
+      <thead><tr><th>선택지</th><th>가격 감</th><th>크레딧</th><th>운전 보조</th></tr></thead>
+      <tbody>
+        <tr><td>테슬라 신차 리스</td><td>Model 3 월 $399, 계약 시 $4,094</td><td>SSN 필수, 코사이너가 필요할 수 있음</td><td>HW4, FSD 구독 가능</td></tr>
+        <tr><td>중고 테슬라 구입</td><td>2024년형 Model 3 평균 <a href="https://www.cargurus.com/research/price-trends/Tesla-Model-3-d2475">$35,881</a></td><td>현금이면 불필요, 할부면 코사인 금액이 줄어듦</td><td>연식에 따라 HW3 또는 HW4</td></tr>
+        <tr><td>중고 니로 EV 구입</td><td>2023년형 평균 <a href="https://www.cargurus.com/research/price-trends/Kia-Niro-EV-d2838">$21,701</a></td><td>현금 구입이 현실적</td><td>차선 유지와 크루즈까지</td></tr>
+        <tr><td>현대·기아 신차 리스</td><td>딜러 견적 필요</td><td>한국 분이 코사인하는 방식이 가능하다고 함</td><td>차선 유지와 크루즈까지</td></tr>
+      </tbody>
+    </table></div>
+    <p>테슬라 리스는 계약금을 포함하면 실질 월 $513이고, FSD 구독을 더하면 월 $612, 36개월 합계 약 $22,000입니다. 중고차는 2026년 5월 평균가에 판매세와 등록비가 더 붙습니다.</p>
+  </details>
+  <details>
+    <summary>FSD와 충전에 대해 알아둘 것</summary>
+    <ul>
+      <li>FSD는 월 $99 구독으로만 팔고 일시불로 살 수 없습니다. 운전자가 계속 주시해야 하는 보조 기능이고 책임도 운전자에게 있습니다.</li>
+      <li>중고를 살 때는 하드웨어를 보세요. HW4는 최신 버전을, HW3는 축소판을 받습니다.</li>
+      <li>HW4는 2024년형 이후 Model 3, 2023년 5월 말 이후 미국에서 만든 Model Y에 들어갑니다. 차 화면의 Software &gt; Additional Vehicle Information에서 확인합니다.</li>
+      <li>전 주인이 FSD를 일시불로 사 둔 차는 FSD가 차에 남아 있을 수 있습니다. 판매자에게 묻고 화면으로 확인하세요.</li>
+      <li>현대·기아에 다는 comma four($999)는 고속도로 차선 유지와 앞차 따라가기까지입니다. 시내 길과 신호등은 처리하지 못해 FSD를 대신하지는 못합니다.</li>
+      <li>재택 위주면 회사 무료 충전을 쓸 날이 적습니다. 집을 고를 때 건물 충전기나 가까운 급속 충전소를 같이 보세요.</li>
+    </ul>
+  </details>
+</section>
+
+<section id="license">
+  <h2>운전면허</h2>
+  <div class="easy">
+    <span class="plaque">편한 길</span>
+    <p><strong>운전학원에 연수와 시험 당일 동행을 함께 맡기세요.</strong> 학원 차로 시험을 볼 수 있으면 시험 차의 보험 서류와 동행 운전자를 따로 챙기지 않아도 됩니다. 한국어 강사 연락처는 교회에서 찾아 알려드리겠습니다.</p>
+  </div>
+  <p>한국 면허는 교환이 안 되어 필기와 실기를 모두 봅니다. SSN과 집 계약서가 있어야 신청할 수 있으니, 둘이 갖춰지는 날 바로 움직이세요.</p>
+  <ol>
+    <li><a href="https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/driver-licenses-dl/">DMV 사이트</a>에서 온라인 신청서를 미리 작성합니다.</li>
+    <li>DMV를 방문해 여권, I-94, SSN, 거주 증빙 2종(집 계약서, 은행 명세서)을 내고 신청비 $46를 냅니다.</li>
+    <li>같은 날 시력검사, 사진, 필기시험을 봅니다. 필기는 세 번까지 볼 수 있습니다.</li>
+    <li>필기에 붙으면 그날 실기시험을 예약합니다. 대기가 있습니다.</li>
+    <li>실기에 붙으면 60일짜리 임시 면허를 받고, 카드는 3~4주 안에 우편으로 옵니다.</li>
+  </ol>
+  <h3>운전을 잘해도 연수는 받으세요</h3>
+  <p>실기 전에 연수를 한두 번 받는 것을 권합니다. 시험은 운전 실력보다 캘리포니아식 습관을 봅니다. 운전 경력이 길어도 이 습관이 몸에 없으면 감점됩니다.</p>
+  <ul>
+    <li>정지 표지판에서 바퀴가 완전히 멈추는지</li>
+    <li>출발과 차선 변경 때 거울만이 아니라 어깨 너머로 확인하는지</li>
+    <li>제한속도와 학교 앞 속도를 지키는지</li>
+  </ul>
+  <details>
+    <summary>그 밖에 알아둘 것</summary>
+    <ul>
+      <li>학원을 쓰지 않으면 실기시험장에 18세 이상 캘리포니아 면허 소지자가 동행해야 합니다. 교회에서 같이 갈 수 있습니다.</li>
+      <li>시험 차는 보험과 등록 증빙이 있어야 합니다. 렌터카는 계약서에 응시자 이름이 있고 실기시험 사용을 금지하지 않아야 합니다.</li>
+      <li>거주자가 되면 10일 안에 캘리포니아 면허를 받아야 한다는 규정이 있습니다. SSN을 기다려야 해서 맞추기 어려우니 가능한 한 빨리 진행하세요.</li>
+      <li>면허 만료일은 I-94 만료일과 같게 나옵니다.</li>
+      <li>공식 핸드북은 한국어판이 없습니다. 필기를 한국어로 볼 수 있는지는 공식 사이트에서 확인하지 못했으니 방문 전에 물어보세요.</li>
+    </ul>
+  </details>
+</section>
+
+<section id="phone">
+  <h2>휴대폰</h2>
+  <div class="easy">
+    <span class="plaque">편한 길</span>
+    <p><strong>Total Wireless 매장에서 두 회선을 한 번에 개통</strong>합니다. 2회선 월 $55, 세금 포함입니다. 지금 쓰는 번호를 은행이나 회사에 이미 등록했다면 그 번호를 옮겨 달라고 하세요.</p>
+  </div>
+  <ul>
+    <li>선불 요금제는 신용 조회가 없어 SSN과 크레딧 없이 가입합니다.</li>
+    <li>번호 이동은 보통 1~3일 걸리니 임시 eSIM이 만료되기 전에 신청하세요.</li>
+    <li>가입 전에 통신사 사이트에서 내 폰이 호환되는지 확인하세요.</li>
+  </ul>
+  <h3>한국 번호는 살려두세요</h3>
+  <p>한국 은행과 정부 사이트의 본인인증 문자를 받으려면 한국 번호가 필요합니다. 해지하지 말고 가장 싼 요금제로 바꿔 두 번째 회선으로 유지하세요. 해외에서 문자가 수신되는지는 한국 통신사에 확인이 필요합니다.</p>
+  <details>
+    <summary>선불 요금제 다섯 곳 비교</summary>
+    <div class="tbl wide"><table>
+      <thead><tr><th>통신사</th><th>망</th><th>1회선 무제한</th><th>세금</th><th>한국으로 전화</th><th>알아둘 것</th></tr></thead>
+      <tbody>
+        <tr><td><a href="https://www.totalwireless.com/plans">Total Wireless</a> (MAX 5G BYO)</td><td>Verizon</td><td>$25, 2회선 $55</td><td>포함</td><td>포함</td><td>자동결제 조건, 5년 가격 보장, 매장 있음</td></tr>
+        <tr><td><a href="https://www.visible.com/plans">Visible</a></td><td>Verizon</td><td>$25</td><td>포함</td><td>미포함</td><td>온라인 전용</td></tr>
+        <tr><td><a href="https://www.mintmobile.com/plans/">Mint Mobile</a></td><td>T-Mobile</td><td>$30</td><td>별도</td><td>미포함</td><td>3개월치 $90를 한 번에 결제</td></tr>
+        <tr><td><a href="https://tello.com/buy/custom_plans">Tello</a></td><td>T-Mobile</td><td>$25 (10GB는 $15)</td><td>별도</td><td>포함</td><td>데이터를 적게 쓰면 가장 쌈</td></tr>
+        <tr><td><a href="https://www.usmobile.com/plans">US Mobile</a> (Unlimited Starter)</td><td>세 망 중 선택</td><td>첫해 $199, 월 $16.58 꼴</td><td>포함</td><td>확인 필요</td><td>1년치 선결제, 갱신은 연 $270</td></tr>
+      </tbody>
+    </table></div>
+    <p>가격은 2026년 10월 4일 각 통신사 사이트 기준이고 자동결제를 걸었을 때의 가격입니다. 한국과의 통화는 대부분 카카오톡으로 하게 되니 국제전화 포함 여부는 덜 중요합니다.</p>
+  </details>
+</section>
+
+<section id="shop">
+  <h2>장보기·살림</h2>
+  <div class="easy">
+    <span class="plaque">편한 길</span>
+    <p>평소 식재료는 <a href="https://www.sayweee.com">Weee!</a> 배달로 받고, 케이타운은 <strong>토요일에 한 번</strong> 가서 마켓과 김스전기를 같이 들르세요. 김스전기는 일요일에 쉽니다.</p>
+  </div>
+  <p>숙소가 있는 컬버시티 근처에는 큰 한인 마켓이 없고 일본·중국계 마켓이 가깝습니다. 케이타운까지는 차로 20~30분입니다. 가게 이름을 누르면 지도가 열립니다.</p>
+  <h3>숙소 근처 아시안 마켓</h3>
+  <div class="tbl mid"><table>
+    <thead><tr><th>가게</th><th>주소</th><th>성격</th></tr></thead>
+    <tbody>
+      <tr><td><a href="https://www.google.com/maps/search/?api=1&amp;query=Mitsuwa+Marketplace+3760+S+Centinela+Ave+Los+Angeles">Mitsuwa Marketplace</a></td><td>3760 S Centinela Ave</td><td>일본 마켓, 푸드코트</td></tr>
+      <tr><td><a href="https://www.google.com/maps/search/?api=1&amp;query=Marukai+Market+12121+W+Pico+Blvd+Los+Angeles">Marukai Market West LA</a></td><td>12121 W Pico Blvd</td><td>일본 마켓</td></tr>
+      <tr><td><a href="https://www.google.com/maps/search/?api=1&amp;query=Nijiya+Market+2130+Sawtelle+Blvd+Los+Angeles">Nijiya Market</a></td><td>2130 Sawtelle Blvd</td><td>일본 마켓, 도시락과 반찬</td></tr>
+      <tr><td><a href="https://www.google.com/maps/search/?api=1&amp;query=99+Ranch+Market+1360+Westwood+Blvd+Los+Angeles">99 Ranch Market</a></td><td>1360 Westwood Blvd</td><td>중국계 아시안 마켓</td></tr>
+      <tr><td><a href="https://www.google.com/maps/search/?api=1&amp;query=Daiso+2130+Sawtelle+Blvd+Los+Angeles">Daiso</a></td><td>2130 Sawtelle Blvd</td><td>일본 생활용품</td></tr>
+    </tbody>
+  </table></div>
+  <h3>케이타운</h3>
+  <div class="tbl mid"><table>
+    <thead><tr><th>가게</th><th>주소</th></tr></thead>
+    <tbody>
+      <tr><td><a href="https://www.google.com/maps/search/?api=1&amp;query=Kim%27s+Home+Center+2940+W+Olympic+Blvd+Los+Angeles">김스전기 (Kim's Home Center)</a></td><td>2940 W Olympic Blvd. 밥솥, 주방용품, 소형 가전. 213-386-4882</td></tr>
+      <tr><td><a href="https://www.google.com/maps/search/?api=1&amp;query=H+Mart+LA+Madang+621+S+Western+Ave+Los+Angeles">H마트 마당몰</a></td><td>621 S Western Ave</td></tr>
+      <tr><td><a href="https://www.google.com/maps/search/?api=1&amp;query=H+Mart+LA+K-Town+928+S+Western+Ave+Los+Angeles">H마트 K-Town</a></td><td>928 S Western Ave</td></tr>
+      <tr><td><a href="https://www.google.com/maps/search/?api=1&amp;query=California+Market+450+S+Western+Ave+Los+Angeles">가주마켓 (California Market)</a></td><td>450 S Western Ave</td></tr>
+      <tr><td><a href="https://www.google.com/maps/search/?api=1&amp;query=Galleria+Market+3250+W+Olympic+Blvd+Los+Angeles">갤러리아 마켓</a></td><td>3250 W Olympic Blvd</td></tr>
+      <tr><td><a href="https://www.google.com/maps/search/?api=1&amp;query=Hannam+Supermarket+2740+W+Olympic+Blvd+Los+Angeles">한남체인</a></td><td>2740 W Olympic Blvd</td></tr>
+      <tr><td><a href="https://www.google.com/maps/search/?api=1&amp;query=Zion+Market+750+S+Oxford+Ave+Los+Angeles">시온마켓</a></td><td>750 S Oxford Ave</td></tr>
+      <tr><td><a href="https://www.google.com/maps/search/?api=1&amp;query=H+K+Market+124+N+Western+Ave+Los+Angeles">한국마켓 (H K Market)</a></td><td>124 N Western Ave</td></tr>
+    </tbody>
+  </table></div>
+  <h3>살림</h3>
+  <ul>
+    <li>매트리스, 재택근무용 책상과 의자, 기본 주방용품이면 됩니다. 컨테이너 짐 목록과 겹치는 것은 사지 마세요.</li>
+    <li>온라인으로 주문해 배송받는 것이 가장 덜 번거롭습니다. 큰 가구를 직접 가져와야 하면 교회 트럭을 쓸 수 있습니다.</li>
+    <li>미국 전압은 120V입니다. 220V 전용 가전은 변압기가 필요하고, 노트북처럼 100~240V 겸용인 기기는 플러그만 바꾸면 됩니다.</li>
+  </ul>
+  <details>
+    <summary>배달, 딜 사이트, 중고 거래</summary>
+    <h3>배달</h3>
+    <ul>
+      <li><a href="https://www.sayweee.com">Weee!</a>: 한국·아시안 식재료를 집으로 배달합니다.</li>
+      <li><a href="https://wooltariusa.com">울타리몰</a>: 한국 농수산식품을 배송합니다.</li>
+    </ul>
+    <h3>딜·커뮤니티</h3>
+    <ul>
+      <li><a href="https://www.missycoupons.com">미씨쿠폰</a>: 한국어로 보는 미국 핫딜 정보</li>
+      <li><a href="https://slickdeals.net">Slickdeals</a>: 미국 딜 사이트. 가전과 가구를 살 때 검색해 보세요</li>
+      <li><a href="https://www.missyusa.com">미씨USA</a>: 한인 여성 커뮤니티. 생활 정보와 후기가 많습니다</li>
+      <li><a href="https://www.radiokorea.com">라디오코리아</a>: LA 한인 커뮤니티. 렌트, 구인, 업소 정보</li>
+    </ul>
+    <h3>중고 거래</h3>
+    <ul>
+      <li><a href="https://www.facebook.com/marketplace">Facebook Marketplace</a>: 매물이 가장 많습니다</li>
+      <li><a href="https://offerup.com">OfferUp</a>: 지역 중고 거래 앱</li>
+      <li><a href="https://www.radiokorea.com/bulletin/bbs/board.php?bo_table=c_forsale">라디오코리아 사고팔고</a>: 한인들의 무빙세일과 중고 거래</li>
+    </ul>
+    <p>거래는 밝은 공공장소에서 하고, 물건을 보기 전에는 돈을 보내지 마세요.</p>
+  </details>
+</section>
+
+<section id="move">
+  <h2>이사·병원</h2>
+  <div class="easy">
+    <span class="plaque">편한 길</span>
+    <p>집 계약서에 서명하는 날 <strong>인터넷 설치부터 예약</strong>하세요. 전기와 가스는 관리사무소에 어느 회사인지 물어보면 바로 알려줍니다.</p>
+  </div>
+  <h3>컨테이너</h3>
+  <ul>
+    <li>컨테이너는 이사 날짜보다 늦게 도착할 가능성이 있습니다. LA·롱비치항까지 해상 운송만 14~18일이고 통관과 배송이 더 붙습니다. 이사 업체에 도착 예정일을 물어보세요.</li>
+    <li>업체가 통관 서류(CBP Form 3299, 여권·비자 사본, 짐 목록)를 요청하면 바로 보내세요.</li>
+    <li>집 계약이 끝나면 업체에 배송 주소를 알리고, 건물에 이사 예약이 필요한지 확인하세요.</li>
+  </ul>
+  <h3>집이 정해지면</h3>
+  <ul>
+    <li><strong>인터넷:</strong> 재택근무에 필수라 가장 먼저 잡습니다.</li>
+    <li><strong>전기·수도·가스:</strong> 제공하는 회사가 주소마다 다릅니다. 입주일에 맞춰 개통하세요. 신용기록이 없으면 보증금을 요구할 수 있습니다.</li>
+    <li><strong>세입자 보험:</strong> 계약 조건으로 요구하는 건물이 많습니다. 자동차 보험과 같은 곳에서 들면 됩니다.</li>
+    <li><strong>주소 변경:</strong> 이사 후 10일 안에 <a href="https://www.uscis.gov/addresschange">USCIS</a>에 온라인으로 신고합니다. 두 분 각각 해야 합니다.</li>
+  </ul>
+  <h3>병원·치과</h3>
+  <ul>
+    <li>병원과 치과는 회사 보험에 따라 갈 수 있는 곳이 다릅니다. 보험 카드가 나오면 보험사 사이트에서 in-network 의사를 검색하세요. 언어를 Korean으로 거를 수 있습니다.</li>
+    <li>건강보험과 치과보험 등록 기한을 회사 HR에 확인하세요. 입사 후 정해진 기간 안에만 등록할 수 있습니다.</li>
+    <li>생명이 위급하면 911입니다. 가벼운 증상은 응급실 대신 urgent care로 가세요.</li>
+  </ul>
+</section>
+
+<section id="church">
+  <h2>교회가 돕는 것</h2>
+  <p class="lead">필요한 것이 있으면 편하게 말씀해 주세요.</p>
+  <div class="tbl mid"><table>
+    <thead><tr><th>도움</th><th>내용</th></tr></thead>
+    <tbody>
+      <tr><td>우편 받을 주소</td><td>9100 Tujunga Canyon Blvd, Tujunga, CA 91042. 집이 정해질 때까지 SSN 카드 같은 중요한 우편을 대신 받을 수 있습니다</td></tr>
+      <tr><td>운전 연수 강사</td><td>찾는 중입니다. 곧 알려드리겠습니다</td></tr>
+      <tr><td>SSA·DMV 동행</td><td>2~3주차. 에이전트 시간을 집에 아끼기 위해서입니다</td></tr>
+      <tr><td>실기시험 동행 운전자</td><td>실기시험 날. 캘리포니아 면허 소지자가 같이 가야 합니다</td></tr>
+      <tr><td>트럭</td><td>이사하는 주. 가구를 사거나 옮길 때 씁니다</td></tr>
+      <tr><td>코사인 상의</td><td>차나 집에서 다른 길이 막혔을 때</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="sources">
+  <h2>출처</h2>
+  <p>규정과 가격은 2026년 10월 4일에 확인한 내용입니다. 이민과 세금 문제는 회사 이민 변호사의 안내가 우선입니다.</p>
+  <details>
+    <summary>확인한 페이지 목록</summary>
+    <ul>
+      <li><strong>SSN:</strong> <a href="https://www.ssa.gov/number-card/request-number-first-time">SSA 첫 번호 신청</a>, <a href="https://www.ssa.gov/pubs/EN-05-10096.pdf">SSA 비시민권자 안내</a>, <a href="https://secure.ssa.gov/apps10/poms.nsf/lnx/0110211530">SSA POMS RM 10211.530</a></li>
+      <li><strong>L-2S 취업 자격:</strong> <a href="https://www.uscis.gov/i-9-central/form-i-9-resources/handbook-for-employers-m-274/70-evidence-of-employment-authorization-for-certain-categories/79-other-temporary-workers/792-l-nonimmigrant-status">USCIS I-9 핸드북 7.9.2</a></li>
+      <li><strong>주소 변경:</strong> <a href="https://www.uscis.gov/addresschange">USCIS</a>, <a href="https://faq.usps.com/s/article/Change-of-Address-The-Basics">USPS 주소 변경 안내</a></li>
+      <li><strong>운전면허:</strong> <a href="https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/driver-licenses-dl/">DMV 면허 신청</a>, <a href="https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/licensing-fees/">DMV 수수료</a>, <a href="https://www.dmv.ca.gov/portal/file/fast-facts-5-requirements-for-a-california-drivers-license/">DMV Fast Facts 5</a>, <a href="https://www.dmv.ca.gov/portal/handbook/california-driver-handbook/the-testing-process/">핸드북 시험 절차</a>, <a href="https://www.dmv.ca.gov/portal/driver-handbooks/">핸드북 언어</a></li>
+      <li><strong>크레딧:</strong> <a href="https://www.americanexpress.com/newcomers">American Express newcomers</a></li>
+      <li><strong>보증금 상한:</strong> <a href="https://www.sf.gov/reports--security-deposits">AB 12 설명 (sf.gov)</a></li>
+      <li><strong>월세와 범죄율:</strong> Zillow, Zumper, RentCafe, <a href="https://crimegrade.org">CrimeGrade</a>의 동네별 페이지. 비교표의 수치마다 링크가 걸려 있습니다</li>
+      <li><strong>테슬라:</strong> <a href="https://www.tesla.com/support/fsd">FSD 안내</a>, <a href="https://www.tesla.com/support/vehicle-financing-options">리스·할부 신청</a>, <a href="https://www.notateslaapp.com/news/2173/how-to-check-if-your-tesla-has-hardware-4-ai4-or-hardware-3">HW3·HW4 확인법</a>, <a href="https://tslna.com/en/tesla-hw3-vs-hw4-fsd/">HW3와 HW4 차이</a>, <a href="https://www.carsdirect.com/deals-articles/2026-tesla-model-3-lease-price-cut-to-399-mo">Model 3 리스 조건</a></li>
+      <li><strong>중고차 가격:</strong> <a href="https://www.cargurus.com/research/price-trends/Tesla-Model-3-d2475">CarGurus Model 3</a>, <a href="https://www.cargurus.com/research/price-trends/Kia-Niro-EV-d2838">CarGurus Niro EV</a></li>
+      <li><strong>comma:</strong> <a href="https://comma.ai/vehicles">comma.ai</a>, <a href="https://evworld.com/article.php?id=629&amp;slug=comma-4-the-aftermarket-autonomy-kit-thats-suddenly-everywhere">EV World</a></li>
+      <li><strong>보험:</strong> <a href="https://www.carinsurance.com/kb/can-I-buy-and-insure-a-car-with-an-international-license.aspx">CarInsurance.com</a></li>
+      <li><strong>휴대폰:</strong> <a href="https://www.totalwireless.com/plans">Total Wireless</a>, <a href="https://www.visible.com/plans">Visible</a>, <a href="https://www.mintmobile.com/plans/">Mint Mobile</a>, <a href="https://tello.com/buy/custom_plans">Tello</a>, <a href="https://www.usmobile.com/plans">US Mobile</a>, <a href="https://www.lowermysubs.com/blog/best-mvno-2026">LowerMySubs</a>, <a href="https://americajosh.com/learn-more/phone-mobile-cell/">America Josh</a></li>
+      <li><strong>해상 운송:</strong> <a href="https://www.aif-usa.com/post/how-to-ship-goods-from-south-korea-to-the-us">AIF</a></li>
+      <li><strong>가게 주소:</strong> Google 지도</li>
+    </ul>
+  </details>
+</section>
+
+<footer>2026년 10월 4일 기준으로 정리했습니다.</footer>
+</main>
+</div>
+
+<script>
+(function () {
+  var KEY = 'la-first-month-checks';
+  var state = {};
+  try { state = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { state = {}; }
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+  function refresh() {
+    document.querySelectorAll('.week').forEach(function (w) {
+      var all = w.querySelectorAll('input[type=checkbox]');
+      var done = w.querySelectorAll('input[type=checkbox]:checked');
+      var out = w.querySelector('.count');
+      if (out) out.textContent = done.length + ' / ' + all.length + ' 완료';
+    });
+  }
+  document.querySelectorAll('.todo input[type=checkbox]').forEach(function (b) {
+    if (state[b.id]) b.checked = true;
+    b.addEventListener('change', function () { state[b.id] = b.checked; save(); refresh(); });
+  });
+  refresh();
+
+  var btn = document.getElementById('toggle-all');
+  var opened = false;
+  btn.addEventListener('click', function () {
+    opened = !opened;
+    document.querySelectorAll('main details').forEach(function (d) { d.open = opened; });
+    btn.textContent = opened ? '자세한 내용 모두 접기' : '자세한 내용 모두 펼치기';
+  });
+
+  var nav = document.querySelector('.exits ul');
+  var links = {};
+  nav.querySelectorAll('a').forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
+  function mark(id) {
+    Object.keys(links).forEach(function (k) {
+      if (k === id) links[k].setAttribute('aria-current', 'true'); else links[k].removeAttribute('aria-current');
+    });
+    var a = links[id];
+    if (a && nav.scrollWidth > nav.clientWidth) {
+      nav.scrollTo({ left: a.offsetLeft - nav.offsetLeft - (nav.clientWidth - a.offsetWidth) / 2, behavior: 'auto' });
+    }
+  }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) mark(e.target.id); });
+    }, { rootMargin: '-15% 0px -75% 0px' });
+    document.querySelectorAll('main section[id]').forEach(function (s) { io.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>
