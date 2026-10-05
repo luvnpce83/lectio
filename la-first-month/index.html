@@ -133,6 +133,10 @@ th, td { text-align: left; vertical-align: top; padding: .5rem .75rem .5rem 0; b
 th { font-weight: 800; border-bottom: 2px solid var(--ink); white-space: nowrap; }
 .wide table { min-width: 42rem; }
 .mid table { min-width: 30rem; }
+.churches { list-style: none; padding: 0; max-width: 44rem; border-top: 1px solid var(--rule); }
+.churches li { margin: 0; padding: .9rem 0 1rem; border-bottom: 1px solid var(--rule); display: flex; flex-direction: column; gap: .25rem; }
+.churches h3 { margin: 0; font-size: 1.125rem; }
+.churches .meta { color: var(--muted); font-size: .9375rem; }
 .addr { background: var(--surface); border: 1px dashed var(--muted); border-radius: 8px; padding: .5rem .8rem; font-weight: 700; display: inline-block; user-select: all; }
 footer { color: var(--muted); font-size: .875rem; border-top: 1px solid var(--rule); padding-top: 1rem; }
 </style>
@@ -152,7 +156,8 @@ footer { color: var(--muted); font-size: .875rem; border-top: 1px solid var(--ru
     <li><a href="#phone">휴대폰</a></li>
     <li><a href="#shop">장보기·살림</a></li>
     <li><a href="#move">이사·병원</a></li>
-    <li><a href="#church">교회가 돕는 것</a></li>
+    <li><a href="#churches">한인교회</a></li>
+    <li><a href="#church">교회가 도울 수 있는 것</a></li>
     <li><a href="#sources">출처</a></li>
   </ul>
   <button type="button" id="toggle-all">자세한 내용 모두 펼치기</button>
@@ -355,8 +360,8 @@ footer { color: var(--muted); font-size: .875rem; border-top: 1px solid var(--ru
         <tr><td>Torrance</td><td><a href="https://www.zillow.com/rental-manager/market-trends/torrance-ca/">$2,775</a></td><td><a href="https://crimegrade.org/safest-places-in-torrance-ca/">35.7</a></td><td>35~60분</td><td>한인·일본 마트와 식당이 많음</td></tr>
         <tr><td>Sherman Oaks</td><td><a href="https://www.zumper.com/rent-research/los-angeles-ca/sherman-oaks">$2,745</a></td><td><a href="https://crimegrade.org/safest-places-in-sherman-oaks-ca/">36.1</a></td><td>25~50분</td><td>밸리에서 회사와 가장 가까움</td></tr>
         <tr><td>Studio City</td><td><a href="https://www.zillow.com/rental-manager/market-trends/studio-city-los-angeles-ca/">$3,045</a></td><td><a href="https://crimegrade.org/safest-places-in-studio-city-ca/">42.3</a></td><td>30~55분</td><td>밸리의 식당가</td></tr>
-        <tr><td>Burbank</td><td><a href="https://www.zillow.com/rental-manager/market-trends/burbank-ca/">$2,825</a></td><td><a href="https://crimegrade.org/safest-places-in-burbank-ca/">37.1</a></td><td>40~65분</td><td>독립 시, 교회와 가까움</td></tr>
-        <tr><td>Glendale</td><td><a href="https://www.zillow.com/rental-manager/market-trends/glendale-ca/">$2,800</a></td><td><a href="https://crimegrade.org/safest-places-in-glendale-ca/">34.2</a></td><td>40~70분</td><td>큰 독립 시, 교회와 가까움</td></tr>
+        <tr><td>Burbank</td><td><a href="https://www.zillow.com/rental-manager/market-trends/burbank-ca/">$2,825</a></td><td><a href="https://crimegrade.org/safest-places-in-burbank-ca/">37.1</a></td><td>40~65분</td><td>독립 시</td></tr>
+        <tr><td>Glendale</td><td><a href="https://www.zillow.com/rental-manager/market-trends/glendale-ca/">$2,800</a></td><td><a href="https://crimegrade.org/safest-places-in-glendale-ca/">34.2</a></td><td>40~70분</td><td>큰 독립 시</td></tr>
         <tr><td>La Crescenta</td><td><a href="https://www.zillow.com/rental-manager/market-trends/la-crescenta-montrose-ca/">$2,800</a></td><td><a href="https://crimegrade.org/safest-places-in-la-crescenta-montrose-ca/">22.9</a></td><td>45~75분</td><td>한인 가정이 많은 주택가</td></tr>
       </tbody>
     </table></div>
@@ -548,7 +553,7 @@ footer { color: var(--muted); font-size: .875rem; border-top: 1px solid var(--ru
   <h2>이사·병원</h2>
   <div class="easy">
     <span class="plaque">편한 길</span>
-    <p>집 계약서에 서명하는 날 <strong>인터넷 설치부터 예약</strong>하세요. 전기와 가스는 관리사무소에 어느 회사인지 물어보면 바로 알려줍니다.</p>
+    <p>집 계약서에 서명하는 날 <strong>인터넷 설치부터 예약</strong>하세요. 어느 회사가 들어오는지는 주소만 넣으면 나옵니다. 전기와 가스는 관리사무소에 물어보면 바로 알려줍니다.</p>
   </div>
   <h3>컨테이너</h3>
   <ul>
@@ -558,8 +563,10 @@ footer { color: var(--muted); font-size: .875rem; border-top: 1px solid var(--ru
   </ul>
   <h3>집이 정해지면</h3>
   <ul>
-    <li><strong>인터넷:</strong> 재택근무에 필수라 가장 먼저 잡습니다.</li>
-    <li><strong>전기·수도·가스:</strong> 제공하는 회사가 주소마다 다릅니다. 입주일에 맞춰 개통하세요. 신용기록이 없으면 보증금을 요구할 수 있습니다.</li>
+    <li><strong>인터넷:</strong> 재택근무에 필수라 가장 먼저 잡습니다. <a href="https://broadbandmap.fcc.gov/home">FCC 인터넷 지도</a>에 집 주소를 넣으면 그 주소에 들어오는 회사와 속도가 나옵니다.</li>
+    <li><strong>전기·수도:</strong> 제공하는 회사가 주소마다 다릅니다. LA 시 주소(Mar Vista, Palms, Sawtelle)는 <a href="https://www.ladwp.com/account/start-or-add-service">LADWP</a>가 전기와 수도를 같이 맡고, Culver City 같은 다른 도시는 전기를 <a href="https://www.sce.com/customer-service-center/help-center/stop-start-move-service/residential/start-service-new-address">SCE</a>가 맡습니다. 신청할 때 주소를 넣으면 맞는 회사인지 확인됩니다.</li>
+    <li><strong>가스:</strong> LA 일대는 <a href="https://www.socalgas.com/services">SoCalGas</a>입니다.</li>
+    <li><strong>신청할 때:</strong> SCE 온라인 신청은 신분증과 SSN을 요구합니다. 신용기록이 없으면 보증금을 요구할 수 있습니다. 입주일에 맞춰 개통하세요.</li>
     <li><strong>세입자 보험:</strong> 계약 조건으로 요구하는 건물이 많습니다. 자동차 보험과 같은 곳에서 들면 됩니다.</li>
     <li><strong>주소 변경:</strong> 이사 후 10일 안에 <a href="https://www.uscis.gov/addresschange">USCIS</a>에 온라인으로 신고합니다. 두 분 각각 해야 합니다.</li>
   </ul>
@@ -571,8 +578,51 @@ footer { color: var(--muted); font-size: .875rem; border-top: 1px solid var(--ru
   </ul>
 </section>
 
+<section id="churches">
+  <h2>한인교회</h2>
+  <p class="lead">집 가까운 곳에서 교회를 찾으실 때 참고하세요. 숙소가 있는 컬버시티에서 주일 오전에 30~40분 안에 갈 수 있는 곳들입니다. 저희 교회도 언제든 환영합니다.</p>
+  <div class="easy">
+    <span class="plaque">편한 길</span>
+    <p>가기 전에 <strong>유튜브로 설교를 한 편</strong> 들어보세요. 교단이 같아도 교회마다 분위기가 달라서, 직접 듣는 것이 가장 빠릅니다.</p>
+  </div>
+  <p>한인교회 가운데 비교적 열린 편으로 꼽히는 연합감리교회(UMC), 미국장로교(PCUSA), 제자회 소속 교회와, 통합과 가까운 뿌리를 가진 큰 교회를 골랐습니다. 가는 시간은 컬버시티 기준 어림입니다.</p>
+  <ul class="churches">
+    <li>
+      <h3><a href="http://lakumc.org">LA연합감리교회</a></h3>
+      <p class="meta">연합감리교회(UMC). Westchester, 차로 10~15분. <a href="https://www.google.com/maps/search/?api=1&amp;query=LA+Korean+UMC+7400+Osage+Ave+Los+Angeles">7400 Osage Ave</a></p>
+      <p>숙소에서 가장 가깝습니다. 1904년에 세워진 미국 본토 첫 한인교회입니다. 2025년 7월에 부임한 안정섭 목사는 연세대 신학과와 에모리를 거쳐 역사신학으로 박사 학위를 받았습니다.</p>
+    </li>
+    <li>
+      <h3><a href="https://www.wilshireumc.org">윌셔연합감리교회</a></h3>
+      <p class="meta">연합감리교회(UMC). 코리아타운 서쪽, 차로 20분쯤. <a href="https://www.google.com/maps/search/?api=1&amp;query=Wilshire+United+Methodist+Church+4350+Wilshire+Blvd+Los+Angeles">4350 Wilshire Blvd</a></p>
+      <p>주일예배는 오전 8시와 11시 45분입니다.</p>
+    </li>
+    <li>
+      <h3><a href="http://www.kupcla.com">라성한인연합장로교회</a></h3>
+      <p class="meta">미국장로교(PCUSA). USC 근처, 차로 15~20분. <a href="https://www.google.com/maps/search/?api=1&amp;query=Korean+United+Presbyterian+Church+1374+W+Jefferson+Blvd+Los+Angeles">1374 W Jefferson Blvd</a></p>
+      <p>미국장로교 Pacific 노회에 속한 한인 장로교회입니다.</p>
+    </li>
+    <li>
+      <h3><a href="https://www.youngnak.com">나성영락교회</a></h3>
+      <p class="meta">장로교, 대형 교회. 다운타운 북쪽, 차로 25~30분. <a href="https://www.google.com/maps/search/?api=1&amp;query=Young+Nak+Church+of+Los+Angeles+1721+N+Broadway">1721 N Broadway</a></p>
+      <p>1973년에 세워졌습니다. 박은성 목사는 장신대와 컬럼비아신학교를 거쳐 드루대에서 박사 학위를 받았습니다. 통합과 가까운 해외한인장로회(KPCA) 소속이었다가 2021년에 교단 탈퇴를 결의했습니다. 주일예배는 오전 7시 30분, 9시, 11시이고 청년예배는 오후 1시 30분입니다.</p>
+    </li>
+    <li>
+      <h3><a href="https://hyanglinla.org">향린교회</a></h3>
+      <p class="meta">제자회(Disciples of Christ), 작은 교회. 코리아타운, 차로 20~25분. <a href="https://www.google.com/maps/search/?api=1&amp;query=540+S+Commonwealth+Ave+Los+Angeles+CA+90020">540 S Commonwealth Ave</a></p>
+      <p>이 목록에서 가장 진보적인 곳입니다. 교회 소개에 차별 없이 각자의 뜻을 존중하고 다른 종교와도 열린 마음으로 대화한다고 적고 있습니다. 곽건용 목사는 한신대 신학대학원을 나와 구약학을 공부했고 서울 향린교회에서 사역했습니다. 주일예배는 오전 10시 30분입니다.</p>
+    </li>
+    <li>
+      <h3><a href="https://www.dreamchurchla.com">드림교회</a></h3>
+      <p class="meta">연합감리교회(UMC). 패서디나, 차로 30~40분. <a href="https://www.google.com/maps/search/?api=1&amp;query=Dream+Church+1305+E+Colorado+Blvd+Pasadena">1305 E Colorado Blvd</a></p>
+      <p>패서디나의 오래된 석조 예배당을 쓰는 한인 연합감리교회입니다.</p>
+    </li>
+  </ul>
+  <p>예배 시간이 적혀 있지 않은 곳은 확인하지 못했습니다. 가기 전에 교회 사이트에서 시간을 확인하세요.</p>
+</section>
+
 <section id="church">
-  <h2>교회가 돕는 것</h2>
+  <h2>교회가 도울 수 있는 것</h2>
   <p class="lead">필요한 것이 있으면 편하게 말씀해 주세요.</p>
   <div class="tbl mid"><table>
     <thead><tr><th>도움</th><th>내용</th></tr></thead>
@@ -606,7 +656,9 @@ footer { color: var(--muted); font-size: .875rem; border-top: 1px solid var(--ru
       <li><strong>보험:</strong> <a href="https://www.carinsurance.com/kb/can-I-buy-and-insure-a-car-with-an-international-license.aspx">CarInsurance.com</a></li>
       <li><strong>휴대폰:</strong> <a href="https://www.totalwireless.com/plans">Total Wireless</a>, <a href="https://www.visible.com/plans">Visible</a>, <a href="https://www.mintmobile.com/plans/">Mint Mobile</a>, <a href="https://tello.com/buy/custom_plans">Tello</a>, <a href="https://www.usmobile.com/plans">US Mobile</a>, <a href="https://www.lowermysubs.com/blog/best-mvno-2026">LowerMySubs</a>, <a href="https://americajosh.com/learn-more/phone-mobile-cell/">America Josh</a></li>
       <li><strong>해상 운송:</strong> <a href="https://www.aif-usa.com/post/how-to-ship-goods-from-south-korea-to-the-us">AIF</a></li>
-      <li><strong>가게 주소:</strong> Google 지도</li>
+      <li><strong>인터넷·유틸리티:</strong> <a href="https://broadbandmap.fcc.gov/home">FCC National Broadband Map</a>, <a href="https://www.ladwp.com/account/start-or-add-service">LADWP</a>, <a href="https://www.sce.com/customer-service-center/help-center/stop-start-move-service/residential/start-service-new-address">SCE</a>, <a href="https://www.socalgas.com/services">SoCalGas</a></li>
+      <li><strong>한인교회:</strong> <a href="https://chosundaily.com/bbs/board.php?bo_table=hotclick&amp;wr_id=26476">LA연합감리교회 담임 부임 기사</a>, <a href="https://www.youngnak.com/pastor">나성영락교회 담임목사 소개</a>, <a href="https://www.youngnak.com/about">나성영락교회 예배 시간</a>, <a href="https://www.newsm.com/news/articleView.html?idxno=23446">나성영락교회 교단 탈퇴 기사</a>, <a href="https://www.wilshireumc.org">윌셔연합감리교회</a>, <a href="https://pcusa.org/congregation/korean-united-church-los-angeles-ca">PCUSA 교회 안내</a>, <a href="https://hyanglinla.org/about/">향린교회 소개</a></li>
+      <li><strong>가게와 교회 주소:</strong> Google 지도</li>
     </ul>
   </details>
 </section>
