@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pay Attention to How You Listen · lectio</title>
+<meta name="description" content="On reading Scripture as listening, and why we let the text speak before we explain it: a first reading of Luke 1:1–4.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="lectio">
+<meta property="og:title" content="Pay Attention to How You Listen">
+<meta property="og:description" content="On reading Scripture as listening, and why we let the text speak before we explain it: a first reading of Luke 1:1–4.">
+<meta property="og:url" content="https://luvnpce83.github.io/lectio/pay-attention-to-how-you-listen/">
+<meta property="article:published_time" content="2026-10-04">
+<link rel="canonical" href="https://luvnpce83.github.io/lectio/pay-attention-to-how-you-listen/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500;1,600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=IBM+Plex+Sans:wght@500&display=swap">
+<style>
+/* Layout: a single lamplit article column (~40rem); the passage sits in a quiet well; one pull quote marks the turn */
+:root {
+  --paper: #F4F6F4;
+  --ink: #1B2430;
+  --muted: #5A6572;
+  --lamp: #9A5F0E;
+  --well: #E8ECEC;
+  --rule: #D3D9DC;
+  --glow: rgba(214, 150, 48, 0.20);
+  --display: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --body: "Literata", "Iowan Old Style", Georgia, serif;
+  --ui: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0E151C; --ink: #E2E6E9; --muted: #98A3AD; --lamp: #E2A849;
+    --well: #16202A; --rule: #26323D; --glow: rgba(226, 168, 73, 0.16);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0E151C; --ink: #E2E6E9; --muted: #98A3AD; --lamp: #E2A849;
+  --well: #16202A; --rule: #26323D; --glow: rgba(226, 168, 73, 0.16);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.72;
+  padding-inline: 20px;
+  padding-block: 0 72px;
+}
+.page { max-width: 40rem; margin: 0 auto; }
+header { position: relative; padding-block: 76px 36px; }
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0 -20px auto -20px;
+  height: 340px;
+  background: radial-gradient(ellipse 55% 75% at 50% 0%, var(--glow), transparent 70%);
+  pointer-events: none;
+}
+header > * { position: relative; }
+.kicker {
+  font-family: var(--ui); font-weight: 500; font-size: 0.75rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--lamp);
+  margin: 0 0 16px;
+}
+h1 {
+  font-family: var(--display); font-weight: 600;
+  font-size: clamp(2.6rem, 9vw, 4rem); line-height: 1.02; letter-spacing: -0.01em;
+  text-wrap: balance; margin: 0 0 18px;
+}
+.lord { font-variant: small-caps; letter-spacing: 0.02em; }
+.dek {
+  font-family: var(--body); font-style: italic; font-size: 1.2rem; line-height: 1.5;
+  color: var(--muted); text-wrap: pretty; margin: 0 0 26px; max-width: 34rem;
+}
+.byline {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px;
+  font-family: var(--ui); font-size: 0.8125rem; color: var(--muted);
+  padding-top: 16px; border-top: 1px solid var(--rule);
+}
+.byline .sep { color: var(--rule); }
+button {
+  margin-left: auto;
+  font-family: var(--ui); font-weight: 500; font-size: 0.8125rem; color: var(--ink);
+  background: transparent; border: 1px solid var(--rule); border-radius: 999px;
+  padding: 6px 14px; cursor: pointer;
+}
+button:hover { border-color: var(--lamp); color: var(--lamp); }
+button:focus-visible { outline: 2px solid var(--lamp); outline-offset: 2px; }
+.status { font-family: var(--ui); font-size: 0.8125rem; color: var(--muted); min-height: 1.2em; margin: 8px 0 0; text-align: right; }
+.passage { background: var(--well); padding: 24px 26px 18px; margin: 12px 0 48px; }
+.passage h3 {
+  font-family: var(--ui); font-weight: 500; font-size: 0.75rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--muted); margin: 0 0 14px;
+}
+.v { margin: 0 0 7px; font-size: 0.97rem; line-height: 1.6; }
+.v.gap { margin-top: 16px; padding-top: 12px; border-top: 1px dashed var(--rule); }
+.v sup {
+  font-family: var(--ui); font-size: 0.68rem; color: var(--lamp); margin-right: 6px;
+  vertical-align: 0.45em; font-variant-numeric: tabular-nums;
+}
+article p { margin: 0 0 1.15em; hyphens: auto; }
+article > p:first-of-type::first-letter {
+  font-family: var(--display); font-weight: 600; color: var(--lamp);
+  float: left; font-size: 3.6em; line-height: 0.85; padding: 0.06em 0.08em 0 0;
+}
+article h2 {
+  font-family: var(--display); font-style: italic; font-weight: 600;
+  font-size: 1.8rem; line-height: 1.2; text-wrap: balance; margin: 2.1em 0 0.6em;
+}
+.pull { margin: 2em 0; padding: 0; border: 0; }
+.pull p {
+  font-family: var(--display); font-style: italic; font-weight: 500;
+  font-size: clamp(1.5rem, 5vw, 1.95rem); line-height: 1.3; text-wrap: balance; margin: 0;
+}
+.pull p::before { content: "“"; color: var(--lamp); margin-right: 0.08em; }
+.pull p::after { content: "”"; color: var(--lamp); margin-left: 0.04em; }
+footer {
+  margin-top: 52px; padding-top: 18px; border-top: 1px solid var(--rule);
+  font-family: var(--ui); font-size: 0.78rem; line-height: 1.6; color: var(--muted);
+  display: grid; gap: 8px;
+}
+footer p { margin: 0; }
+@media (max-width: 480px) {
+  body { font-size: 1rem; padding-inline: 16px; }
+  header { padding-block: 52px 28px; }
+  .passage { padding: 20px 18px 14px; }
+  button { margin-left: 0; }
+  .status { text-align: left; }
+}
+
+.site { padding-top: 22px; }
+.site a {
+  font-family: var(--ui); font-weight: 500; font-size: 0.8125rem; letter-spacing: 0.04em;
+  color: var(--muted); text-decoration: none;
+}
+.site a:hover { color: var(--lamp); }
+.site + header { padding-top: 48px; }
+@media (max-width: 480px) { .site + header { padding-top: 36px; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <nav class="site"><a href="../">← lectio</a></nav>
+  <header>
+    <p class="kicker">Reading Luke · 1 · Luke 1:1–4</p>
+    <h1>Pay Attention to How You Listen</h1>
+    <p class="dek">On reading Scripture as listening, and why we let the text speak before we explain it: a first reading of Luke 1:1–4.</p>
+    <div class="byline">
+      <span>Young Kang</span><span class="sep">·</span><span>Hana Church</span><span class="sep">·</span><span>October 4, 2026</span><span class="sep">·</span><span>7 min read</span>
+      <button id="copy" type="button">Copy text</button>
+    </div>
+    <p class="status" id="status" role="status" aria-live="polite"></p>
+  </header>
+  <section class="passage" aria-label="The passage">
+    <h3>The passage · Luke 1:1–4</h3>
+    <p class="v"><sup>1</sup>Since many have undertaken to compile a narrative about the events that have been fulfilled among us,</p><p class="v"><sup>2</sup>just as they were handed on to us by those who from the beginning were eyewitnesses and servants of the word,</p><p class="v"><sup>3</sup>I, too, decided, as one having a grasp of everything from the start, to write a well-ordered account for you, most excellent Theophilus,</p><p class="v"><sup>4</sup>so that you may have a firm grasp of the words in which you have been instructed.</p>
+  </section>
+  <article id="article">
+<p>Most of us learned to pray by talking. We thank God, we confess, we ask. Then we say amen and get up. Very few of us were taught to stop and listen, and if we were, we weren’t sure what we were listening for.</p>
+<p>We tend to read the Bible the same way. We come to a familiar passage already knowing what it says. We’ve heard the sermon, sung the song, seen the picture in a children’s Bible. So we read quickly and hear what we expected to hear. The text gets a word in only where it agrees with us.</p>
+<p>In the eighth chapter of Luke, Jesus tells a story about a farmer scattering seed. Some falls on the path, some on rock, some among thorns, and some on good soil. When he explains it, the good soil turns out to be the people who, “when they hear the word, hold it fast in an honest and good heart” (8:15). A few verses later he adds a warning: “So pay attention to how you listen” (8:18). Not only whether we listen, but how.</p>
+<p>This piece is about how. It is the way of reading behind this series, and it is a way anyone can learn.</p>
+<h2>Listen, discern, live</h2>
+<p>Underneath it is one conviction: reading Scripture is first of all listening. We open the Bible to hear what God is saying to us. That sounds obvious, but it changes the order of things. If reading is listening, the first task is to let the text speak, before we explain it, apply it, or decide what we think of it.</p>
+<p>Background and interpretation come next. They are the care we take to discern what we heard. Luke’s world was not ours. He wrote in Greek, for readers who lived inside the Roman Empire and inside Israel’s story, and much of what was plain to them is invisible to us. Background does not replace listening. It helps us hear more accurately. And it is best done together, because each of us hears some things and misses others.</p>
+<p>Then we live what we heard. A word that is heard and never lived is the seed on the rock: it grows for a while, then withers for lack of moisture (8:6, 13).</p>
+<p>Listen, discern, live, in that order. Most of us have learned to run it backward. We start from what we already believe and do, and we read the Bible to confirm it. Turning that around is harder than it sounds, and it takes practice.</p>
+<h2>Notice first</h2>
+<p>Practice starts with noticing. An observation says what the text says and how it says it. That’s all. In an observation, the text is in control.</p>
+<p>An interpretation goes past the page to say what the text means. Take the Good Samaritan. “A priest sees the man and passes by on the other side” is an observation. “The priest was afraid of becoming unclean” is an interpretation. It may be right, but the story doesn’t say so. Interpretation has its place. It comes second, and it has to stand on what we observed.</p>
+<p>Here is a simple test. A good observation is one anyone could agree with: a Protestant, a Catholic, a Muslim, even an atheist reading over your shoulder. We may disagree about what a passage means. We shouldn’t have to disagree about what it says.</p>
+<p>The question that keeps us honest is “Where does it say that?” Many of us “know” that Mary was a teenager when the angel came to her. Luke never says so. It may be a reasonable guess from what we know of the time, but it is something we brought, not something we read. Or we “know” that Zechariah was punished for doubting. The angel does tell him he will be unable to speak “because you did not believe my words” (1:20). The word <i>punish</i> never appears. These are small differences, but they are exactly where we stop hearing the text and start hearing ourselves.</p>
+<p>So read slowly, and more than once. Notice when and where things happen, who is there and who is missing, what happens and in what order, which words and phrases keep coming back, and which ones sound unusual. You don’t have to understand a line to notice it. Read this way, and a familiar passage starts to show things we never saw in it.</p>
+<blockquote class="pull"><p>Some of what we thought we knew turns out to be what we were told. What we discover is what the text was saying all along.</p></blockquote>
+<h2>Then wonder</h2>
+<p>Noticing leads to questions. Not quiz questions we already know the answers to, but real ones. The best come from something odd in the text: something strange, something missing, something repeated. Why does this person speak and that one stay silent? Why is this detail here? Why that word twice?</p>
+<p>A good question doesn’t rush to an answer. It is tempting to grab the first explanation that comes to mind, usually the one we have heard before. Holding a question open a little longer, and asking whether there might be another way to read the line, gives the text room to answer for itself.</p>
+<p>Some questions the text answers itself if we keep reading. Some need background: a custom, a place, a word that meant something then that it doesn’t mean now. And some stay open. That isn’t failure. A question we carry is often how the text keeps speaking after we close the book.</p>
+<h2>A first try: Luke 1:1–4</h2>
+<p>Luke’s gospel opens with a single long sentence. It is a good place to practice.</p>
+<p>Start with what is there. Others have already written about these events: “many have undertaken to compile a narrative.” The story was “handed on to us” by people who were “eyewitnesses and servants of the word” from the beginning, and the writer does not count himself among them. He never gives his name. He only says “I.” He has “a grasp of everything from the start,” and he means to write “a well-ordered account.” There is one reader, and a title stands in front of his name: “most excellent Theophilus.” Theophilus has already been instructed. The aim is that he “may have a firm grasp” of what he was taught. So <i>grasp</i> turns up twice, once for the writer and once for the reader. And something is missing. The sentence never names Jesus. It never names God. The events “have been fulfilled,” but it doesn’t say by whom.</p>
+<p>Now the questions. If many had already written, why write another? Was something missing in the other accounts, or did this particular reader need something they couldn’t give him? Who is Theophilus, and why the title? If he has already been taught, why does he need this?</p>
+<p>Some background helps. Writers in the Greek-speaking world often opened a serious work with a formal preface like this one and dedicated it to a patron. Roman society ran on relationships between unequal people. A patron gave what those below him could not get on their own, such as money, protection, work or an introduction, and in return he received loyalty and public honor. Books traveled the same way. There were no publishers, so a patron might pay for copies and lend a book his name. In Acts the same title, “most excellent,” is used for Roman governors. And Luke’s Greek here is as polished as anything in the New Testament. Theophilus was very likely a person of rank, and Luke was doing what writers of his day did.</p>
+<p>Now read it again, and it looks different. It was written by someone who received the story secondhand, as every one of us has, and who took the trouble to look into it carefully before writing it down. It was written for someone who had been taught and wanted to be sure. And it opens a book about God without naming God, a book about Jesus without naming Jesus, leaving one verb to carry the weight: these things “have been fulfilled.” By whom? Luke will take twenty-four chapters to answer.</p>
+<p>One more thing. The way Luke says he wrote is close to the way we are trying to read: carefully, from the beginning, in order. He did his listening before he wrote. We do ours before we interpret.</p>
+<p>There is a tension here too, between this man of rank and the book he is being handed. That is a question for the next piece.</p>
+<h2>Reading on your own</h2>
+<p>None of this is meant to make reading the Bible complicated. It is meant to do the opposite. The goal is that you can open a passage on your own, without a commentary or a preacher, and know what to do with it. Notice what is there. Ask what puzzles you. Look up what you need to. Read it again. Background, commentaries and teachers all have their place, but they come after listening, not instead of it.</p>
+<p>Keep a notebook. Write down what you noticed and the questions you couldn’t answer. Over the weeks you will see the questions change, and some of them will answer each other.</p>
+<p>And then there is the last step, which no method can take for you. Jesus’ story about the farmer is not about technique. The good soil is the heart that hears the word, holds it fast, and bears fruit. We listen so that we can live what we hear.</p>
+<p>If reading can become listening, maybe prayer can too. The conversation with God that most of us were taught to begin by talking might, for once, begin with us being quiet.</p>
+  </article>
+  <footer>
+    <p>Reading Luke, part 1. Adapted from a Bible study at Hana Church on October 4, 2026.</p>
+    <p>Scripture quotations are taken from the New Revised Standard Version Updated Edition. Copyright © 2021 National Council of Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide.</p>
+  </footer>
+</div>
+<script>
+(function () {
+  var btn = document.getElementById("copy");
+  var status = document.getElementById("status");
+  function plainText() {
+    var parts = [document.querySelector("h1").innerText, document.querySelector(".dek").innerText, ""];
+    document.querySelectorAll("#article > *").forEach(function (el) { parts.push(el.innerText); parts.push(""); });
+    parts.push(document.querySelector("footer").innerText);
+    return parts.join("\n").trim();
+  }
+  function fallback() {
+    var range = document.createRange();
+    range.selectNodeContents(document.getElementById("article"));
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    status.textContent = "Text selected. Press Ctrl+C or ⌘C to copy.";
+  }
+  btn.addEventListener("click", function () {
+    var text = plainText();
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { status.textContent = "Copied."; }, fallback);
+    } else { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>
