@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Greetings, Favored One! · lectio</title>
+<meta name="description" content="On two announcements, a world that ran on honor and shame, and the kind of honor only God gives: a reading of Luke 1:5–38.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="lectio">
+<meta property="og:title" content="Greetings, Favored One!">
+<meta property="og:description" content="On two announcements, a world that ran on honor and shame, and the kind of honor only God gives: a reading of Luke 1:5–38.">
+<meta property="og:url" content="https://luvnpce83.github.io/lectio/greetings-favored-one/">
+<meta property="article:published_time" content="2026-10-11">
+<link rel="canonical" href="https://luvnpce83.github.io/lectio/greetings-favored-one/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500;1,600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=IBM+Plex+Sans:wght@500&display=swap">
+<style>
+/* Layout: a single lamplit article column (~40rem); the passage sits in a quiet well; one pull quote marks the turn */
+:root {
+  --paper: #F4F6F4;
+  --ink: #1B2430;
+  --muted: #5A6572;
+  --lamp: #9A5F0E;
+  --well: #E8ECEC;
+  --rule: #D3D9DC;
+  --glow: rgba(214, 150, 48, 0.20);
+  --display: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --body: "Literata", "Iowan Old Style", Georgia, serif;
+  --ui: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0E151C; --ink: #E2E6E9; --muted: #98A3AD; --lamp: #E2A849;
+    --well: #16202A; --rule: #26323D; --glow: rgba(226, 168, 73, 0.16);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0E151C; --ink: #E2E6E9; --muted: #98A3AD; --lamp: #E2A849;
+  --well: #16202A; --rule: #26323D; --glow: rgba(226, 168, 73, 0.16);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.72;
+  padding-inline: 20px;
+  padding-block: 0 72px;
+}
+.page { max-width: 40rem; margin: 0 auto; }
+header { position: relative; padding-block: 76px 36px; }
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0 -20px auto -20px;
+  height: 340px;
+  background: radial-gradient(ellipse 55% 75% at 50% 0%, var(--glow), transparent 70%);
+  pointer-events: none;
+}
+header > * { position: relative; }
+.kicker {
+  font-family: var(--ui); font-weight: 500; font-size: 0.75rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--lamp);
+  margin: 0 0 16px;
+}
+h1 {
+  font-family: var(--display); font-weight: 600;
+  font-size: clamp(2.6rem, 9vw, 4rem); line-height: 1.02; letter-spacing: -0.01em;
+  text-wrap: balance; margin: 0 0 18px;
+}
+.lord { font-variant: small-caps; letter-spacing: 0.02em; }
+.dek {
+  font-family: var(--body); font-style: italic; font-size: 1.2rem; line-height: 1.5;
+  color: var(--muted); text-wrap: pretty; margin: 0 0 26px; max-width: 34rem;
+}
+.byline {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px;
+  font-family: var(--ui); font-size: 0.8125rem; color: var(--muted);
+  padding-top: 16px; border-top: 1px solid var(--rule);
+}
+.byline .sep { color: var(--rule); }
+button {
+  margin-left: auto;
+  font-family: var(--ui); font-weight: 500; font-size: 0.8125rem; color: var(--ink);
+  background: transparent; border: 1px solid var(--rule); border-radius: 999px;
+  padding: 6px 14px; cursor: pointer;
+}
+button:hover { border-color: var(--lamp); color: var(--lamp); }
+button:focus-visible { outline: 2px solid var(--lamp); outline-offset: 2px; }
+.status { font-family: var(--ui); font-size: 0.8125rem; color: var(--muted); min-height: 1.2em; margin: 8px 0 0; text-align: right; }
+.passage { background: var(--well); padding: 24px 26px 18px; margin: 12px 0 48px; }
+.passage h3 {
+  font-family: var(--ui); font-weight: 500; font-size: 0.75rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--muted); margin: 0 0 14px;
+}
+.v { margin: 0 0 7px; font-size: 0.97rem; line-height: 1.6; }
+.v.gap { margin-top: 16px; padding-top: 12px; border-top: 1px dashed var(--rule); }
+.v sup {
+  font-family: var(--ui); font-size: 0.68rem; color: var(--lamp); margin-right: 6px;
+  vertical-align: 0.45em; font-variant-numeric: tabular-nums;
+}
+article p { margin: 0 0 1.15em; hyphens: auto; }
+article > p:first-of-type::first-letter {
+  font-family: var(--display); font-weight: 600; color: var(--lamp);
+  float: left; font-size: 3.6em; line-height: 0.85; padding: 0.06em 0.08em 0 0;
+}
+article h2 {
+  font-family: var(--display); font-style: italic; font-weight: 600;
+  font-size: 1.8rem; line-height: 1.2; text-wrap: balance; margin: 2.1em 0 0.6em;
+}
+.pull { margin: 2em 0; padding: 0; border: 0; }
+.pull p {
+  font-family: var(--display); font-style: italic; font-weight: 500;
+  font-size: clamp(1.5rem, 5vw, 1.95rem); line-height: 1.3; text-wrap: balance; margin: 0;
+}
+.pull p::before { content: "“"; color: var(--lamp); margin-right: 0.08em; }
+.pull p::after { content: "”"; color: var(--lamp); margin-left: 0.04em; }
+footer {
+  margin-top: 52px; padding-top: 18px; border-top: 1px solid var(--rule);
+  font-family: var(--ui); font-size: 0.78rem; line-height: 1.6; color: var(--muted);
+  display: grid; gap: 8px;
+}
+footer p { margin: 0; }
+@media (max-width: 480px) {
+  body { font-size: 1rem; padding-inline: 16px; }
+  header { padding-block: 52px 28px; }
+  .passage { padding: 20px 18px 14px; }
+  button { margin-left: 0; }
+  .status { text-align: left; }
+}
+
+.site { padding-top: 22px; }
+.site a {
+  font-family: var(--ui); font-weight: 500; font-size: 0.8125rem; letter-spacing: 0.04em;
+  color: var(--muted); text-decoration: none;
+}
+.site a:hover { color: var(--lamp); }
+.site + header { padding-top: 48px; }
+@media (max-width: 480px) { .site + header { padding-top: 36px; } }
+article a { color: var(--lamp); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.compare { width: 100%; border-collapse: collapse; margin: 0.4em 0 1.6em; font-size: 0.9rem; line-height: 1.5; }
+.compare th, .compare td { text-align: left; vertical-align: top; padding: 10px 10px; border-bottom: 1px solid var(--rule); }
+.compare thead th { font-family: var(--ui); font-weight: 500; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); border-bottom-color: var(--ink); }
+.compare tbody th { font-family: var(--ui); font-weight: 500; font-size: 0.78rem; color: var(--lamp); width: 24%; }
+.nw { white-space: nowrap; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@media (max-width: 480px) {
+  .compare { font-size: 0.84rem; }
+  .compare th, .compare td { padding: 8px 6px; }
+  .compare tbody th { width: 26%; font-size: 0.72rem; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <nav class="site"><a href="../">← lectio</a></nav>
+  <header>
+    <p class="kicker">Reading Luke · 3 · Luke 1:5–38</p>
+    <h1>Greetings, Favored One!</h1>
+    <p class="dek">On two announcements, a world that ran on honor and shame, and the kind of honor only God gives: a reading of Luke 1:5–38.</p>
+    <div class="byline">
+      <span>Young Kang</span><span class="sep">·</span><span>Hana Church</span><span class="sep">·</span><span>October 11, 2026</span><span class="sep">·</span><span>8 min read</span>
+      <button id="copy" type="button">Copy text</button>
+    </div>
+    <p class="status" id="status" role="status" aria-live="polite"></p>
+  </header>
+  <section class="passage" aria-label="The passage">
+    <h3>The passage · Luke 1:5–7, 18–22, 26–30, 38</h3>
+    <p class="v"><sup>5</sup>In the days of King Herod of Judea, there was a priest named Zechariah, who belonged to the priestly order of Abijah. His wife was descended from the daughters of Aaron, and her name was Elizabeth.</p><p class="v"><sup>6</sup>Both of them were righteous before God, living blamelessly according to all the commandments and regulations of the Lord.</p><p class="v"><sup>7</sup>But they had no children because Elizabeth was barren, and both were getting on in years.</p><p class="v gap"><sup>18</sup>Zechariah said to the angel, “How can I know that this will happen? For I am an old man, and my wife is getting on in years.”</p><p class="v"><sup>19</sup>The angel replied, “I am Gabriel. I stand in the presence of God, and I have been sent to speak to you and to bring you this good news.</p><p class="v"><sup>20</sup>But now, because you did not believe my words, which will be fulfilled in their time, you will become mute, unable to speak, until the day these things occur.”</p><p class="v"><sup>21</sup>Meanwhile the people were waiting for Zechariah and wondering at his delay in the sanctuary.</p><p class="v"><sup>22</sup>When he did come out, he was unable to speak to them, and they realized that he had seen a vision in the sanctuary. He kept motioning to them and remained unable to speak.</p><p class="v gap"><sup>26</sup>In the sixth month the angel Gabriel was sent by God to a town in Galilee called Nazareth,</p><p class="v"><sup>27</sup>to a virgin engaged to a man whose name was Joseph, of the house of David. The virgin’s name was Mary.</p><p class="v"><sup>28</sup>And he came to her and said, “Greetings, favored one! The Lord is with you.”</p><p class="v"><sup>29</sup>But she was much perplexed by his words and pondered what sort of greeting this might be.</p><p class="v"><sup>30</sup>The angel said to her, “Do not be afraid, Mary, for you have found favor with God.”</p><p class="v gap"><sup>38</sup>Then Mary said, “Here am I, the servant of the Lord; let it be with me according to your word.” Then the angel departed from her.</p>
+  </section>
+  <article id="article">
+<p>Luke begins his story with two births announced by the same angel, six months apart. First Gabriel comes to an old priest named Zechariah in the temple in Jerusalem. Then he goes to a woman named Mary in a small town in Galilee. Each is told that a son will be born. Each is told not to be afraid. Each asks the angel a question.</p>
+<p>The two scenes are built to be read together, and the differences between them are where Luke does his talking. Most of us know these stories well enough that we stop seeing them. Christmas pageants have smoothed them into one soft picture: an angel, a surprised listener, good news. But set the two side by side and read slowly, and something sharp comes into view. It has to do with a word that mattered more than almost anything in Luke’s world: honor.</p>
+<h2>Side by side</h2>
+<p>Here is what the text itself says about each of them, and nothing more.</p>
+<table class="compare">
+  <thead><tr><th scope="col"><span class="sr">Row</span></th><th scope="col">Zechariah <span class="nw">(1:5–25)</span></th><th scope="col">Mary <span class="nw">(1:26–38)</span></th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Where</th><td>The sanctuary of the Lord, at the hour of incense</td><td>“A town in Galilee called Nazareth”</td></tr>
+    <tr><th scope="row">Who else is there</th><td>“The whole assembly of the people,” praying outside</td><td>No one is mentioned</td></tr>
+    <tr><th scope="row">Family</th><td>A priest of the order of Abijah; his wife descended from Aaron</td><td>Not given. “Of the house of David” belongs to Joseph</td></tr>
+    <tr><th scope="row">Position</th><td>A priest on duty, chosen by lot to offer incense</td><td>None given. Engaged to Joseph</td></tr>
+    <tr><th scope="row">How the text describes them</th><td>Righteous and blameless; both getting on in years</td><td>“A virgin.” Nothing else</td></tr>
+    <tr><th scope="row">What they lack</th><td>Children: “Elizabeth was barren”</td><td>The text names no lack</td></tr>
+    <tr><th scope="row">The angel’s greeting</th><td>“Do not be afraid, Zechariah, for your prayer has been heard”</td><td>“Greetings, favored one! The Lord is with you”</td></tr>
+    <tr><th scope="row">Their question</th><td>“How can I know that this will happen?”</td><td>“How can this be, since I am a virgin?”</td></tr>
+    <tr><th scope="row">Afterward</th><td>He comes out unable to speak</td><td>“Here am I, the servant of the Lord”</td></tr>
+  </tbody>
+</table>
+<p>Read down each column. One fills up with place, people, family, office and reputation. The other stays nearly blank until the row where the angel speaks. Why that matters is easier to see once we know how Luke’s world measured a person.</p>
+<h2>A world of honor and shame</h2>
+<p>In Luke’s world, Jewish, Greek and Roman alike, what people valued most was honor: your worth as other people saw it. Honor was public. It lived in other people’s eyes, and it was lost in front of them. That loss was shame.</p>
+<p>Some honor you were born with: your family, your father’s name, your town, an office handed down to you. Some you won or lost in public, by what you did and how people judged it. That is why people in the Bible are so often introduced by their ancestry and their hometown. Those lines are not decoration. They are a person’s standing.</p>
+<p>Zechariah had a great deal of the first kind. You did not apply to be a priest; you were born one, from the line of Aaron. Elizabeth came from Aaron’s line too. Their names carried a lineage on both sides.</p>
+<p>But one thing could undo much of it. In that world children carried the family name, inherited the land and cared for their parents in old age. People believed children were a sign of God’s blessing, so they believed the reverse as well: if you had none, God must be displeased with you. And when a couple had no children, the blame almost always fell on the wife. The Bible knows this pain well, in Sarah, in Rachel, in Hannah. Luke says that Zechariah and Elizabeth had no children “because Elizabeth was barren” (1:7). Later the angel calls her the one “who was said to be barren” (1:36). That was what people called her. When a son is finally on the way, it is Elizabeth, not Zechariah, who speaks of “the disgrace I have endured among my people” (1:25), words that echo Rachel’s after her own long wait (Genesis 30:23). Yet Luke has already told us that both of them were “righteous before God” (1:6). Honor and shame did not track goodness.</p>
+<p>Mary’s standing would have come, as a woman’s usually did, through the men in her life: first her father, then her husband. Luke names neither her father nor her family. He introduces her only through the man she is engaged to. And her town is small enough that he has to introduce it too: “a town in Galilee called Nazareth.” The Old Testament never mentions it once.</p>
+<h2>Silence at the height of honor</h2>
+<p>Now look again at Zechariah’s day. His priestly group is on duty, and the lot falls to him to go into the sanctuary and burn incense, as close to the presence of God as an ordinary priest would ever come. For most priests that came once in a lifetime, if it came at all.</p>
+<p>And it was public. It was the hour of prayer, and “the whole assembly of the people was praying outside” (1:10). When the priest came back out, the crowd expected him to pronounce the priestly blessing over them. This was the most honored moment of Zechariah’s life, with everyone watching.</p>
+<p>But when he finally comes out, he cannot speak. He keeps motioning to them, and they work out that he has seen a vision (1:21–22). The blessing they waited for never comes. At the height of his honor, in front of everyone, the priest cannot say a word, and the people go home.</p>
+<p>Six months later the same angel goes to a town that has to be introduced, to a woman whose family is never named. There is no crowd, no altar, no office. She is “much perplexed” and asks her own question: “How can this be, since I am a virgin?” (1:34). And at the end of the scene, the one who speaks is her: “Here am I, the servant of the Lord; let it be with me according to your word” (1:38).</p>
+<blockquote class="pull"><p>The man with all the honor goes silent in front of everyone. The woman with none is the one who speaks.</p></blockquote>
+<h2>The honor God gives</h2>
+<p>Look at the greeting row again. “Greetings, favored one!” Nobody inherited that, and nobody earned it. Luke’s word for “favored” is built on the Greek word for grace. Mary is favored because God has favored her, and the angel says so twice: “you have found favor with God” (1:30).</p>
+<p>So from its first pages Luke’s gospel turns honor and shame upside down. This is good news for the lowly, right from the start. But notice how God does it. He does not fix Mary’s column by handing her what Zechariah had: a better family tree, a position, a title. He gives honor another way.</p>
+<p>Think about how the two sons’ lives turn out. John will live in the wilderness and die in a prison. Jesus will die on a cross, the most shameful death Rome had. By the world’s measure, neither story ends in honor. Yet the church confesses Jesus as Lord and remembers John as the one who prepared his way. No lineage could have given them that.</p>
+<p>And even the world’s own measure was turned over. Luke names the emperors himself: Augustus when Jesus was born (2:1), Tiberius when John began to preach (3:1). For two thousand years the stories of a preacher from the wilderness and a crucified man from Nazareth have been read, sung and honored more than the story of any emperor. Few people today could tell you one thing Tiberius did. And the parents are remembered for one thing: they raised these two.</p>
+<p>None of this makes Zechariah the villain. The reversal in Luke does not throw out the high so the low can take their seats. Elizabeth’s disgrace is taken away: the Lord “looked favorably on me,” she says (1:25). And when her son is born and the neighbors want to name him after his father, Zechariah asks for a writing tablet and writes, “His name is John.” Then “immediately his mouth was opened and his tongue freed, and he began to speak, praising God” (1:63–64). The priest who could not bless the people gets his voice back, and the first thing he does with it is praise God. God’s reversal has room for him too.</p>
+<h2>Honor now</h2>
+<p>What counts as honor today? It isn’t hard to list. Which school you graduated from. What job you landed. How much you make. What house you bought, what car you drive. How your family looks to the people around you. We may not use the word honor, but we know exactly which column we would like our lives to fill, and we feel the blank rows.</p>
+<p>Luke does not answer by promising to fill them. He shows God giving honor another way, and he invites us to live by it: to live for other people, and to keep asking God to help us do it. In the world’s eyes that is a losing deal. You give more than you get back. In Korean there is a word for that person, <i lang="ko-Latn">hogu</i>: the one who always seems to come out behind. I don’t mean letting people use you; no one should be told to put up with that. I mean the life you choose, freely, when you give to someone who cannot pay you back (14:13–14).</p>
+<p>Yet that is where people keep finding what their lives mean, and where hope and peace come from. And there is something you only learn by living it: when you help someone else live, you come alive yourself.</p>
+<p>So here is a question to carry. Look back over your life at the places the world would call failure: the school that said no, the job that went to someone else, the years that went sideways. What did God give you there? Mary’s column was nearly empty until God spoke. Some of the best things we have were given to us in rows we thought were blank.</p>
+  </article>
+  <footer>
+    <p>Reading Luke, part 3. Adapted from a Bible study at Hana Church on October 11, 2026.</p>
+    <p>Scripture quotations are taken from the New Revised Standard Version Updated Edition. Copyright © 2021 National Council of Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide.</p>
+  </footer>
+</div>
+<script>
+(function () {
+  var btn = document.getElementById("copy");
+  var status = document.getElementById("status");
+  function plainText() {
+    var parts = [document.querySelector("h1").innerText, document.querySelector(".dek").innerText, ""];
+    document.querySelectorAll("#article > *").forEach(function (el) { parts.push(el.innerText); parts.push(""); });
+    parts.push(document.querySelector("footer").innerText);
+    return parts.join("\n").trim();
+  }
+  function fallback() {
+    var range = document.createRange();
+    range.selectNodeContents(document.getElementById("article"));
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    status.textContent = "Text selected. Press Ctrl+C or ⌘C to copy.";
+  }
+  btn.addEventListener("click", function () {
+    var text = plainText();
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { status.textContent = "Copied."; }, fallback);
+    } else { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>
